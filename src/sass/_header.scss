@@ -1,0 +1,293 @@
+@import "variables";
+@import "../../node_modules/breakpoint-sass/stylesheets/breakpoint";
+
+/**
+* HEADER
+*/
+
+.header {
+    position: relative;
+	height: $header_h;
+	width: 100%;
+	background-color: $header_bgc;
+	//position: fixed;
+	z-index: 999;
+
+    line-height: $header_h;
+	text-align: center;
+
+    transition-duration: 0.3s;
+    transition-property: background-color;
+    //box-shadow: 0px 4px 15px 0px rgba(0,0,0,.35);
+
+	ul { padding: 0; margin: 0; }
+}
+
+.fake {
+    height: $header_h;
+    width: 100%;
+}
+
+.animated-scroll {
+    background-color: rgba(darken($color, 10%), 0.8);
+}
+
+.animated-scroll.desktop {
+    position: fixed;
+    top: 0;
+}
+
+.header__title, .header__nav__li {
+	text-transform: uppercase;
+    font-weight: 300;
+    font-size: 20px;
+    color: $header_link_color;
+    transition-duration: 0.3s;
+    transition-property: color;
+}
+
+// Animation sur les <li>
+.header__nav__li {
+    position: relative;
+    height: $header_h;
+    float: left;
+    //z-index: 1;
+
+    list-style: none;
+
+    transition-timing-function: cubic-bezier(0.2, 1, 0.3, 1);
+    transition: 0.3s color;
+    &:hover { color: #fff; }
+    &:before {
+        content: '';
+        width: 100%;
+        height: 100%;
+        position: absolute;
+        top: 0;
+        left: 0;
+        background-color: $header_li_animate_background-color;
+        z-index: -1;
+        opacity: 0;
+
+        transform: scaleX(0.5);
+        transition: transform 0.4s, opacity 0.4s;
+        transition-timing-function: cubic-bezier(0.2, 1, 0.3, 1);
+    }
+
+    &:hover::before {
+        opacity: 1;
+        transform: scaleX(1);
+    }
+}
+// Fin animation sur les <li>
+
+.header__title {
+    float: left;
+    text-decoration: none;
+    font-size: 25px;
+    color: $header_title_color;
+    border-right: 1px solid darken($header_bgc, 8);
+    padding-left: 20px; padding-right: 20px;
+}
+
+.header__nav__link {
+	display: block; // pour que le lien prennent tout le li donc que le lien soit cliquable sur une grande zone
+	padding-left : 10px;
+	padding-right: 10px;
+    color: inherit;
+	text-decoration: none;
+}
+
+/**
+* HERO
+*/
+
+
+$hero_height: 500px;
+$hero_content_height: 130px;
+
+.hero {
+    height: 60%;
+    width: 100%;
+    padding-top: (($hero_height - $hero_content_height) - $header_h) / 2;
+    padding-bottom: (($hero_height - $hero_content_height) - $header_h) / 2;
+    background: url("../img/bg_header2.jpg") no-repeat center;
+    display: inline-block;
+    box-shadow: 0px 4px 15px 0px rgba(0,0,0,.35);
+}
+
+.hero__welcome {
+    //width: 100%;
+    background-color: rgba(0, 0, 0, 0.5);
+    padding-top: 15px;
+    padding-bottom: 15px;
+    text-align: center;
+    color: $hero_color;
+    h1 { font-size: 2.5em; }
+    p { font-size: 1.2em; }
+    h1, p {
+        margin: 0;
+        font-weight: 300;
+        line-height: 50px;
+        text-transform: uppercase;
+        font-family: 'Roboto', sans-serif;
+        //text-shadow: 1px 1px 1px rgba(0, 0, 0, 0.5);
+    }
+}
+
+.hero__social {
+    clear: both; // Pour "nettoyer" le float left du hero content
+    padding-top: 15px;
+    text-align: center;
+}
+
+.box-icon {
+    display: inline-block;
+    padding-left: 7px;
+    padding-right: 7px;
+    a { color: inherit; }
+}
+
+
+
+/**
+* RESPONSIVE
+**/
+
+$icon_width : 50px;
+
+$header__nav_width : 200px;
+
+$header__li_width: 60px;
+
+@media only screen and (max-width: $breakPoint) {
+
+  body, html, .site-pusher { height: 100%; overflow: hidden; }
+    .fixed_bug { padding-bottom: $header_h; }
+    .scroll-resp {
+        background-color: #fff;
+        position: absolute;
+        top: 0; right: 0; left: 0; bottom: 0;
+
+        overflow-y: scroll;
+        overflow-x: hidden;
+        -webkit-overflow-scrolling: touch;
+    }
+
+    /**
+    * Changements pour régler les problèmes lié à la position fixed du header
+    */
+    .header { position: absolute; transform: none; }
+    .hero { padding-top: $header_h *2; }
+
+    /**
+    * END
+    */
+
+    // .header__nav, .site-pusher { transition: transform 0.5s; } // à voir pour mettre une accélération avc courbe bézier
+
+    /**
+    * HEADER
+    */
+
+    .header__icon {
+        width: $icon_width;
+        height: $header_h;
+        position: relative;
+        float: left;
+        border-right: 1px solid;
+        border-color: darken($header_bgc, 20%);
+        background-color: transparent;
+
+		z-index: 100; // Pour passer au dessus de .shadow
+
+		cursor: pointer;
+		outline: 0;
+
+        color: #fff; // for box-shadow
+
+        transition: 0.3s color, 0.3s background-color, 0.3s border-color;
+        &:after {
+            content: '';
+            position: absolute;
+            display: block;
+            width: 18px;
+            top: 15px;
+            left: 15px;
+            box-shadow: 0 10px 0 1px, 0 16px 0 1px, 0 22px 0 1px;
+        }
+    }
+
+    .header__title { border: none; }
+
+    .header__nav {
+        width: $header__nav_width;
+        height: 100%;
+        position: absolute;
+        top: $header_h; bottom: 0; left: 0;
+
+		.first { border-top: 1px solid darken($header_bgc, 10%)!important; }
+    }
+
+    .header__nav__li {
+        height: $header__li_width;
+        border-top: 1px solid rgba(255,255,255,0.05);
+        border-bottom: 1px solid darken($header_bgc, 10%);
+
+        float: none!important;
+        // opacity: 0;
+        line-height: $header__li_width;
+        // transform: translateX(-100%);
+        transition: 0.3s transform, 0.3s color;
+        &:before { // Spécifique au site portfolio
+            content: '';
+            height: 0; // pour anuler l'animation de départ
+        }
+        &:hover { color: rgba(0, 0, 0, 0.5); }
+    }
+
+    .header__nav__link {
+        display: block!important;
+        position: absolute;
+        left: 0;
+        right: 0;
+
+        text-decoration: none;
+        color: inherit;
+    }
+
+    //.site-pusher{ transform: translateX(0); }
+
+    .header__nav__ul {
+        padding: 0; // for fix the bug padding
+        margin: 0;
+        height: 2000px;
+        background-color: $header_bgc;
+        transform: translateX(-100%);
+        transition: transform 0.3s;
+        transition-timing-function: cubic-bezier(0.2, 1, 0.3, 1);
+    }
+
+		/** Quand on veut afficher le menu **/
+    .site-cache {
+        opacity: 0;
+        transition: 0.5s opacity;
+        transition-timing-function: cubic-bezier(0.2, 1, 0.3, 1);
+    }
+
+    .cliqued {
+        .header { background-color: $header_bgc; }
+        .header__nav__ul { transform: translateX(0); }
+        .header__nav__li { opacity: 1; transform: translateX(0); }
+		.shadow { display: none; }
+        .site-cache {
+            position: absolute;
+            top: $header_h; left: 0; right: 0; bottom: 0;
+            background-color: rgba(0,0,0,0.5);
+            z-index: 100;
+            height: 5000px; // Pour "forcer"
+            opacity: 1;
+        }
+        .scroll-resp { overflow-y: hidden; } // Lorsque le menu est ouvert, on interdit le scroll Y sur la page
+    }
+}

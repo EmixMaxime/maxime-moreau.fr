@@ -1,0 +1,73 @@
+.box-title.no-padding { padding-bottom: 0px; }
+
+.skill-box {
+    //height: 120px;
+    text-align: center;
+    margin-top: 30px;
+    img { width: 150px; margin-top: 5px; }
+}
+.skill-box__title {
+    position: relative;
+    padding-top: 10px;
+    padding-bottom: 10px;
+    z-index: 1;
+
+    text-transform: uppercase;
+    font-size: 24px;
+    color: #FFF;
+}
+
+.skill-box__title::after {
+    content: '';
+    position: absolute; top: 0; bottom: 0; left: 0;
+    z-index: -1;
+}
+
+$percents : (
+        ten:10%,
+        twenty: 20%,
+        thirty: 30%,
+        forty: 40%,
+        fifty: 50%,
+        sixty: 60%,
+        seventy: 70%,
+        eighty: 80%,
+        ninety: 90%,
+        full: 100%
+);
+
+$skills : (
+        html: (background-color: #ff8c4b, border-color: #ff8c4b, width: 70%),
+        js: (background-color: #ebc217, border-color: #ebc217, width: 40%),
+        php: (background-color: #6082bb, border-color: #6082bb, width: 90%),
+        laravel: (background-color: #e74430, border-color: #e74430, width: 80%),
+        symfony: (background-color: #7aba20, border-color: #7aba20, width: 60%),
+);
+
+@each $skill, $property in $skills {
+    .#{$skill} {
+        @each $p, $value in $property {
+            @if($p == background-color) { #{$p} : #{$value}; }
+            @if($p == border-color) { #{$p} : #{$value}; }
+        }
+    }
+
+    .skill-box__container {
+        background-color: #fff!important;
+        border-width: 1px;
+        border-style: solid;
+        height: 130px;
+    }
+
+    .#{$skill}::after {
+        @each $p, $value in $property {
+            @if($p == background-color) { #{$p} : darken($value, 10%) }
+        }
+    }
+}
+
+@each $percent, $value in $percents {
+    .#{$percent}::after {
+        width: $value;
+    }
+}

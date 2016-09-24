@@ -1,0 +1,12 @@
+mixin skill(name, img, style)
+    .skill-box(class=(name == "laravel" ? "skill-box-push" : ''))
+        .skill-box__title(class=(style ? style : name), class=attributes.class)=name
+        .skill-box__container(class=(style ? style : name))
+            img.skill-box__logo(src=require('../img/'+ img), alt=name, style=attributes.style)
+
+#skills.site-container
+    .box-title.no-padding
+        h2.title Compétences
+
+    each skill in skills
+        +skill(skill.name, skill.img, skill.class)(class=skill.percent, style=skill.style)

@@ -1,0 +1,37 @@
+include ../helpers/tooltip
+
+mixin career(title, date, dateString)
+    div(id=dateString class="career-box")
+        .career-box_title
+            p=title
+        p.career-box__p
+            block
+        .career-box__date
+            p=date
+
+.bg-career
+    .bullet
+        +tooltip('Je ne suis pas un professionnel')(type="small")
+            button(data-jargon="true" class="field-submit") M'éviter le jargon
+    #parcours.site-container.career
+        .box-title
+            h2.title Mon parcours
+        .career-content
+            +career("Découverte",2012, "douze")
+                | Je découvre OpenClassrooms par le biais d'un ami étudiant en informatique, ainsi par curiosité je me suis inscrit au MOOC le plus populaire d'OC : "HTML/CSS".
+                | <br> J'ai de suite accroché, j'ai réalisé différentes petites pages pour aller plus loin que ce que proposait ce MOOC.
+            +career("Curiosité",2013, "treize")
+                | Je deviens de plus en plus curieux sur les technologies qui font tourner le web, je m'intéresse à savoir quelles technologies sont utilisées pour rendre les sites dynamiques. Je continue à m'exercer sur les langages HTML/CSS et je me lance doucement l'apprentissage de PHP & SQL.
+            +career("Apprentissage",2014, "quatorze")
+                | Je continue mon apprentissage de PHP & SQL plus sérieusement. Après avoir découvert PHP procédurale je me lance vers la fin d'année à l'apprentissage de la programmation orientée objet.
+                | J'apprend également le Responsive web design.
+            +career("Le grand pas!",2015, "quinze")
+                | A ce stade, j'ai des connaissances de bases dans les languages : HTML/CSS, PHP & SQL. Mon choix d'orientation de mes études est fait, je veux devenir développeur web.
+                br
+                | Je décide alors d'aller plus loin. Je me lance dans le framework PHP Laravel, j'essaie différents outils pour le développement front-end.
+                br
+                | Je me lance en fin d'année à la découverte du framework Symfony2!
+
+        .career-desc
+            p Passionné depuis le plus jeune âge, je souhaite faire de ma passion mon métier.
+

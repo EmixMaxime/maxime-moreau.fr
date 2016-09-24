@@ -1,0 +1,79 @@
+@import '../../node_modules/susy/sass/susy';
+@import "../../node_modules/breakpoint-sass/stylesheets/breakpoint";
+
+$susy: (
+	container: 960px,
+	columns: 12,
+	gutters: 15px/100px,
+	gutter-position: inside-static,
+	column-width: 100px,
+);
+
+$desktop: (
+	container: 960px,
+	columns: 12,
+	gutters: 30px/100px,
+	gutter-position: inside-static,
+	column-width: 100px,
+);
+
+$debug : false;
+
+
+.presentation, .presentation-text,
+.career-box, .skill-box,
+.form,
+.footer__quote, .footer__twitter
+{ @include span(12); }
+
+.footer__quote { text-align: center; margin-top: 30px!important; }
+
+
+.site-container { width: 100%; }
+
+@if $debug {
+	.site-container { background-color: pink };
+}
+
+@include susy-breakpoint(768px, $susy) {
+	.site-container{ width: 750px; }
+	.hero__content { @include span(10); @include push(1); }
+
+	.presentation-text { @include span(7); }
+	.presentation { @include span(5); }
+}
+
+@include susy-breakpoint(992px, $desktop) {
+	.site-container{ width: 970px;}
+	.hero__content { @include span(8); @include push(2); }
+	.presentation { @include span(8); float: right; }
+ 	.career-box { @include span(6) }
+  	.skill-box { @include span(6); }
+
+	.contact_social { @include span(5) }
+	.contact_form { @include span(7) }
+
+	.presentation-text { @include span(7); }
+	.presentation { @include span(5); }
+
+	.footer__quote { text-align: unset; margin-top: 0px!important; @include span(4); }
+}
+
+@include susy-breakpoint(1200px, $desktop) {
+	.site-container{ width: 1170px; }
+	.hero__content { @include span(6); @include push(3); }
+	.presentation-text { @include span(6); }
+	.presentation { @include span(6); }
+
+	.career-box { @include span(3); }
+	.skill-box { @include span(4) }
+	.skill-box-push { transform: translateX(100%); }
+
+	.footer__twitter { @include span(3) }
+	.footer__quote { @include span(4) }
+
+	.contact_social, .contact_form { @include span(6) }
+
+	.bg-career { background-attachment: fixed!important; } // ça pompe bcp de ressources, on laisse cet attribu que pr les grand écran (théoriquement pourr pc)
+
+}

@@ -1,0 +1,53 @@
+.presentation-picture, .presentation-profile {
+    float: left;
+    width: 50%;
+    padding-left: 15px;
+    padding-right: 15px;
+}
+.presentation {
+    ul { margin: 0; padding: 0;}
+    li {
+        list-style: none;
+        margin-top: 10px;
+        &::after {
+            content: '';
+            display: block;
+            position: relative;
+            top: 5px;
+            height: 1px;
+            background-color: #eee;
+        }
+    }
+    .first {
+        margin-top: 0;
+    }
+    span {
+        font-weight: bold;
+        color: $color;
+    }
+    a {
+        text-decoration: none;
+        color: inherit;
+        border-bottom: 1px solid;
+        border-color: transparent;
+        transition: 0.3s border-color;
+        &:hover {
+            border-color: $color;
+        }
+    }
+}
+
+.presentation-picture {
+    height: 200px;
+    background-image: url("../img/me2.jpg");
+}
+
+.presentation-text {
+    display: table;
+    height: 200px;
+}
+
+.presentation__p {
+    display: table-cell;
+    vertical-align: middle;
+}

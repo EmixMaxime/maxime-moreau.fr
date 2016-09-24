@@ -1,0 +1,34 @@
+// Header 
+$header_h : 70px;
+$header_bgc : #30a7b7;
+$header_link_color: #fff;
+$header_title_color: #E3F2FD;
+$header_li_animate_background-color: lighten($header_bgc, 10%);
+
+// Hero
+$hero_color: #fff;
+
+$site-container_padding-top: 30px;
+
+// Parcours 
+$career_bgc: rgba(0, 0, 0, 0.5);
+
+$text_c : #555; // gris foncé pour les textes
+$color_gray : #555; // gris foncé pour les textes
+
+$title_color : #666;
+
+$p_light : #777777;
+
+$color : #30a7b7;
+//$li_hover_bgc: #f5756c;
+
+/* RESPONSIVE */
+
+$breakPoint: 1200px;
+$header_width: 200px;
+
+
+$decallage : 30px;
+
+$color_box : #f5f5f5;

@@ -1,0 +1,200 @@
+// Polyfill
+interface ObjectCtor extends ObjectConstructor {
+    assign(target: any, ...sources: any[]): any;
+}
+
+declare var Object: ObjectCtor;
+let assign = Object.assign ? Object.assign : function(target: any, ...sources: any[]): any {
+        return;
+}
+
+const turnObjToArray = (obj) => {
+    return [].map.call(obj, function(element) {
+        return element;
+    })
+}
+// ---
+interface interfaceInformationMessage {
+    content: string, button: string
+}
+
+export interface interfaceInformationMessages {
+    with: interfaceInformationMessage,
+    without: interfaceInformationMessage
+}
+
+export interface interfaceJargonOptions {
+    bulletSelector: string, // The bullet 
+    targetsSelector: string,
+    targetSelectorContent: string,
+    buttonSelector: string,
+    pSelector: string
+}
+
+interface stateInterface  {
+    options: interfaceJargonOptions,
+    contentJargon: any,
+    informationMessages: interfaceInformationMessages,
+    bullet: Element,
+    button: Element,
+    p: Element,
+    targets: NodeListOf<Element>
+    jargon: boolean
+}
+
+const changeBlabla = () => {
+    let changeTargetContent = function () {
+        p.textContent = ...
+        this.classList.remove('fade')
+    }
+    items = Array.from(items)
+    items.forEach(element => {
+        element.classList.add('fade')
+        element.addEventListener('transitionend', changeTargetContent)
+    })
+} */
+
+/* 
+const getStateJargon = (jargon: boolean) => {
+    return jargon ? 'with' : 'without'
+}
+
+const changeStateJargon = () => {
+    state.jargon = !state.jargon
+}
+
+const changeBullet = (options, state) => {
+    const {informationMessages, button, p } = options
+
+    state.jargon = !state.jargon
+    let index = getStateJargon(state.jargon)
+    let messages: interfaceInformationMessage = informationMessages[index]
+
+    button.textContent = messages.button
+    p.textContent = messages.content
+}
+
+const changeJargon = (options) => { // S'occupe de changer les "boxes"
+    const { targetSelectorContent , contentJargon, button } = options
+
+    let changeTargetContent = function () {
+        let p: Element = this.querySelector(targetSelectorContent)
+        let index = getStateJargon(state.jargon)
+        p.textContent = contentJargon[index][this.id]
+
+        this.classList.remove('fade')
+        this.removeEventListener('transitionend', changeTargetContent)
+    }
+
+    let changeJargon = function () {
+        changeBullet(options, state)
+        
+        for (let item of turnObjToArray(state.targets)) { // TODO:  Voir la génération du code ES5 si il est en for(let... i++...)
+            item.classList.add('fade')
+            item.addEventListener('transitionend', changeTargetContent)
+        }
+    }
+    button.addEventListener('click', changeJargon)
+}
+
+export const Jargon = (options: interfaceJargonOptions, informationMessages: interfaceInformationMessages, contentJargon) => {
+
+/* Le state, c'est ce que je modifie pour l'app
+    Ex, jargon true/false il est modifié pour tte l'app (script jargon)
+    Le reste ce n'est que des options propre à chacune des fonctions ! Rien à voir, pq les mettres dans le state? ...
+*/
+    var state: stateInterface = {
+        options,
+        contentJargon,
+        informationMessages,
+        bullet: document.querySelector(options.bulletSelector),
+        button: document.querySelector(options.buttonSelector),
+        p: document.querySelector(options.pSelector),
+        targets: document.querySelectorAll(options.targetsSelector),
+        jargon: true
+    }
+
+    let optionsL = {
+
+    }
+    
+    changeJargon.prototype.state = state
+
+    console.log(state)
+
+    return Object.assign(
+        {},
+        changeJargon(state)
+    )
+
+}
+
+/*
+export class Jargon {
+
+    private informationMessages: interfaceInformationMessages // OK
+    private contentJargon // OK
+    private bullet: Element // OK
+    private button: Element // OK
+    private p: Element // OK
+    private targets: NodeListOf<Element> // OK
+    private targetSelectorContent: string // PAS IMPLEMENTER
+    private jargon: boolean
+
+    constructor (options: interfaceJargonOptions, informationMessages: interfaceInformationMessages, contentJargon) {
+        this.informationMessages = informationMessages
+        this.contentJargon = contentJargon
+
+        this.bullet = document.querySelector(options.bulletSelector)
+        this.button = this.bullet.querySelector(options.buttonSelector)
+        this.p = this.bullet.querySelector(options.pSelector)
+
+        this.targets = document.querySelectorAll(options.targetsSelector)
+        this.targetSelectorContent = options.targetSelectorContent
+
+        this.jargon = true // value by default, at start !
+        this.addEventListener()
+    }
+
+    private state (): string {
+        return this.jargon ? 'with' : 'without'
+    }
+
+    private changeBullet (): void {
+        this.jargon = !this.jargon // Change the state, exemple if jargon = true the value become false (the opposite)
+        let messages: interfaceInformationMessage = this.informationMessages[this.state()]
+
+        this.button.textContent = messages.button // Change the text of button
+        this.p.textContent = messages.content // Change the text of bullet
+    }
+
+    private addEventListener () {
+        let self = this
+
+        let changeTargetContent = function () {
+            let p: Element = this.querySelector(self.targetSelectorContent)
+            p.textContent = self.contentJargon[self.state()][this.id] // Get contentJargon with the key of state and this.id equals to the div, example the div #douze charge her content with id
+            this.classList.remove('fade')
+            this.removeEventListener('transitionend', changeTargetContent)
+        }
+
+        let turnObjToArray = function(obj) {
+            return [].map.call(obj, function(element) {
+                return element;
+            })
+        }
+
+        let changeJargon = function () {
+            self.changeBullet()
+            
+            for (let item of turnObjToArray(self.targets)) { // TODO:  Voir la génération du code ES5 si il est en for(let...)
+                item.classList.add('fade')
+                item.addEventListener('transitionend', changeTargetContent)
+            }
+        }
+        this.button.addEventListener('click', changeJargon)
+    }
+}
+*/
+// var emix = new Jargon('.bullet', '.career-box', 'button', '.tooltip-content')
+

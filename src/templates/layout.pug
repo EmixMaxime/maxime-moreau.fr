@@ -1,0 +1,28 @@
+mixin header-link(name, href)
+    li.header__nav__li.first
+        a.header__nav__link(href="")=name
+
+doctype html
+html(lang='fr')
+    head
+        meta(charset='UTF-8')
+        title site.prefixTitle
+        meta(name='viewport', content='width=device-width, initial-scale=1.0, maximum-scale=1.0')
+        //link(rel='stylesheet', href='./css/index.css')
+        //link(rel='stylesheet', href='../css/fonts.css')
+    include svg/svg
+    body
+        #fake
+        header.header
+            a#header__icon.header__icon(href='#')
+            a.header__title(href='#') Maxime
+            // Pour le name
+            nav.header__nav
+              ul.header__nav__ul
+                each item in menu
+                  +header-link(item.name, item.link)
+        .scroll-resp
+            .site-cache
+            block content
+            include ./footer
+    block script

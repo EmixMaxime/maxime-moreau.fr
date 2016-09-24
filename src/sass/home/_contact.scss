@@ -1,0 +1,28 @@
+.bg-contact {
+    background-color: $header_bgc;
+    color: #fff;
+}
+
+.contact {
+    .box-title h2 {
+        color: #fff;
+        transition: none;
+        &:hover { color: #fff; }
+    }
+    .icon-twitter { fill: #fff; }
+    .icon-social {
+        margin-top: 10px;
+    }
+}
+
+.contact_social {
+    text-align: center;
+}
+
+.contact-title {
+    font-size: 1.3em;
+    margin: 0;
+    text-align: center;
+}
+.contact_form {
+}

@@ -1,0 +1,53 @@
+.footer {
+    background: url('../img/bg_footer.jpg');
+    padding-top: 20px;
+    padding-bottom: 20px;
+}
+
+.footer__quote {
+    color: rgba(255, 255, 255, 0.9);
+    font-size: 18px;
+    line-height: 23px;
+    margin: 0;
+
+    .author {
+        display: block;
+        color: $color;
+        &::before {
+            content: '-';
+        }
+    }
+    .icon { font-size: 0.9em; }
+    p { display: inline-block; margin: 0; }
+
+    opacity: 1;
+    transition: 0.3s opacity;
+}
+
+.footer .hidden {
+    opacity: 0;
+}
+
+.footer__twitter {
+    height: 50px;
+    background-color: #55acee;
+    border: 2px solid transparent;
+    border-radius: 50px;
+
+    position: relative;
+    top: 30px;
+
+    color: #fff;
+    text-decoration: none;
+    font-size: 25px;
+    text-align: center;
+    line-height: 50px;
+    font-weight: 100;
+
+    transition-property: background-color, border-color;
+    transition-duration: 0.3s;
+    &:hover {
+        border-color: #fff;
+        background-color: transparent;
+    }
+}

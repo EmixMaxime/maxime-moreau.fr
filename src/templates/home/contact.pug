@@ -1,0 +1,20 @@
+.bg-contact
+    #contact.site-container.contact
+        .box-title
+            h2.title Contact
+        .contact_form
+            p.contact-title M'envoyer un message
+            form(action="#" method="POST" class="form")
+                .field.field-animated
+                    label(for="email", class="field-label") Email
+                    input(type="email", name="email", id="email", class="field-input")
+                .field
+                    label(for="message") Message
+                    textarea(id="message" class="field-input")
+                button(type="submit" value="Envoyer" class="field-submit") Envoyer
+        .contact_social
+            p.contact-title Retrouvez moi sur les réseaux sociaux
+            div.icon-social
+                include ../linksSocial/facebook
+            div.icon-social
+                include ../linksSocial/twitter

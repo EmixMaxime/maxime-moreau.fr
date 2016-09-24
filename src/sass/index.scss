@@ -1,0 +1,47 @@
+@import "_susy";
+@import "_header";
+@import "_app";
+@import "./form/_form";
+
+@mixin box-title($t_color : ""){
+	@if $t_color == '' {
+	  $t_color:$title_color;
+	}
+	text-align: center;
+	color: $t_color;
+	padding-bottom: 30px;
+}
+
+/**
+* TOOLTIP
+*/
+@import "./helpers/_tooltip";
+
+/**
+* PRESENTATION
+*/
+
+@import "./home/_presentation";
+
+/**
+* CAREER
+*/
+
+@import "./home/_career";
+/**
+* SKILLS
+**/
+
+@import "./home/_skills";
+
+/**
+* CONTACT
+**/
+
+@import "./home/_contact";
+
+/**
+* FOOTER
+**/
+
+@import "./footer/_footer";

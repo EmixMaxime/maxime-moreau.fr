@@ -1,0 +1,100 @@
+//.bullet
+//p Je ne suis pas un professionnel
+//button(data-jargon="true") M'éviter le jargon
+
+.bullet {
+    //background-color: rgba(0,0,0,0.6);
+    //width: auto;
+    float: left;
+    position: absolute;
+    color: #fff;
+    left: 20px;
+    top: 20px;
+}
+
+.bg-career {
+    background: url('../img/bg_career.jpg') no-repeat center;
+    background-size: cover;
+    position: relative; // for the bullet
+}
+
+.career {
+    .box-title h2 {
+        color: #fff;
+        transition: none;
+        &:hover { color: #fff; }
+    }
+}
+
+.career-content {
+    height: 500px;
+}
+
+.career-desc {
+    text-align: center;
+    color: #fff;
+    font-size: 30px;
+    p { margin: 0; }
+}
+
+.career-box {
+    position: relative;
+    padding-bottom: 40px;
+
+    opacity: 1;
+    transform: translateY(0);
+    transition: transform 0.3s, opacity 0.3s;
+    p { margin: 0;}
+}
+
+.career-box.fade {
+    opacity: 0;
+    transform: translateY(100px);
+}
+
+.career-box_title {
+    text-align: center;
+    padding-bottom: 15px;
+    p {
+        font-size: 20px;
+        display: inline-block;
+        color: #fff;
+        border-bottom: 1px solid #fff;
+    }
+}
+
+.career-box__p {
+    margin: 0;
+    padding: 10px;
+    background: $career_bgc;
+
+    text-align: left;
+    line-height: 23px;
+    color: #fff;
+}
+
+.career-box::after {
+    content: '';
+    width: 0;
+    height: 0;
+    position: relative;
+    top: 10px;
+    left: 50%;
+
+    border: 10px solid transparent;
+    border-top-color: $career_bgc;
+    margin-left: -10px;
+    pointer-events: none;
+}
+
+.career-box__date {
+    position: absolute;
+    left: gutters() *2;
+    right: gutters() *2;
+    text-align: center;
+    p {
+        font-size: 20px;
+        padding-top: 15px;
+        color: rgba(255, 255, 255, 0.9);
+    }
+}

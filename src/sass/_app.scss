@@ -1,0 +1,78 @@
+//@import "responsive";
+//@import "header";
+//@import "footer";
+
+@import "variables";
+@import url(https://fonts.googleapis.com/css?family=Roboto:100,300);
+
+* { box-sizing: border-box; }
+
+body {
+	margin: 0;
+	padding: 0;
+	font-family: 'Roboto', sans-serif;
+	background-color: #fff;
+}
+
+body, html {height: 100%; }
+
+/**
+* STYLE GENERAL
+**/
+
+@mixin title() {
+  	display: inline;
+	margin: 0;
+
+	text-align: center;
+	text-transform: uppercase;
+	//font-weight: 100;
+	font-weight: normal;
+	font-size: 2em;
+
+	transition: 0.3s color;
+	&:hover {
+		color: $color;
+	}
+}
+
+.box-title {
+	text-align: center;
+	color: $title_color;
+	padding-bottom: 30px;
+}
+
+.title {
+  @include title();
+}
+
+.site-container {
+	position: relative;
+	overflow: hidden;
+	margin: 0 auto;
+	padding-top: $site-container_padding-top;
+	padding-bottom: $site-container_padding-top;
+}
+
+.link {
+	color: $color;
+}
+
+.icon {
+	display: inline-block;
+	width: 1em;
+	height: 1em;
+	fill: currentColor;
+	font-size: 30px;
+}
+
+.icon-github { fill: #fff; }
+.icon-twitter { fill: #55acee; }
+.icon-facebook { fill: #3b5998 }
+
+.container-allheight {
+	height: 100vh;
+	.site-container {
+		height: 40%!important;
+	}
+}
