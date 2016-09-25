@@ -1,0 +1,242 @@
+// colors
+@import "../responsive/_mixinResponsive";
+
+$main-text: #7f8c97; // main text
+$link: #acb7c0; // anchor tags
+$background: #e9f0f5; // body background color
+
+$color-1: #303e49; // blue dark
+$color-2: #c03b44; // red
+$color-3: #ffffff; // white
+$color-4: #75ce66; // green
+$color-5: #f0ca45; // yellow
+
+.bg-timeline {
+  height: 100vh;
+  background-color: #F5F5F5;
+}
+
+/* Animations : */
+.cd-timeline {
+  .cd-timeline_content {
+    transform: translateX(0px);
+    opacity: 1;
+    transition: transform 0.4s, opacity 0.4s;
+  }
+  .cd-timeline_img {
+    animation-duration: 0.4s;
+    animation-name: emix;
+  }
+}
+
+.cd-timeline.hidden {
+  .cd-timeline_content {
+    transform: translateX(50px);
+    opacity: 0;
+  }
+}
+
+@keyframes emix {
+from {
+    zoom: 0%;
+    opacity: 0;
+  }
+50% {
+    zoom: 150%;
+    opacity: 0.5;
+  }
+75% {
+    opacity: 0.7;
+  }
+to {
+    zoom: 100%;
+    opacity: 1;
+  }
+}
+
+/* Fin animations */
+
+.site-container-timeline {
+  height: 100%;
+  &::before {
+    /* this is the vertical line */
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 18px;
+    height: 100%;
+    width: 4px;
+    background: darken($background, 5%);
+  }
+    &::before {
+      left: 50%;
+      margin-left: -2px;
+    }
+}
+
+.cd-timeline {
+  position: relative;
+  width: 100%;
+  margin: 2em 0;
+
+  content: '';
+  display: table;
+  clear: both;
+
+  &:first-child { margin-top: 0; }
+
+  &:last-child { margin-bottom: 0; }
+
+  @include emix-breakpoint(M) {
+      margin: 4em 0;
+      &:first-child { margin-top: 0; }
+
+      &:last-child { margin-bottom: 0; }
+  }
+}
+
+.cd-timeline_img {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  box-shadow: 0 0 0 4px $color-3, inset 0 2px 0 rgba(#000, .08), 0 3px 0 4px rgba(#000, .05) ;
+
+  img {
+    display: block;
+    width: 24px;
+    height: 24px;
+    position: relative;
+    left: 50%;
+    top: 50%;
+    margin-left: -12px;
+    margin-top: -12px;
+  }
+
+  &.cd-picture {
+    background: $color-4;
+  }
+
+  &.cd-movie {
+    background: $color-2;
+  }
+
+  &.cd-location {
+    background: $color-5;
+  }
+
+  @include emix-breakpoint (L) {
+    width: 60px;
+    height: 60px;
+    left: 50%;
+    margin-left: -30px;
+    /* Force Hardware Acceleration in WebKit */
+    //-webkit-transform: translateZ(0);
+    //-webkit-backface-visibility: hidden;
+
+  }
+}
+
+.cd-timeline_content {
+  position: relative;
+  width: 100%;
+  margin-left: 60px;
+  background: $color-3;
+  padding: 1em;
+  box-shadow: 0 3px 0 darken($background, 5%);
+
+  content: '';
+  display: table;
+  clear: both; // Clearfix car contient des élements en float left !
+
+  h2 { color: $color-1; }
+
+  p, .cd-read-more, .cd-date { font-size: 13px; }
+
+  .cd-read-more, .cd-date { display: inline-block; }
+
+  p { margin: 1em 0; line-height: 1.6; }
+
+  .cd-read-more {
+    float: right;
+    padding: .8em 1em;
+    background: $link;
+    color: $color-3;
+    .no-touch &:hover {
+      background-color: lighten($link, 5%);
+    }
+  }
+
+  .cd-date {
+    float: left;
+    padding: .8em 0;
+    opacity: .7;
+  }
+
+  &::before { // La petite flèche
+    content: '';
+    position: absolute;
+    top: 16px;
+    right: 100%;
+    height: 0;
+    width: 0;
+    border: 7px solid transparent;
+    border-right: 7px solid $color-3;
+  }
+
+  @include emix-breakpoint (M) {
+    h2 {font-size: 20px; }
+
+    p {font-size: 16px; }
+
+    .cd-read-more, .cd-date { font-size: 14px; }
+  }
+}
+
+
+
+// Système de 1 à droite, 1 à gauche lorsqu'on est sur du LARGE
+@include emix-breakpoint (L) {
+  .cd-timeline_content {
+    margin-left: 0;
+    padding: 1.6em;
+    width: 45%;
+
+    &::before {
+      top: 24px;
+      left: 100%;
+      border-color: transparent;
+      border-left-color: $color-3;
+    }
+
+    .cd-read-more { float: left; }
+
+    .cd-date {
+      position: absolute;
+      width: 100%;
+      left: 122%;
+      top: 6px;
+      font-size: 16px;
+    }
+
+    .cd-timeline:nth-child(even) & { // Un sur 2 sera à droite, C'EST QUOI LE & !!!!!!!!!
+      float: right;
+
+      &::before {
+        top: 24px;
+        left: auto;
+        right: 100%;
+        border-color: transparent;
+        border-right-color: $color-3;
+      }
+      .cd-read-more { float: right; }
+      .cd-date {
+        left: auto;
+        right: 122%;
+        text-align: right;
+      }
+    }
+  }
+}
