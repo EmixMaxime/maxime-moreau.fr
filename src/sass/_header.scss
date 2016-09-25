@@ -109,15 +109,30 @@ $hero_content_height: 130px;
 .hero {
     height: 60%;
     width: 100%;
-    padding-top: (($hero_height - $hero_content_height) - $header_h) / 2;
-    padding-bottom: (($hero_height - $hero_content_height) - $header_h) / 2;
+  position: relative;
+    //padding-top: (($hero_height - $hero_content_height) - $header_h) / 2;
+    //padding-bottom: (($hero_height - $hero_content_height) - $header_h) / 2;
     background: url("../img/bg_header2.jpg") no-repeat center;
     display: inline-block;
     box-shadow: 0px 4px 15px 0px rgba(0,0,0,.35);
 }
 
+.hero__content {
+  position: absolute;
+  left: 0;
+  right: 0;
+  top: 50%;
+  transform: translateY(-50%);
+}
+
 .hero__welcome {
-    //width: 100%;
+  /* center */
+  //position: absolute;
+  //left: 0;
+  //right: 0;
+  //top: 50%;
+  //transform: translateY(-50%);
+  /* */
     background-color: rgba(0, 0, 0, 0.5);
     padding-top: 15px;
     padding-bottom: 15px;
@@ -126,11 +141,10 @@ $hero_content_height: 130px;
     h1 { font-size: 2.5em; }
     p { font-size: 1.2em; }
     h1, p {
-        margin: 0;
+        color: #fff;
         font-weight: 300;
         line-height: 50px;
         text-transform: uppercase;
-        font-family: 'Roboto', sans-serif;
         //text-shadow: 1px 1px 1px rgba(0, 0, 0, 0.5);
     }
 }

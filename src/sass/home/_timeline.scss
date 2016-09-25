@@ -3,7 +3,7 @@
 
 $main-text: #7f8c97; // main text
 $link: #acb7c0; // anchor tags
-$background: #e9f0f5; // body background color
+$background: #F5F5F5; // body background color
 
 $color-1: #303e49; // blue dark
 $color-2: #c03b44; // red
@@ -12,7 +12,6 @@ $color-4: #75ce66; // green
 $color-5: #f0ca45; // yellow
 
 .bg-timeline {
-  height: 100vh;
   background-color: #F5F5F5;
 }
 
@@ -23,7 +22,7 @@ $color-5: #f0ca45; // yellow
     opacity: 1;
     transition: transform 0.4s, opacity 0.4s;
   }
-  .cd-timeline_img {
+  .cd-timeline_icon {
     animation-duration: 0.4s;
     animation-name: emix;
   }
@@ -38,26 +37,23 @@ $color-5: #f0ca45; // yellow
 
 @keyframes emix {
 from {
-    zoom: 0%;
+    transform: scale(0);
     opacity: 0;
   }
 50% {
-    zoom: 150%;
-    opacity: 0.5;
+  transform: scale(1.5);
+  opacity: 0.5;
   }
-75% {
-    opacity: 0.7;
-  }
+
 to {
-    zoom: 100%;
-    opacity: 1;
+  transform: scale(1);
+  opacity: 1;
   }
 }
 
 /* Fin animations */
 
 .site-container-timeline {
-  height: 100%;
   &::before {
     /* this is the vertical line */
     content: '';
@@ -68,10 +64,15 @@ to {
     width: 4px;
     background: darken($background, 5%);
   }
+}
+
+@include emix-breakpoint(L) {
+  .site-container-timeline {
     &::before {
       left: 50%;
       margin-left: -2px;
     }
+  }
 }
 
 .cd-timeline {
@@ -86,58 +87,34 @@ to {
   &:first-child { margin-top: 0; }
 
   &:last-child { margin-bottom: 0; }
+}
 
-  @include emix-breakpoint(M) {
-      margin: 4em 0;
-      &:first-child { margin-top: 0; }
+@include emix-breakpoint(M) {
+  .cd-timeline {
+    margin: 4em 0;
+    &:first-child { margin-top: 0; }
 
-      &:last-child { margin-bottom: 0; }
+    &:last-child { margin-bottom: 0; }
   }
 }
 
-.cd-timeline_img {
+.cd-timeline_icon {
   position: absolute;
   top: 0;
-  left: 0;
-  width: 40px;
-  height: 40px;
+  left: 4px;
+  width: 30px;
+  height: 30px;
   border-radius: 50%;
-  box-shadow: 0 0 0 4px $color-3, inset 0 2px 0 rgba(#000, .08), 0 3px 0 4px rgba(#000, .05) ;
+  background: $color-4;
+}
 
-  img {
-    display: block;
-    width: 24px;
-    height: 24px;
-    position: relative;
+@include emix-breakpoint (L) {
+  .cd-timeline_icon {
     left: 50%;
-    top: 50%;
-    margin-left: -12px;
-    margin-top: -12px;
-  }
-
-  &.cd-picture {
-    background: $color-4;
-  }
-
-  &.cd-movie {
-    background: $color-2;
-  }
-
-  &.cd-location {
-    background: $color-5;
-  }
-
-  @include emix-breakpoint (L) {
-    width: 60px;
-    height: 60px;
-    left: 50%;
-    margin-left: -30px;
-    /* Force Hardware Acceleration in WebKit */
-    //-webkit-transform: translateZ(0);
-    //-webkit-backface-visibility: hidden;
-
+    margin-left: -15px;
   }
 }
+
 
 .cd-timeline_content {
   position: relative;
@@ -151,27 +128,10 @@ to {
   display: table;
   clear: both; // Clearfix car contient des élements en float left !
 
-  h2 { color: $color-1; }
-
-  p, .cd-read-more, .cd-date { font-size: 13px; }
-
-  .cd-read-more, .cd-date { display: inline-block; }
-
-  p { margin: 1em 0; line-height: 1.6; }
-
-  .cd-read-more {
-    float: right;
-    padding: .8em 1em;
-    background: $link;
-    color: $color-3;
-    .no-touch &:hover {
-      background-color: lighten($link, 5%);
-    }
-  }
+  .cd-date { display: inline-block; }
 
   .cd-date {
     float: left;
-    padding: .8em 0;
     opacity: .7;
   }
 
@@ -183,15 +143,6 @@ to {
     height: 0;
     width: 0;
     border: 7px solid transparent;
-    border-right: 7px solid $color-3;
-  }
-
-  @include emix-breakpoint (M) {
-    h2 {font-size: 20px; }
-
-    p {font-size: 16px; }
-
-    .cd-read-more, .cd-date { font-size: 14px; }
   }
 }
 
@@ -205,18 +156,15 @@ to {
     width: 45%;
 
     &::before {
-      top: 24px;
       left: 100%;
       border-color: transparent;
       border-left-color: $color-3;
     }
 
-    .cd-read-more { float: left; }
-
     .cd-date {
       position: absolute;
       width: 100%;
-      left: 122%;
+      left: 118%;
       top: 6px;
       font-size: 16px;
     }
@@ -225,16 +173,14 @@ to {
       float: right;
 
       &::before {
-        top: 24px;
         left: auto;
         right: 100%;
         border-color: transparent;
         border-right-color: $color-3;
       }
-      .cd-read-more { float: right; }
       .cd-date {
         left: auto;
-        right: 122%;
+        right: 118%;
         text-align: right;
       }
     }
