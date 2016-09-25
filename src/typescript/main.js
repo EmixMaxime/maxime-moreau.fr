@@ -1,5 +1,5 @@
 import {HeaderResponsive} from './header/headerResponsive'
-import HeaderAnimate from './header/headerAnimate'
+import {HeaderAnimate} from './header/headerAnimate'
 
 import {AnimateForm} from './form/form'
 
@@ -28,16 +28,14 @@ let locals = {
 const html = tpl(locals)
 document.write(html)
 
-
 let optionsHeader = {
     iconSelector: '#header__icon',
     bodyClass: 'cliqued', // className add to body when the header is open
-    hiddenSelector: '.site-cache', // The selector of the div for hide the website when the header is open
+    hiddenSelector: '.site-cache' // The selector of the div for hide the website when the header is open
 }
 
 new HeaderResponsive(optionsHeader)
 new HeaderAnimate('.header', '#fake', '.header__nav__link')
-
 /* Citation */
 import {Citation} from './citation/citation'
 
@@ -46,11 +44,11 @@ const citations = [
     { author: 'bidule', content: "L'homme est un loup pour l'homme" }
 ]
 
-let citation = new Citation(citations, '#citation', '.author')
+new Citation(citations, '#citation', '.author')
 
 /* Form */
 
-const optionsA  = {
+const optionsA = {
     inputSelector: '.field-input',
     labeledClass: 'has-label',
     focusedClass: 'is-focused'

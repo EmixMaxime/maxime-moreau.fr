@@ -1,4 +1,4 @@
-export default class Emix {
+export class Emix {
     getScrollY (element) {
         return element.scrollTop ? element.scrollTop : window.scrollY // TODO: window.scrollY => use un polyfill
     }

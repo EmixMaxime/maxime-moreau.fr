@@ -1,7 +1,4 @@
 export default class Timeline {
-    private timelines;
-    private classHidden;
-    private _observer;
 
     constructor (timelines, classHidden) {
         this.timelines = timelines
@@ -10,7 +7,8 @@ export default class Timeline {
     }
 
     observer () {
-        return new IntersectionObserver(function (observables) { // Lancé que si le threshold > 0.5 ou threshold < 0.5
+        return new IntersectionObserver(function (observables) { // eslint-disable-line no-undef
+            // Lancé que si le threshold > 0.5 ou threshold < 0.5
 
             observables.forEach(function (observable) {
                 if (observable.intersectionRatio > 0.5) {
@@ -25,7 +23,6 @@ export default class Timeline {
     }
 
     animate () {
-        console.log(this._observer);
         this.timelines.forEach((item) => {
             item.classList.add('hidden')
             this._observer.observe(item)

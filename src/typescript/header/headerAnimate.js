@@ -1,6 +1,9 @@
-import Emix from '../app'
+import {Emix as App} from '../app'
+// console.log(Emix.isMobile())
+const scrollTo = require('scroll-to')
+const Emix = new App()
 
-export default class HeaderAnimate {
+export class HeaderAnimate {
 
     constructor (headerSelector, fakeSelector, linkSelector) {
         this.header = document.querySelector(headerSelector)
@@ -17,9 +20,9 @@ export default class HeaderAnimate {
         this.animateAnchor()
     }
 
-    private getHeaderTop () {
+    getHeaderTop () {
         let headerTop
-        if(!this.mobile) {
+        if (!this.mobile) {
             headerTop = this.header.getBoundingClientRect().top + window.scrollY // ClientRect envoit la position relative à l'écran, on ajoute donc la quantité de scrollY
         } else { // If the client is mobile, the header is "fixed" on top = 0 (position absolute top 0)
             headerTop = 0
@@ -62,13 +65,12 @@ export default class HeaderAnimate {
         events()
     }
 
-
     animateAnchor () {
         this.links.forEach((link) => {
             link.addEventListener('click', function () {
                 let target = document.querySelector(this.hash)
                 let y = target.getBoundingClientRect().top + window.scrollY
-                scrollTo(0,y)
+                scrollTo(0, y)
             })
         })
     }
