@@ -1,11 +1,6 @@
-export interface interfaceHeaderRespOptions {
-    iconSelector: string,
-    bodyClass: string,
-    hiddenSelector: string
-}
-
 export class HeaderResponsive {
-    constructor (options: interfaceHeaderRespOptions) {
+
+    constructor (options) {
         let iconNode = document.querySelector(options.iconSelector)
         let hiddenNode = options.hiddenSelector ? document.querySelector(options.hiddenSelector) : null // The hidden effect is optional
 
@@ -19,13 +14,5 @@ export class HeaderResponsive {
 
         iconNode.addEventListener('click', eventCliqued)
         if (hiddenNode) hiddenNode.addEventListener('click', eventCliqued)
-
     }
-}
-
-interface headerResponsiveInterface {
-    iconSelector: string,
-}
-
-const test = (options) => {
 }
