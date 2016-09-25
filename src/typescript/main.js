@@ -1,19 +1,7 @@
-// https://youtu.be/n6RoVyZEsv4?t=1675 <- système de "require"
-import scrollEmix = require('scroll-to')
-import Emix from './app'
+import {HeaderResponsive} from './header/headerResponsive'
+import {HeaderAnimate} from './header/headerAnimate'
 
-import {HeaderResponsive,interfaceHeaderRespOptions} from './header/headerResponsive'
-import HeaderAnimate from './header/headerAnimate'
-
-import {AnimateForm, interfaceFormOptions} from './form/form'
-
-/* declare var require: {
-    <T>(path: string): T;
-    (paths: string[], callback: (...modules: any[]) => void): void;
-    ensure: (paths: string[], callback: (require: <T>(path: string) => T) => void) => void;
-} */
-
-declare function require(name:string)
+import {AnimateForm} from './form/form'
 
 const tpl = require('../templates/home.pug')
 let locals = { 
@@ -40,32 +28,34 @@ let locals = {
 const html = tpl(locals)
 document.write(html)
 
-
-let optionsHeader: interfaceHeaderRespOptions = {
+let optionsHeader = {
     iconSelector: '#header__icon',
     bodyClass: 'cliqued', // className add to body when the header is open
-    hiddenSelector: '.site-cache', // The selector of the div for hide the website when the header is open
+    hiddenSelector: '.site-cache' // The selector of the div for hide the website when the header is open
 }
 
 new HeaderResponsive(optionsHeader)
 new HeaderAnimate('.header', '#fake', '.header__nav__link')
-
 /* Citation */
-import {Citation, interfaceOptions} from './citation/citation'
+import {Citation} from './citation/citation'
 
-const citations: interfaceOptions[] = [
+const citations = [
     { author: 'Socrate', content: "Tout ce que je sais, c'est que je ne sais rien" },
     { author: 'bidule', content: "L'homme est un loup pour l'homme" }
 ]
 
-let citation = new Citation(citations, '#citation', '.author')
+new Citation(citations, '#citation', '.author')
 
 /* Form */
 
-const optionsA: interfaceFormOptions = {
+const optionsA = {
     inputSelector: '.field-input',
     labeledClass: 'has-label',
     focusedClass: 'is-focused'
 }
 
 new AnimateForm(optionsA)
+
+import Timeline from './timeline'
+
+new Timeline(document.querySelectorAll('.cd-timeline'), '.hidden').animate()

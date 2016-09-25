@@ -32,6 +32,7 @@
     "fs": "0.0.2",
     "html-loader": "^0.4.3",
     "html-webpack-plugin": "^2.22.0",
+    "intersection-observer": "^0.1.1",
     "js-yaml": "^3.6.1",
     "node-sass": "^3.4.2",
     "object-assign": "^4.1.0",

@@ -1,9 +1,9 @@
-export default class Emix {
-    static getScrollY (element) : number {
+export class Emix {
+    getScrollY (element) {
         return element.scrollTop ? element.scrollTop : window.scrollY // TODO: window.scrollY => use un polyfill
     }
 
-    static isMobile () : boolean {
+    isMobile () {
         return window.innerWidth < 1200 // TODO: use un polyfill
     }
 }
