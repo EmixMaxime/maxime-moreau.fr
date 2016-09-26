@@ -10,10 +10,12 @@ export default class Timeline {
         return new IntersectionObserver(function (observables) { // eslint-disable-line no-undef
             // Lancé que si le threshold > 0.5 ou threshold < 0.5
 
-            observables.forEach(function (observable) {
+            observables.forEach(observable => {
                 if (observable.intersectionRatio > 0.5) {
                     observable.target.classList.remove('hidden')
-                    this._observer.unobserve(observable.target)
+                    // debugger // eslint-disable-line no-debugger
+
+                    // this._observer.unobserve(observable.target) TODO: amélioration des performances en mettant ça en place, pb de this undefined à corriger
                     console.log('Item visible', observable)
                 }
             })
@@ -23,7 +25,7 @@ export default class Timeline {
     }
 
     animate () {
-        this.timelines.forEach((item) => {
+        this.timelines.forEach(item => {
             item.classList.add('hidden')
             this._observer.observe(item)
         })
