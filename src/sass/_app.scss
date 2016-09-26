@@ -12,13 +12,13 @@ body {
 	padding: 0;
 	font-family: 'Roboto', sans-serif;
 	background-color: #fff;
+    color: $title_color;
 }
 
 body, html {height: 100%; }
 
 h1,h2,h3,h4,h5,h6, p {
   margin: 0;
-  color: $title_color;
 }
 
 /**
@@ -29,26 +29,28 @@ h1,h2,h3,h4,h5,h6, p {
   	display: inline;
 	margin: 0;
 
-	text-align: center;
 	text-transform: uppercase;
-	//font-weight: 100;
 	font-weight: normal;
 	font-size: 2em;
-
-	transition: 0.3s color;
-	&:hover {
-		color: $color;
-	}
 }
 
 .box-title {
-	text-align: center;
-	color: $title_color;
-	padding-bottom: 30px;
+  text-align: center;
+  padding-bottom: $site-container_padding;
 }
 
 .title {
   @include title();
+}
+.title.black {
+  transition: 0.3s color;
+  &:hover {
+    color: $color;
+  }
+}
+
+.title.white {
+  color: #fff;
 }
 
 .site-container {

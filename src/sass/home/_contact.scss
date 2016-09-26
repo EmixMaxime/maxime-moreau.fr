@@ -3,13 +3,7 @@
 }
 
 .contact {
-    h2, p, label {
-      color: #fff;
-    }
-    .box-title h2 {
-        transition: none;
-        &:hover { color: #fff; }
-    }
+    color: #fff;
     .icon-twitter { fill: #fff; }
     .icon-social {
         margin-top: 10px;
