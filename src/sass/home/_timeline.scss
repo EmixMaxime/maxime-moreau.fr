@@ -1,8 +1,7 @@
 // colors
 @import "../responsive/_mixinResponsive";
 
-$main-text: #7f8c97; // main text
-$link: #acb7c0; // anchor tags
+//$main-text: #7f8c97; // main text
 $background: #F5F5F5; // body background color
 
 $color-1: #303e49; // blue dark
@@ -13,6 +12,10 @@ $color-5: #f0ca45; // yellow
 
 .bg-timeline {
   background-color: #F5F5F5;
+  .site-container {
+    padding-top: 60px;
+    padding-bottom: 60px;
+  }
 }
 
 /* Animations : */

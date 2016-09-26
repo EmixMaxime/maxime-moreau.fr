@@ -1,11 +1,12 @@
 .bg-contact {
     background-color: $header_bgc;
-    color: #fff;
 }
 
 .contact {
+    h2, p, label {
+      color: #fff;
+    }
     .box-title h2 {
-        color: #fff;
         transition: none;
         &:hover { color: #fff; }
     }

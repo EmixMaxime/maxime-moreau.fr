@@ -55,8 +55,8 @@ h1,h2,h3,h4,h5,h6, p {
 	position: relative;
 	overflow: hidden;
 	margin: 0 auto;
-	padding-top: $site-container_padding-top;
-	padding-bottom: $site-container_padding-top;
+	padding-top: $site-container_padding;
+	padding-bottom: $site-container_padding;
 }
 
 .link {
@@ -77,6 +77,7 @@ h1,h2,h3,h4,h5,h6, p {
 
 .container-allheight {
 	height: 100vh;
+    min-height: 900px;
 	.site-container {
 		height: 40%!important;
 	}
