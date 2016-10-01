@@ -4,7 +4,6 @@
 
 $debug : false;
 
-
 .presentation, .presentation-text,
 .career-box, .skill-box,
 .form,
@@ -29,7 +28,7 @@ $debug : false;
 }
 
 @include emix-breakpoint(M) {
-  .site-container{ width: 970px;}
+  .site-container{ width: 970px; }
   .hero__content { @include span(8); @include push(2); }
   .presentation { @include span(8); float: right; }
   .career-box { @include span(6) }
@@ -46,7 +45,7 @@ $debug : false;
 
 @include emix-breakpoint(L) {
   .site-container{ width: 1170px; }
-  .hero__content { @include span(6); @include push(3); }
+  //.hero__content { @include span(6); @include push(3); }
   .presentation-text { @include span(6); }
   .presentation { @include span(6); }
 
@@ -60,5 +59,13 @@ $debug : false;
   .contact_social, .contact_form { @include span(6) }
 
   .bg-career { background-attachment: fixed!important; } // ça pompe bcp de ressources, on laisse cet attribu que pr les grand écran (théoriquement pourr pc)
+
+  .container-allheight {
+    height: 100vh;
+    min-height: 900px;
+    .site-container {
+      height: 40%!important;
+    }
+  }
 
 }

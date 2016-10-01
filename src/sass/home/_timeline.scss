@@ -2,7 +2,6 @@
 @import "../responsive/_mixinResponsive";
 
 //$main-text: #7f8c97; // main text
-$background: #F5F5F5; // body background color
 
 $color-1: #303e49; // blue dark
 $color-2: #c03b44; // red
@@ -11,7 +10,7 @@ $color-4: #75ce66; // green
 $color-5: #f0ca45; // yellow
 
 .bg-timeline {
-  background-color: #F5F5F5;
+  background-color: $background_color-grey;
   .site-container {
     padding-top: 60px;
     padding-bottom: 60px;
@@ -29,6 +28,11 @@ $color-5: #f0ca45; // yellow
     animation-duration: 0.4s;
     animation-name: emix;
   }
+}
+
+.cd-timeline-title {
+  font-size: 1.7rem;
+  font-weight: 700;
 }
 
 .cd-timeline.hidden {
@@ -65,7 +69,7 @@ to {
     left: 18px;
     height: 100%;
     width: 4px;
-    background: darken($background, 5%);
+    background: darken($background_color-grey, 5%);
   }
 }
 
@@ -121,11 +125,11 @@ to {
 
 .cd-timeline_content {
   position: relative;
-  width: 100%;
   margin-left: 60px;
+  margin-right: 7.5px; // TODO: à mettre la référence vers $susy gutters de _mixinResponsive
   background: $color-3;
   padding: 1em;
-  box-shadow: 0 3px 0 darken($background, 5%);
+  box-shadow: 0 3px 0 darken($background_color-grey, 5%);
 
   content: '';
   display: table;
