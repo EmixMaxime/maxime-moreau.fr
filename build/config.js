@@ -6,7 +6,7 @@ var publicDirectory = 'public'
 module.exports = {
     publicDirectory: 'public',
     entry: {
-        app: ['./src/sass/index.scss', './src/javascript/main.js']
+        app: ['./src/sass/_app.scss', './src/javascript/main.js']
     },
     output: {
         path: path.resolve(root, publicDirectory), // attention ce dossier sera vidé systématiquement (ne rien y mettre !)

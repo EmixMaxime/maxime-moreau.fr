@@ -1,53 +1,68 @@
-.presentation-picture, .presentation-profile {
+@import "../_variables";
+
+.presentation-picture,
+.presentation-profile
+{
     float: left;
+
     width: 50%;
-    padding-left: 15px;
     padding-right: 15px;
+    padding-left: 15px;
 }
-.presentation {
-    ul { margin: 0; padding: 0;}
-    li {
-        list-style: none;
+
+.presentation
+{
+    ul
+    {
+        margin: 0; padding: 0;
+    }
+    li
+    {
         margin-top: 10px;
-        &::after {
-            content: '';
-            display: block;
+
+        list-style: none;
+        &::after
+        {
             position: relative;
             top: 5px;
+
+            display: block;
+
             height: 1px;
+
+            content: '';
+
             background-color: #eee;
         }
     }
-    .first {
+    .first
+    {
         margin-top: 0;
     }
-    span {
+    span
+    {
         font-weight: bold;
+
         color: $accent_color;
     }
-    a {
+    a
+    {
+        transition: .3s border-color;
         text-decoration: none;
+
         color: inherit;
-        border-bottom: 1px solid;
         border-color: transparent;
-        transition: 0.3s border-color;
-        &:hover {
+        border-bottom: 1px solid;
+        &:hover
+        {
             border-color: $color;
         }
     }
 }
 
-.presentation-picture {
+.presentation-picture
+{
     height: 200px;
-    background-image: url("../img/me2.jpg");
-}
 
-.presentation-text {
-    display: table;
-    height: 200px;
-}
-
-.presentation__p {
-    display: table-cell;
-    vertical-align: middle;
+    background-image: url('../../img/me2.jpg');
 }

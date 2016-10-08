@@ -8,5 +8,7 @@ mixin skill(name, img, style)
     .box-title.no-padding
         h2.title.black Compétences
 
-    each skill in skills
-        +skill(skill.name, skill.img, skill.class)(class=skill.percent, style=skill.style)
+    +skill('html', 'html.png')(class='seventy')
+    +skill('Javascript', 'js.png', 'js')(class='seventy')
+    +skill('php', 'php.png')(class='ninety')
+    +skill('laravel', 'laravel.png')(class='forty', style='margin-top: 10px')

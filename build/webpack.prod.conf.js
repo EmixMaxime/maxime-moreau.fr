@@ -1,21 +1,23 @@
 var config = require('./webpack.base.conf')
 var conf = require('./config')
 var webpack = require('webpack')
+
 var ExtractTextPlugin = require('extract-text-webpack-plugin')
 var extractSASS = new ExtractTextPlugin('[name]-[contenthash:7].css') // Cache busting
+
 var HtmlWebpackPlugin = require('html-webpack-plugin')
 
 
 config.output.publicPath = ''
 config.plugins = config.plugins.concat([
   extractSASS,
-  new webpack.optimize.UglifyJsPlugin({
-    comments: false,
-    compress: {
-      warnings: false
-    }
-  }),
-  new webpack.optimize.OccurenceOrderPlugin()
+  // new webpack.optimize.UglifyJsPlugin({
+  //   comments: false,
+  //   compress: {
+  //     warnings: false
+  //   }
+  // }),
+  // new webpack.optimize.OccurenceOrderPlugin()
 ])
 
 // On ajoute le HtmlWebppackPlugin pour extraire nos fichier HTML venant d'un fichier template (ici PUG)
