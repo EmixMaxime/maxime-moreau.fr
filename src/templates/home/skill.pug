@@ -5,10 +5,11 @@ mixin skill(name, img, style)
             img.skill-box__logo(src=require('../img/'+ img), alt=name, style=attributes.style)
 
 #skills.site-container
-    .box-title.no-padding
-        h2.title.black Compétences
+    .animated
+        .box-title.no-padding
+            h2.title.black Compétences
 
-    +skill('html', 'html.png')(class='seventy')
-    +skill('Javascript', 'js.png', 'js')(class='seventy')
-    +skill('php', 'php.png')(class='ninety')
-    +skill('laravel', 'laravel.png')(class='forty', style='margin-top: 10px')
+        +skill('html', 'html.png')(class='seventy')
+        +skill('Javascript', 'js.png', 'js')(class='seventy')
+        +skill('php', 'php.png')(class='ninety')
+        +skill('laravel', 'laravel.png')(class='forty', style='margin-top: 10px')

@@ -6,95 +6,95 @@
 */
 
 .header {
-    position: relative;
+  position: relative;
 	height: $header_h;
 	width: 100%;
 	background-color: $header_bgc;
 	//position: fixed;
 	z-index: 999;
 
-    line-height: $header_h;
+  line-height: $header_h;
 	text-align: center;
 
-    transition-duration: 0.3s;
-    transition-property: background-color;
-    //box-shadow: 0px 4px 15px 0px rgba(0,0,0,.35);
+  transition-duration: 0.3s;
+  transition-property: background-color;
+  //box-shadow: 0px 4px 15px 0px rgba(0,0,0,.35);
 
 	ul { padding: 0; margin: 0; }
 }
 
 .fake {
-    height: $header_h;
-    width: 100%;
+  height: $header_h;
+  width: 100%;
 }
 
 .animated-scroll {
-    background-color: rgba(darken($header_bgc, 10%), 0.8);
+  background-color: rgba(darken($header_bgc, 10%), 0.8);
 }
 
 .animated-scroll.desktop {
-    position: fixed;
-    top: 0;
+  position: fixed;
+  top: 0;
 }
 
 .header__title, .header__nav__li {
 	text-transform: uppercase;
-    font-weight: 300;
-    font-size: 20px;
-    color: $header_link_color;
-    transition-duration: 0.3s;
-    transition-property: color;
+  font-weight: 300;
+  font-size: 20px;
+  color: $header_link_color;
+  transition-duration: 0.3s;
+  transition-property: color;
 }
 
 // Animation sur les <li>
 .header__nav__li {
-    position: relative;
-    height: $header_h;
-    float: left;
-    //z-index: 1;
+  position: relative;
+  height: $header_h;
+  float: left;
+  //z-index: 1;
 
-    list-style: none;
+  list-style: none;
 
+  transition-timing-function: cubic-bezier(0.2, 1, 0.3, 1);
+  transition: 0.3s color;
+  &:hover { color: #fff; }
+  &:before {
+    content: '';
+    width: 100%;
+    height: 100%;
+    position: absolute;
+    top: 0;
+    left: 0;
+    background-color: $header_li_animate_background-color;
+    z-index: -1;
+    opacity: 0;
+
+    transform: scaleX(0.5);
+    transition: transform 0.4s, opacity 0.4s;
     transition-timing-function: cubic-bezier(0.2, 1, 0.3, 1);
-    transition: 0.3s color;
-    &:hover { color: #fff; }
-    &:before {
-        content: '';
-        width: 100%;
-        height: 100%;
-        position: absolute;
-        top: 0;
-        left: 0;
-        background-color: $header_li_animate_background-color;
-        z-index: -1;
-        opacity: 0;
+  }
 
-        transform: scaleX(0.5);
-        transition: transform 0.4s, opacity 0.4s;
-        transition-timing-function: cubic-bezier(0.2, 1, 0.3, 1);
-    }
-
-    &:hover::before {
-        opacity: 1;
-        transform: scaleX(1);
-    }
+  &:hover::before {
+      opacity: 1;
+      transform: scaleX(1);
+  }
 }
 // Fin animation sur les <li>
 
 .header__title {
-    float: left;
-    text-decoration: none;
-    font-size: 25px;
-    color: $header_title_color;
-    border-right: 1px solid darken($header_bgc, 8);
-    padding-left: 20px; padding-right: 20px;
+  float: left;
+  text-decoration: none;
+  font-size: 25px;
+  color: $header_title_color;
+  border-right: 1px solid darken($header_bgc, 8);
+  padding-left: 20px; padding-right: 20px;
 }
 
 .header__nav__link {
 	display: block; // pour que le lien prennent tout le li donc que le lien soit cliquable sur une grande zone
 	padding-left : 10px;
 	padding-right: 10px;
-    color: inherit;
+  color: inherit;
 	text-decoration: none;
 }
 
@@ -107,14 +107,14 @@ $hero_height: 500px;
 $hero_content_height: 130px;
 
 .hero {
-    height: 60%;
-    width: 100%;
+  height: 60%;
+  width: 100%;
   position: relative;
     //padding-top: (($hero_height - $hero_content_height) - $header_h) / 2;
     //padding-bottom: (($hero_height - $hero_content_height) - $header_h) / 2;
-    background: url("../img/bg_header2.jpg") no-repeat center;
-    display: inline-block;
-    box-shadow: 0px 4px 15px 0px rgba(0,0,0,.35);
+  background: url("../img/bg_header2.jpg") no-repeat center;
+  display: inline-block;
+  box-shadow: 0px 4px 15px 0px rgba(0,0,0,.35);
 }
 
 .hero__content {
@@ -123,6 +123,7 @@ $hero_content_height: 130px;
   right: 0;
   top: 50%;
   transform: translateY(-50%);
+  animation-delay: .3s;  
 }
 
 .hero__welcome {
@@ -133,33 +134,34 @@ $hero_content_height: 130px;
   //top: 50%;
   //transform: translateY(-50%);
   /* */
-    background-color: rgba(0, 0, 0, 0.5);
-    padding-top: 15px;
-    padding-bottom: 15px;
-    text-align: center;
-    color: $hero_color;
-    h1 { font-size: 2.5em; }
-    p { font-size: 1.2em; }
-    h1, p {
-        color: #fff;
-        font-weight: 300;
-        line-height: 50px;
-        text-transform: uppercase;
-        //text-shadow: 1px 1px 1px rgba(0, 0, 0, 0.5);
-    }
+  background-color: rgba(0, 0, 0, 0.5);
+  padding-top: 15px;
+  padding-bottom: 15px;
+  text-align: center;
+  color: $hero_color;
+  
+  h1 { font-size: 2.5em; }
+  p { font-size: 1.2em; }
+  h1, p {
+    color: #fff;
+    font-weight: 300;
+    line-height: 50px;
+    text-transform: uppercase;
+    //text-shadow: 1px 1px 1px rgba(0, 0, 0, 0.5);
+  }
 }
 
 .hero__social {
-    clear: both; // Pour "nettoyer" le float left du hero content
-    padding-top: 15px;
-    text-align: center;
+  clear: both; // Pour "nettoyer" le float left du hero content
+  padding-top: 15px;
+  text-align: center;
 }
 
 .box-icon {
-    display: inline-block;
-    padding-left: 7px;
-    padding-right: 7px;
-    a { color: inherit; }
+  display: inline-block;
+  padding-left: 7px;
+  padding-right: 7px;
+  a { color: inherit; }
 }
 
 

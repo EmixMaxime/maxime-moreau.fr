@@ -1,7 +1,5 @@
 .grid a {
-	float: left;
-	max-width: 250px;
-	width: 25%;
+	max-width: 250px!important;
 	color: #333;
 }
 
@@ -17,8 +15,9 @@
 	position: relative;
 	display: block;
 	width: 100%;
-	opacity: 0.7;
-	transition: opacity 0.3s;
+	filter: grayscale(1);
+	// opacity: 0.7;
+	transition: filter 0.3s;
 }
 
 .grid figcaption {
@@ -74,26 +73,34 @@
 	backface-visibility: hidden;
 }
 
-.grid a:hover figure img {
-	opacity: 1;
-}
+/* Animations */
 
-.grid a:hover figcaption h2,
-.grid a:hover figcaption p {
-	transform: translateY(0);
-}
+.grid a:hover {
+	figure img {
+		filter: grayscale(0);
+	}
 
-.grid a:hover figcaption p {
-	opacity: 0;
+	figcaption h2,
+	figcaption p {
+		transform: translateY(0);
+	}
+
+	figcaption p {
+		opacity: 0;
+	}
+
+	figure button {
+		transform: translateY(0);
+	}
 }
 
 .grid figure button {
-    position: absolute;
-    width: 100%;
-    height: 40px;
-    bottom: 0;
-    left: 0;
-    right: 0;
+  position: absolute;
+  width: 100%;
+  height: 40px;
+  bottom: 0;
+  left: 0;
+  right: 0;
 
 	text-transform: uppercase;
 	letter-spacing: 1px;
@@ -103,12 +110,6 @@
 	border: none;
 	color: #333;
 	background: #fff;
-	opacity: 1;
 
-    transform: translateY(100%);
-}
-
-.grid a:hover figure button {
-    opacity: 1;
-	transform: translateY(0);
+  transform: translateY(100%);
 }

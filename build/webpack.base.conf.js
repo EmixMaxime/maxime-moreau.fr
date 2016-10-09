@@ -31,7 +31,6 @@ module.exports = {
       {
         test: /\.css$/,
         loaders: ['style', 'css', 'postcss'],
-        include: path.resolve(root, '/src/sass')
       },
       {
         test: /\.pug$/,

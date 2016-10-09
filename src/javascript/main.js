@@ -10,3 +10,23 @@ require('home/_skills.scss')
 require('home/_presentation.scss')
 require('home/_contact.scss')
 require('footer/_footer.scss')
+require('animate.css')
+
+document.querySelector('.hero__content')
+    .classList.add('animated', 'fadeIn')
+
+// const observer = new IntersectionObserver(observables => { // eslint-disable-line
+//     observables.forEach(observable => {
+//         if (observable.intersectionRatio > 0.5) {
+//             observable.target.classList.add('fadeIn')
+
+//             observer.unobserve(observable.target)
+//         }
+//     })
+// }, {
+//     threshold: [0.5]
+// })
+
+// const skillsContent = document.querySelector('#skills > .animated')
+// console.log(skillsContent)
+// observer.observe(skillsContent)
