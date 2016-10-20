@@ -4,18 +4,21 @@ class Skill {
     }
 
     observer () {
-        return new IntersectionObserver(observables => {
+        return new IntersectionObserver(observables => { // eslint-disable-line no-undef
             observables.forEach(observable => {
-                if (observable.intersectionRatio > 0.3) {
-                    observable.target.classList.remove('no-visibility')
+                if (observable.intersectionRatio > 0.8) {
+                    observable.target.classList.remove('hidden')
+                    console.log(observable.target, ' become visible')
                 }
             })
         }, {
-            threshold: [0.3]
+            threshold: [0.8]
         })
     }
 }
 
-const container = document.querySelectorAll('skills')
-container.classList.add('no-visibility')
+const container = document.querySelector('#skills')
+container.classList.add('hidden')
+
+console.log(container)
 new Skill(container)
