@@ -1,19 +1,16 @@
 const tpl = require('../templates/home.pug')
 document.write(tpl()) // à retirer lorsqu'on build
-
 require('./header/header.js')
 require('./timeline/timeline.js')
 require('./creation/creation.js')
 require('./form/form.js')
+require('./skill/skill')
 
-require('home/_skills.scss')
-require('home/_presentation.scss')
-require('home/_contact.scss')
-require('footer/_footer.scss')
-require('animate.css')
-
-document.querySelector('.hero__content')
-    .classList.add('animated', 'fadeIn')
+// require('home/_presentation')
+// require('home/_skills.scss')
+// require('home/_contact.scss')
+// require('footer/_footer.scss')
+// require('animate.css')
 
 // const observer = new IntersectionObserver(observables => { // eslint-disable-line
 //     observables.forEach(observable => {
