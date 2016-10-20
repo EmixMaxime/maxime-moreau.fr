@@ -10,6 +10,10 @@ $debug : false;
 .footer__quote, .footer__twitter
 { @include span(12); }
 
+#grid {
+  @include span(4);
+}
+
 .footer__quote { text-align: center; margin-top: 30px!important; }
 
 

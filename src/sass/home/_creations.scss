@@ -1,6 +1,15 @@
 .grid a {
-	max-width: 250px!important;
 	color: #333;
+}
+#grid {
+	max-width: 300px!important;	
+}
+
+.row {
+	display: inline-block;
+	position: relative;
+	left: 50%;
+	transform: translateX(-50%);
 }
 
 
