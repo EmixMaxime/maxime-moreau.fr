@@ -1,39 +1,16 @@
-# Portfolio
-## - Comment fonctionne ce site static ?
-### Les langages :
-  - Sass
-  - Jade
-  - Yaml (format de données)
+# maxime-moreau.fr
 
-### Structure :
-  - **templates** -> fichiers Jade, et le fichier **daya.yml**
-  - **public** -> fichiers HTML compilés
-  
-  - **sass** -> fichers Sass
-  - **css** -> fichiers CSS compilés
+# Utilisation de webpack
+Vous pouvez retrouver ma configuration entière sur mon [dépôt github dédié](https://github.com/EmixMaxime/Front-end-boilerplate-with-webpack)
+Pourquoi avoir choisi webpack ?
+J'aime la philosophie de cette technologie, grâce à elle je peux bundler mes fichiers.
+De plus, le HMR est un gain de temps incroyable. 
 
-### Outils :
-J'utilise [Gulp](http://gulpjs.com/) pour effecuter mes tâches, telles que compiler mes fichier Jade Scss... <br>
-Ainsi que [Susy](http://susy.oddbird.net/) pour gérer le responsive design, se trouvant dans le fichier [_susy.scss](https://github.com/EmixMaxime/portfolio/blob/master/sass/_susy.scss).
+# Motion mouvement : material design
+N'étant pas graphiste j'ai choisi de suivre le material design de Google, vous pouvez retrouver les mouvements [ici](https://material.google.com/motion/movement.html#). *(courbe de bézier, temps d'animation...)*
 
-### Qu'est-ce le fichier data.yml ?
-Le contenu de mon header ainsi que mes compétances est créé à partir de ce fichier.
-Si je souhaite ajouter un lien dans mon menu, il me suffit d'ajouter ces lignes :
-```yaml
-menu:
-  -
-    link: /link
-    name: MonSuperLien
-```
-Et si je souhaite ajouter une compétences :
-```yaml
-skills:
-  -
-    name: symfony
-    img: symfony.png
-    percent: seventy
-```
-### Comment ces données se retrouvent elles dans mes fichiers templates?
-J'utilise [yamljs](https://www.npmjs.com/package/yamljs) pour parser ce fichier et envoyer les données dans mes templates :
-Pour plus d'informations voir la tâche "html" de mon fichier [gulpfile](https://github.com/EmixMaxime/portfolio/blob/master/gulpfile.js).
-
+# Todo list
+Important :
+- Générer des sprites pour mes images et les optimiser
+Pas important :
+- Gérer le problème avec le hash : si le client actualise la page le scroll n'est pas correct.
