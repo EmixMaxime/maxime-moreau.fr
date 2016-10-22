@@ -1,77 +1,77 @@
-.grid a {
-	color: #333;
+.grid div {
+  color: #333;
 }
 #grid {
-	max-width: 300px!important;	
+  max-width: 300px!important;
 }
 
 .row {
-	display: inline-block;
-	position: relative;
-	left: 50%;
-	transform: translateX(-50%);
+  display: inline-block;
+  position: relative;
+  left: 50%;
+  transform: translateX(-50%);
 }
 
 
 .grid figure {
-	position: relative;
-	overflow: hidden;
-	margin: 5px;
-	background: #333;
+  position: relative;
+  margin: 5px;
+  overflow: hidden;
+  background: #333;
 }
 
 .grid figure img {
-	position: relative;
-	display: block;
-	width: 100%;
-	filter: grayscale(1);
-	// opacity: 0.7;
-	transition: filter 0.3s;
+  display: block;
+  width: 100%;
+  position: relative;
+  filter: grayscale(1);
+  // opacity: 0.7;
+  transition: filter 0.3s;
 }
 
 .grid figcaption {
-	position: absolute;
-	top: 0;
-	z-index: 11;
-	padding: 10px;
-	width: 100%;
-	height: 100%;
-	text-align: center;
+  width: 100%;
+  height: 100%;
+  position: absolute;
+  top: 0;
+  z-index: 11;
+  padding: 10px;
+  text-align: center;
 }
 
 .grid svg {
-	position: absolute;
-	top: -1px; /* fixes rendering issue in FF */
-	z-index: 10;
-	width: 100%;
-	height: 100%;
+  width: 100%;
+  height: 100%;
+  position: absolute;
+  top: -1px; /* fixes rendering issue in FF */
+  z-index: 10;
 }
 
 .grid svg path {
-	fill: #fff;
+  fill: #fff;
 }
 
 
 .grid figcaption h2 {
-	margin: 0 0 20px 0;
-	color: #3498db;
-	text-transform: uppercase;
-	letter-spacing: 1px;
-	font-weight: 300;
-	font-size: 130%;
-	transition: transform 0.3s;
+  margin: 0 0 20px 0;
+  font-size: 130%;
+  font-weight: 300;
+  color: #3498db;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  transition: transform 0.3s;
 }
 
 .grid figcaption p {
-	padding: 0 20px;
-	color: #aaa;
-	font-weight: 300;
-	transition: opacity 0.3s, transform 0.3s;
+  padding: 0 20px;
+  font-weight: 300;
+  color: #aaa;
+  transition: opacity 0.3s, transform 0.3s;
 }
 
 .grid figcaption h2,
 .grid figcaption p {
-	transform: translateY(50px);
+  transform: translateY(50px);
 }
 
 
@@ -79,46 +79,43 @@
 .grid figcaption h2,
 .grid figcaption p,
 .grid figure button {
-	backface-visibility: hidden;
+  backface-visibility: hidden;
 }
 
 /* Animations */
 
-.grid a:hover {
-	figure img {
-		filter: grayscale(0);
-	}
+.grid > div:hover {
+  figure img {
+    filter: grayscale(0);
+  }
 
-	figcaption h2,
-	figcaption p {
-		transform: translateY(0);
-	}
+  figcaption h2,
+  figcaption p {
+    transform: translateY(0);
+  }
 
-	figcaption p {
-		opacity: 0;
-	}
+  figcaption p {
+    opacity: 0;
+  }
 
-	figure button {
-		transform: translateY(0);
-	}
+  figure button {
+    transform: translateY(0);
+  }
 }
 
 .grid figure button {
-  position: absolute;
   width: 100%;
   height: 40px;
+  position: absolute;
+  right: 0;
   bottom: 0;
   left: 0;
-  right: 0;
-
-	text-transform: uppercase;
-	letter-spacing: 1px;
-	font-weight: bold;
-	transition: opacity 0.3s, transform 0.3s;
-
-	border: none;
-	color: #333;
-	background: #fff;
-
+  font-weight: bold;
+  color: #333;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  background: #fff;
+  border: none;
+  transition: opacity 0.3s, transform 0.3s;
   transform: translateY(100%);
 }
