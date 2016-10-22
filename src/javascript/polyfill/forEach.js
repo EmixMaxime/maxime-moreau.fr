@@ -1,5 +1,4 @@
-if(NodeList.forEach === undefined) {
-    NodeList.prototype.forEach = [].prototype.forEach
+/* eslint-disable no-undef */
+if (NodeList.forEach === undefined) {
+    NodeList.prototype.forEach = Array.prototype.forEach
 }
-
-console.log('LOOOL')
