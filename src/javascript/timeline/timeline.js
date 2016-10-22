@@ -4,6 +4,7 @@ require('home/_skills.scss')
 require('home/_contact.scss')
 require('footer/_footer.scss')
 require('animate.css')
-import Timeline from './timelineAnimate'
+import Visibility from '../visibility'
 
-new Timeline(document.querySelectorAll('.cd-timeline'), '.hidden').animate()
+const timelines = document.querySelectorAll('.cd-timeline')
+new Visibility(timelines, 'hidden', '0.5').animate()
