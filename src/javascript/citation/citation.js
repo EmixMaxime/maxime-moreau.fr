@@ -5,4 +5,7 @@ const citations = [
     { author: 'bidule', content: "L'homme est un loup pour l'homme" }
 ]
 
-new Citation(citations, '#citation', '.author')
+const citation = document.querySelector('#citation > p')
+const author = document.querySelector('#citation .author')
+
+new Citation(citations, citation, author)
