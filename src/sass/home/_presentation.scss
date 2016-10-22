@@ -1,4 +1,6 @@
 @import "../_variables";
+@import "~susy";
+@import "../responsive/mixinResponsive";
 
 .presentation-picture,
 .presentation-profile {
@@ -17,6 +19,7 @@
     margin-top: 10px;
     list-style: none;
     &::after {
+      /* little border separation */
       display: block;
       height: 1px;
       position: relative;
@@ -25,7 +28,7 @@
       background-color: #eee;
     }
   }
-  .first {
+  li:first-child {
     margin-top: 0;
   }
   span {
@@ -37,7 +40,7 @@
     text-decoration: none;
     border-color: transparent;
     border-bottom: 1px solid;
-    transition: .3s border-color;
+    transition: 0.3s border-color;
     &:hover {
       border-color: $color;
     }
@@ -47,4 +50,37 @@
 .presentation-picture {
   height: 200px;
   background-image: url('../../img/me2.jpg');
+}
+
+.presentation, .presentation-text {
+  @include span(12);
+}
+.presentation-text {
+  margin-top: 20px;
+}
+@include emix-breakpoint(S) {
+  .presentation-text {
+    @include span(7);
+  }
+  .presentation {
+    @include span(5);
+  }
+}
+
+@include emix-breakpoint(M) {
+  .presentation-text {
+    @include span(7);
+  }
+  .presentation {
+    @include span(5);
+  }
+}
+
+@include emix-breakpoint(L) {
+  .presentation-text {
+    @include span(6);
+  }
+  .presentation {
+    @include span(6);
+  }
 }
