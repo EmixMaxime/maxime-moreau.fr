@@ -6,29 +6,34 @@ require('home/_creations')
 import Snap from 'imports-loader?this=>window,fix=>module.exports=0!../libs/snap.svg-min.js'
 // About this : https://github.com/adobe-webplatform/Snap.svg/issues/341
 
-(function () {
-	
-	function init () {
-		const speed = 350
-		const easing = mina.backout
+class Animate {
 
-		document.querySelectorAll('#grid > a').forEach(el => {
-			const s = Snap(el.querySelector('svg'))
-			const path = s.select('path')
-			const pathConfig = {
-				from: path.attr('d'),
-				to: el.getAttribute('data-path-hover')
-			}
+    constructor (speed, easing) {
+        this.speed = speed
+        this.easing = easing
+    }
 
-			el.addEventListener('mouseenter', () => {
-				path.animate({'path': pathConfig.to}, speed, easing)
-			})
+    anime (element, snap) {
+        const path = snap.select('path')
+        const pathConfig = {
+            from: path.attr('d'),
+            to: element.getAttribute('data-path-hover')
+        }
 
-			el.addEventListener('mouseleave', () => {
-				path.animate({'path': pathConfig.from}, speed, easing)
-			})
-		})
-	}
+        element.addEventListener('mouseenter', () => {
+            path.animate({'path': pathConfig.to}, this.speed, this.easing)
+        })
 
-	init()
-})()
+        element.addEventListener('mouseleave', () => {
+            path.animate({'path': pathConfig.from}, this.speed, this.easing)
+        })
+    }
+}
+const targets = document.querySelectorAll('#grid > div')
+const animate = new Animate(350, mina.backout)
+
+targets.forEach(el => {
+    const snap = Snap(el.querySelector('svg'))
+    animate.anime(el, snap)
+})
+
