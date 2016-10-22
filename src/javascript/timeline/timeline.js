@@ -7,4 +7,4 @@ require('animate.css')
 import Visibility from '../visibility'
 
 const timelines = document.querySelectorAll('.cd-timeline')
-new Visibility(timelines, 'hidden', '0.5').animate()
+new Visibility(timelines, 'hidden', 0.5).animate()
