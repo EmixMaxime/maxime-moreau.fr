@@ -1,3 +1,5 @@
+@import "../variables";
+
 .grid div {
   color: #333;
 }
@@ -118,4 +120,37 @@
   border: none;
   transition: opacity 0.3s, transform 0.3s;
   transform: translateY(100%);
+}
+
+/* Content */
+.enter {
+  transition-timing-function: cubic-bezier(0.0, 0.0, 0.2, 1);
+  transition: transform 0.3s;
+}
+
+.leave {
+  transition-timing-function: cubic-bezier(0.4, 0.0, 1, 1);
+  transition: transform 0.25s;
+}
+
+.cd-project-content {
+  width: 100%;
+  height: 100%;
+  position: absolute;
+  bottom: 0;
+  padding-top: 30px;
+  color: #fff;
+  background: $background_color-blue;
+  transition: transform 0.3s;
+  transform: translateY(100%);
+  section {
+    display: none;
+  }
+  section.display-block {
+    display: block;
+  }
+}
+
+.cd-project-content.show {
+  transform: translateY(0);
 }
