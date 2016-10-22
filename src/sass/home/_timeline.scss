@@ -1,11 +1,10 @@
 @import "../variables";
 @import "../responsive/_mixinResponsive";
-
 //$main-text: #7f8c97; // main text
 
 $color-1: #303e49; // blue dark
 $color-2: #c03b44; // red
-$color-3: #ffffff; // white
+$color-3: #fff; // white
 $color-4: #75ce66; // green
 $color-5: #f0ca45; // yellow
 
@@ -20,13 +19,13 @@ $color-5: #f0ca45; // yellow
 /* Animations : */
 .cd-timeline {
   .cd-timeline_content {
-    transform: translateX(0px);
     opacity: 1;
     transition: transform 0.4s, opacity 0.4s;
+    transform: translateX(0px);
   }
   .cd-timeline_icon {
-    animation-duration: 0.4s;
     animation-name: emix;
+    animation-duration: 0.4s;
   }
 }
 
@@ -37,24 +36,24 @@ $color-5: #f0ca45; // yellow
 
 .cd-timeline.hidden {
   .cd-timeline_content {
-    transform: translateX(50px);
     opacity: 0;
+    transform: translateX(50px);
   }
 }
 
 @keyframes emix {
-from {
-    transform: scale(0);
+  from {
     opacity: 0;
+    transform: scale(0);
   }
-50% {
-  transform: scale(1.5);
-  opacity: 0.5;
+  50% {
+    opacity: 0.5;
+    transform: scale(1.5);
   }
 
-to {
-  transform: scale(1);
-  opacity: 1;
+  to {
+    opacity: 1;
+    transform: scale(1);
   }
 }
 
@@ -62,13 +61,13 @@ to {
 
 .site-container-timeline {
   &::before {
-    /* this is the vertical line */
-    content: '';
+    width: 4px;
+    height: 100%;
     position: absolute;
     top: 0;
     left: 18px;
-    height: 100%;
-    width: 4px;
+    /* this is the vertical line */
+    content: '';
     background: darken($background_color-grey, 5%);
   }
 }
@@ -83,36 +82,43 @@ to {
 }
 
 .cd-timeline {
-  position: relative;
-  width: 100%;
-  margin: 2em 0;
-
-  content: '';
   display: table;
+  width: 100%;
+  position: relative;
+  margin: 2em 0;
   clear: both;
+  content: '';
 
-  &:first-child { margin-top: 0; }
+  &:first-child {
+    margin-top: 0;
+  }
 
-  &:last-child { margin-bottom: 0; }
+  &:last-child {
+    margin-bottom: 0;
+  }
 }
 
 @include emix-breakpoint(M) {
   .cd-timeline {
     margin: 4em 0;
-    &:first-child { margin-top: 0; }
+    &:first-child {
+      margin-top: 0;
+    }
 
-    &:last-child { margin-bottom: 0; }
+    &:last-child {
+      margin-bottom: 0;
+    }
   }
 }
 
 .cd-timeline_icon {
+  width: 30px;
+  height: 30px;
   position: absolute;
   top: 0;
   left: 4px;
-  width: 30px;
-  height: 30px;
-  border-radius: 50%;
   background: $color-4;
+  border-radius: 50%;
 }
 
 @include emix-breakpoint (L) {
@@ -124,31 +130,33 @@ to {
 
 
 .cd-timeline_content {
+  display: table;
   position: relative;
-  margin-left: 60px;
-  margin-right: 7.5px; // TODO: à mettre la référence vers $susy gutters de _mixinResponsive
-  background: $color-3;
   padding: 1em;
+  margin-right: 7.5px; // TODO: à mettre la référence vers $susy gutters de _mixinResponsive
+  margin-left: 60px;
+  clear: both; // Clearfix car contient des élements en float left !
+  content: '';
+  background: $color-3;
   box-shadow: 0 3px 0 darken($background_color-grey, 5%);
 
-  content: '';
-  display: table;
-  clear: both; // Clearfix car contient des élements en float left !
-
-  .cd-date { display: inline-block; }
+  .cd-date {
+    display: inline-block;
+  }
 
   .cd-date {
     float: left;
-    opacity: .7;
+    opacity: 0.7;
   }
 
-  &::before { // La petite flèche
-    content: '';
+  &::before {
+    width: 0;
+    height: 0;
     position: absolute;
     top: 16px;
     right: 100%;
-    height: 0;
-    width: 0;
+    // La petite flèche
+    content: '';
     border: 7px solid transparent;
   }
 }
@@ -158,9 +166,9 @@ to {
 // Système de 1 à droite, 1 à gauche lorsqu'on est sur du LARGE
 @include emix-breakpoint (L) {
   .cd-timeline_content {
-    margin-left: 0;
-    padding: 1.6em;
     width: 45%;
+    padding: 1.6em;
+    margin-left: 0;
 
     &::before {
       left: 100%;
@@ -169,25 +177,26 @@ to {
     }
 
     .cd-date {
-      position: absolute;
       width: 100%;
-      left: 118%;
+      position: absolute;
       top: 6px;
+      left: 118%;
       font-size: 16px;
     }
 
-    .cd-timeline:nth-child(even) & { // Un sur 2 sera à droite, C'EST QUOI LE & !!!!!!!!!
+    .cd-timeline:nth-child(even) & {
+      // Un sur 2 sera à droite, C'EST QUOI LE & !!!!!!!!!
       float: right;
 
       &::before {
-        left: auto;
         right: 100%;
+        left: auto;
         border-color: transparent;
         border-right-color: $color-3;
       }
       .cd-date {
-        left: auto;
         right: 118%;
+        left: auto;
         text-align: right;
       }
     }
