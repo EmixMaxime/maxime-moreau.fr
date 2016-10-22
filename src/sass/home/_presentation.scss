@@ -1,68 +1,50 @@
 @import "../_variables";
 
 .presentation-picture,
-.presentation-profile
-{
-    float: left;
-
-    width: 50%;
-    padding-right: 15px;
-    padding-left: 15px;
+.presentation-profile {
+  width: 50%;
+  float: left;
+  padding-right: 15px;
+  padding-left: 15px;
 }
 
-.presentation
-{
-    ul
-    {
-        margin: 0; padding: 0;
+.presentation {
+  ul {
+    padding: 0;
+    margin: 0;
+  }
+  li {
+    margin-top: 10px;
+    list-style: none;
+    &::after {
+      display: block;
+      height: 1px;
+      position: relative;
+      top: 5px;
+      content: '';
+      background-color: #eee;
     }
-    li
-    {
-        margin-top: 10px;
-
-        list-style: none;
-        &::after
-        {
-            position: relative;
-            top: 5px;
-
-            display: block;
-
-            height: 1px;
-
-            content: '';
-
-            background-color: #eee;
-        }
+  }
+  .first {
+    margin-top: 0;
+  }
+  span {
+    font-weight: bold;
+    color: $accent_color;
+  }
+  a {
+    color: inherit;
+    text-decoration: none;
+    border-color: transparent;
+    border-bottom: 1px solid;
+    transition: .3s border-color;
+    &:hover {
+      border-color: $color;
     }
-    .first
-    {
-        margin-top: 0;
-    }
-    span
-    {
-        font-weight: bold;
-
-        color: $accent_color;
-    }
-    a
-    {
-        transition: .3s border-color;
-        text-decoration: none;
-
-        color: inherit;
-        border-color: transparent;
-        border-bottom: 1px solid;
-        &:hover
-        {
-            border-color: $color;
-        }
-    }
+  }
 }
 
-.presentation-picture
-{
-    height: 200px;
-
-    background-image: url('../../img/me2.jpg');
+.presentation-picture {
+  height: 200px;
+  background-image: url('../../img/me2.jpg');
 }
