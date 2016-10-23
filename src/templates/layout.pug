@@ -1,6 +1,6 @@
 mixin header-link(name, href)
     li.header__nav__li.first
-        a.header__nav__link(href="")=name
+        a.header__nav__link(href="#" + href)=name
 
 doctype html
 html(lang='fr')
@@ -22,6 +22,7 @@ html(lang='fr')
                 +header-link('Accueil', 'home')
                 +header-link('Présentation', 'presentation')
                 +header-link('Compétences', 'skills')
+                +header-link('Créations', 'creations')
                 +header-link('Contact', 'contact')
 
         .scroll-resp

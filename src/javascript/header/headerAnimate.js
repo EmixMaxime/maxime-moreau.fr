@@ -66,10 +66,12 @@ export class HeaderAnimate {
     }
 
     animateAnchor () {
-        this.links.forEach((link) => {
+        const self = this
+        this.links.forEach(link => {
             link.addEventListener('click', function () {
                 let target = document.querySelector(this.hash)
-                let y = target.getBoundingClientRect().top + window.scrollY
+                let y = target.getBoundingClientRect().top + window.scrollY - self.headerFake.clientHeight
+                /* header fake height */
                 scrollTo(0, y)
             })
         })
