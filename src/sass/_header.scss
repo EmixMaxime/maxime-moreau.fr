@@ -7,72 +7,67 @@
 */
 
 .header {
-  position: relative;
-  height: $header_h;
   width: 100%;
-  background-color: $header_bgc;
+  height: $header_h;
+  position: fixed;
+  top: 0;
   //position: fixed;
   z-index: 999;
-
   line-height: $header_h;
   text-align: center;
-
+  background-color: $header_bgc;
   transition-duration: 0.3s;
   transition-property: background-color;
   //box-shadow: 0px 4px 15px 0px rgba(0,0,0,.35);
-  ul { padding: 0; margin: 0; }
+  ul {
+    padding: 0;
+    margin: 0;
+  }
 }
 
 .fake {
-  height: $header_h;
   width: 100%;
+  height: $header_h;
 }
 
 .animated-scroll {
   background-color: rgba(darken($header_bgc, 10%), 0.8);
 }
 
-.animated-scroll.desktop {
-  position: fixed;
-  top: 0;
-}
-
 .header__title, .header__nav__li {
-  text-transform: uppercase;
-  font-weight: 300;
   font-size: 20px;
+  font-weight: 300;
   color: $header_link_color;
+  text-transform: uppercase;
   transition-duration: 0.3s;
   transition-property: color;
 }
 
 // Animation sur les <li>
 .header__nav__li {
-  position: relative;
   height: $header_h;
   float: left;
+  position: relative;
   //z-index: 1;
-
   list-style: none;
-
-  transition-timing-function: cubic-bezier(0.2, 1, 0.3, 1);
-
   transition: 0.3s color;
-  &:hover { color: #fff; }
+  transition-timing-function: cubic-bezier(0.2, 1, 0.3, 1);
+  &:hover {
+    color: #fff;
+  }
   &:before {
-    content: '';
     width: 100%;
     height: 100%;
     position: absolute;
     top: 0;
     left: 0;
-    background-color: $header_li_animate_background-color;
     z-index: -1;
+    content: '';
+    background-color: $header_li_animate_background-color;
     opacity: 0;
-
-    transform: scaleX(0.5);
     transition: transform 0.4s, opacity 0.4s;
     transition-timing-function: cubic-bezier(0.2, 1, 0.3, 1);
+    transform: scaleX(0.5);
   }
 
   &:hover::before {
@@ -84,17 +79,18 @@
 
 .header__title {
   float: left;
-  text-decoration: none;
+  padding-right: 20px;
+  padding-left: 20px;
   font-size: 25px;
   color: $header_title_color;
+  text-decoration: none;
   border-right: 1px solid darken($header_bgc, 8);
-  padding-left: 20px; padding-right: 20px;
 }
 
 .header__nav__link {
   display: block; // pour que le lien prennent tout le li donc que le lien soit cliquable sur une grande zone
-  padding-left : 10px;
   padding-right: 10px;
+  padding-left : 10px;
   color: inherit;
   text-decoration: none;
 }
@@ -107,13 +103,13 @@ $hero_height: 500px;
 $hero_content_height: 130px;
 
 .hero {
+  display: inline-block;
   width: 100%;
   position: relative;
   //padding-top: (($hero_height - $hero_content_height) - $header_h) / 2;
   //padding-bottom: (($hero_height - $hero_content_height) - $header_h) / 2;
   background: url("../img/bg_header2.jpg") no-repeat center;
-  display: inline-block;
-  box-shadow: 0px 4px 15px 0px rgba(0,0,0,.35);
+  box-shadow: 0 4px 15px 0 rgba(0,0,0,0.35);
 }
 
 @include emix-breakpoint(M) {
@@ -122,47 +118,52 @@ $hero_content_height: 130px;
   }
   .hero__content {
     position: absolute;
-    left: 0;
-    right: 0;
     top: 50%;
+    right: 0;
+    left: 0;
     transform: translateY(-50%);
-
   }
 }
 
 .hero__content {
-  animation-delay: .3s;
+  animation-delay: 0.2s;
 }
 
 .hero__welcome {
-  background-color: rgba(0, 0, 0, 0.5);
   padding-top: 15px;
   padding-bottom: 15px;
-  text-align: center;
   color: $hero_color;
+  text-align: center;
+  background-color: rgba(0, 0, 0, 0.5);
 
-  h1 { font-size: 2.5em; }
-  p { font-size: 1.2em; }
+  h1 {
+    font-size: 2.5em;
+  }
+  p {
+    font-size: 1.2em;
+  }
   h1, p {
-    color: #fff;
     font-weight: 300;
     line-height: 50px;
+    color: #fff;
     text-transform: uppercase;
     //text-shadow: 1px 1px 1px rgba(0, 0, 0, 0.5);
   }
 }
 
 .hero__social {
-  clear: both; // Pour "nettoyer" le float left du hero content
   padding-top: 15px;
+  clear: both; // Pour "nettoyer" le float left du hero content
   text-align: center;
 }
 
 .box-icon {
   display: inline-block;
-  padding-left: 7px;
   padding-right: 7px;
-  a { color: inherit; }
+  padding-left: 7px;
+  a {
+    color: inherit;
+  }
 }
 
 
@@ -172,30 +173,40 @@ $hero_content_height: 130px;
 **/
 
 $icon_width : 50px;
-
 $header__nav_width : 200px;
-
 $header__li_width: 60px;
 
 @media only screen and (max-width: $breakPoint) {
-
-  body, html, .site-pusher { height: 100%; overflow: hidden; }
-  .fixed_bug { padding-bottom: $header_h; }
-  .scroll-resp {
-    background-color: #fff;
-    position: absolute;
-    top: 0; right: 0; left: 0; bottom: 0;
-
-    overflow-y: scroll;
-    overflow-x: hidden;
-    -webkit-overflow-scrolling: touch;
+  //body, html, .site-pusher {
+  //  height: 100%;
+  //  overflow: hidden;
+  //}
+  .fixed_bug {
+    padding-bottom: $header_h;
   }
+  //.scroll-resp {
+  //  position: absolute;
+  //  top: 0;
+  //  right: 0;
+  //  bottom: 0;
+  //  left: 0;
+  //  overflow-x: hidden;
+  //  overflow-y: scroll;
+  //  -webkit-overflow-scrolling: touch;
+  //  background-color: #fff;
+  //}
 
   /**
   * Changements pour régler les problèmes lié à la position fixed du header
   */
-  .header { position: absolute; transform: none; }
-  .hero { padding-top: $header_h *2; padding-bottom: $header_h; } // Pour centrer verticalement
+  .header {
+    position: absolute;
+    transform: none;
+  }
+  .hero {
+    padding-top: $header_h *2;
+    padding-bottom: $header_h;
+  } // Pour centrer verticalement
 
   /**
   * END
@@ -210,79 +221,82 @@ $header__li_width: 60px;
   .header__icon {
     width: $icon_width;
     height: $header_h;
-    position: relative;
     float: left;
-    border-right: 1px solid;
-    border-color: darken($header_bgc, 20%);
-    background-color: transparent;
-
+    position: relative;
     z-index: 100; // Pour passer au dessus de .shadow
-
-    cursor: pointer;
-    outline: 0;
-
     color: #fff; // for box-shadow
-
+    cursor: pointer;
+    background-color: transparent;
+    border-color: darken($header_bgc, 20%);
+    border-right: 1px solid;
+    outline: 0;
     transition: 0.3s color, 0.3s background-color, 0.3s border-color;
     &:after {
-      content: '';
-      position: absolute;
       display: block;
       width: 18px;
+      position: absolute;
       top: 15px;
       left: 15px;
+      content: '';
       box-shadow: 0 10px 0 1px, 0 16px 0 1px, 0 22px 0 1px;
     }
   }
 
-  .header__title { border: none; }
+  .header__title {
+    border: none;
+  }
 
   .header__nav {
     width: $header__nav_width;
     height: 100%;
     position: absolute;
-    top: $header_h; bottom: 0; left: 0;
+    top: $header_h;
+    bottom: 0;
+    left: 0;
 
-    .first { border-top: 1px solid darken($header_bgc, 10%)!important; }
+    .first {
+      border-top: 1px solid darken($header_bgc, 10%)!important;
+    }
   }
 
   .header__nav__li {
     height: $header__li_width;
-    border-top: 1px solid rgba(255,255,255,0.05);
-    border-bottom: 1px solid darken($header_bgc, 10%);
-
     float: none!important;
     // opacity: 0;
     line-height: $header__li_width;
+    border-top: 1px solid rgba(255,255,255,0.05);
+    border-bottom: 1px solid darken($header_bgc, 10%);
     // transform: translateX(-100%);
     transition: 0.3s transform, 0.3s color;
-    &:before { // Spécifique au site portfolio
-      content: '';
+    &:before {
       height: 0; // pour anuler l'animation de départ
+      // Spécifique au site portfolio
+      content: '';
     }
-    &:hover { color: rgba(0, 0, 0, 0.5); }
+    &:hover {
+      color: rgba(0, 0, 0, 0.5);
+    }
   }
 
   .header__nav__link {
     display: block!important;
     position: absolute;
-    left: 0;
     right: 0;
-
-    text-decoration: none;
+    left: 0;
     color: inherit;
+    text-decoration: none;
   }
 
   //.site-pusher{ transform: translateX(0); }
 
   .header__nav__ul {
+    height: 2000px;
     padding: 0; // for fix the bug padding
     margin: 0;
-    height: 2000px;
     background-color: $header_bgc;
-    transform: translateX(-100%);
     transition: transform 0.3s;
     transition-timing-function: cubic-bezier(0.2, 1, 0.3, 1);
+    transform: translateX(-100%);
   }
 
   /** Quand on veut afficher le menu **/
@@ -293,18 +307,32 @@ $header__li_width: 60px;
   }
 
   .cliqued {
-    .header { background-color: $header_bgc; }
-    .header__nav__ul { transform: translateX(0); }
-    .header__nav__li { opacity: 1; transform: translateX(0); }
-    .shadow { display: none; }
+    .header {
+      background-color: $header_bgc;
+    }
+    .header__nav__ul {
+      transform: translateX(0);
+    }
+    .header__nav__li {
+      opacity: 1;
+      transform: translateX(0);
+    }
+    .shadow {
+      display: none;
+    }
     .site-cache {
-      position: absolute;
-      top: $header_h; left: 0; right: 0; bottom: 0;
-      background-color: rgba(0,0,0,0.5);
-      z-index: 100;
       height: 5000px; // Pour "forcer"
+      position: absolute;
+      top: $header_h;
+      right: 0;
+      bottom: 0;
+      left: 0;
+      z-index: 100;
+      background-color: rgba(0,0,0,0.5);
       opacity: 1;
     }
-    .scroll-resp { overflow-y: hidden; } // Lorsque le menu est ouvert, on interdit le scroll Y sur la page
+    .scroll-resp {
+      overflow-y: hidden;
+    } // Lorsque le menu est ouvert, on interdit le scroll Y sur la page
   }
 }

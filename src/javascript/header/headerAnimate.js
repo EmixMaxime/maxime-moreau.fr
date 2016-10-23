@@ -35,16 +35,8 @@ export class HeaderAnimate {
         return function () {
             let hasScrollClass = self.header.classList.contains('animated-scroll')
             if (Emix.getScrollY(this) > self.headerTop && !hasScrollClass) {
-                if (!self.mobile) {
-                    self.headerFake.classList.add('fake')
-                    self.header.classList.add('desktop')
-                }
                 self.header.classList.add('animated-scroll')
             } else if (Emix.getScrollY(this) <= self.headerTop && hasScrollClass) {
-                if (!self.mobile) {
-                    self.headerFake.classList.remove('fake')
-                    self.header.classList.remove('desktop')
-                }
                 self.header.classList.remove('animated-scroll')
             }
         }
