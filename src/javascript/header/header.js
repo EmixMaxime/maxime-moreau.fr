@@ -2,6 +2,8 @@ import {HeaderResponsive} from './headerResponsive'
 import {HeaderAnimate} from './headerAnimate'
 
 require('_header.scss')
+document.querySelector('.hero__content')
+    .classList.add('animated', 'fadeIn')
 
 let optionsHeader = {
     iconSelector: '#header__icon',
