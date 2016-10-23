@@ -7,7 +7,7 @@ import Snap from 'imports-loader?this=>window,fix=>module.exports=0!../libs/snap
 // About this : https://github.com/adobe-webplatform/Snap.svg/issues/341
 import Animate from './animate'
 
-const targets = document.querySelectorAll('#grid > div')
+const targets = document.querySelectorAll('.grid > div')
 const animate = new Animate(350, mina.backout)
 const projectContent = document.querySelector('.cd-project-content')
 
