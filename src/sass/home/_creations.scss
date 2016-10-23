@@ -158,7 +158,6 @@ section.grid {
   padding-top: 30px;
   color: #fff;
   background: $background_color-blue;
-  transition: transform 0.3s;
   transform: translateY(100%);
   section {
     display: none;
@@ -183,4 +182,12 @@ section.grid {
 
 .cd-project-content.show {
   transform: translateY(0);
+}
+
+.cd-project-content section .gallery {
+  .gallery-picture {
+    padding-top: 20px;
+    @include span(4);
+    img { width: 100%; }
+  }
 }

@@ -2,20 +2,20 @@
     #creations.site-container
         .box-title
             h2.title.white Créations
-        .row
+        .row#emitter
             section.grid
-                div(data-path-hover="m 180,34.57627 -180,0 L 0,0 180,0 z", data-ref="one")
+                div(data-path-hover="m 180,34.57627 -180,0 L 0,0 180,0 z")
                     figure
                         img(src=require("../../img/sono_mini.png"))
                         svg(viewBox="0 0 180 320" preserveAspectRatio="none")
                             path(d="M 180,160 0,218 0,0 180,0 z")
                         figcaption
-                            h2 Crystalline
-                            p Soko radicchio bunya nuts gram dulse.
-                            button View
+                            h2 Sono Light Music
+                            p Design simple, efficace
+                            button(data-target="one") View
 
             section.grid
-                div(data-path-hover="m 180,34.57627 -180,0 L 0,0 180,0 z", data-ref="two")
+                div(data-path-hover="m 180,34.57627 -180,0 L 0,0 180,0 z", data-url="https://github.com/EmixMaxime/Front-end-boilerplate-with-gulp")
                     figure
                         img(src=require("../../img/1.png"))
                         svg(viewBox="0 0 180 320" preserveAspectRatio="none")
@@ -23,10 +23,10 @@
                         figcaption
                             h2 Crystalline
                             p Soko radicchio bunya nuts gram dulse.
-                            button View
+                            button(data-target="two") View
             
             section.grid
-                div(data-path-hover="m 180,34.57627 -180,0 L 0,0 180,0 z", data-ref="three")
+                div(data-path-hover="m 180,34.57627 -180,0 L 0,0 180,0 z", data-url="https://github.com/EmixMaxime/collection-design")
                     figure
                         img(src=require("../../img/1.png"))
                         svg(viewBox="0 0 180 320" preserveAspectRatio="none")
@@ -37,33 +37,21 @@
                             button View
 
         .cd-project-content
-            section(data-project="one")
-                h2 Hello world ! Project one
+            section(data-ref="one")
+                h2 Sono Light Music
                 button.close
                     svg(class="icon icon-close")
                         use(xlink:href="#icon-close")
                 p
-                    | Lorem ipsum dolor sit amet, consectetur adipisicing elit. Illum praesentium officia, fugit recusandae ipsa, quia velit nulla adipisci? Consequuntur aspernatur at, eaque hic repellendus sit dicta consequatur quae, ut harum ipsam molestias maxime non nisi reiciendis eligendi! Doloremque quia pariatur harum ea amet quibusdam quisquam, quae, temporibus dolores porro doloribus.
-                    | Illum quaerat asperiores aliquam voluptate saepe omnis porro excepturi in atque veritatis sapiente ipsam voluptates iste amet deserunt ullam error pariatur, magni consectetur optio nostrum minima dolorum. Soluta animi nihil doloremque ipsa incidunt vitae architecto beatae, maxime libero, dolore corporis vero porro tenetur ipsam modi repudiandae magnam enim, quibusdam sit.
-                    | Illum quaerat asperiores aliquam voluptate saepe omnis porro excepturi in atque veritatis sapiente ipsam voluptates iste amet deserunt ullam error pariatur, magni consectetur optio nostrum minima dolorum. Soluta animi nihil doloremque ipsa incidunt vitae architecto beatae, maxime libero, dolore corporis vero porro tenetur ipsam modi repudiandae magnam enim, quibusdam sit.
+                    | Site créé pour l'entreprise Sono Light Music. Le projet n'a finalement pas abouti sur la volonté de l'entrepreneur.
+                .gallery
+                    .gallery-picture
+                        img(src=require('../../img/sono/index_m.png'))
+                    .gallery-picture
+                        img(src=require('../../img/sono/index_5_m.png'))
 
-            section(data-project="two")
-                h2 Hello world ! Project two
+            section(data-ref="two")
+                h2 Hello world :)
                 button.close
                     svg(class="icon icon-close")
                         use(xlink:href="#icon-close")
-                p
-                    | Lorem ipsum dolor sit amet, consectetur adipisicing elit. Illum praesentium officia, fugit recusandae ipsa, quia velit nulla adipisci? Consequuntur aspernatur at, eaque hic repellendus sit dicta consequatur quae, ut harum ipsam molestias maxime non nisi reiciendis eligendi! Doloremque quia pariatur harum ea amet quibusdam quisquam, quae, temporibus dolores porro doloribus.
-                    | Illum quaerat asperiores aliquam voluptate saepe omnis porro excepturi in atque veritatis sapiente ipsam voluptates iste amet deserunt ullam error pariatur, magni consectetur optio nostrum minima dolorum. Soluta animi nihil doloremque ipsa incidunt vitae architecto beatae, maxime libero, dolore corporis vero porro tenetur ipsam modi repudiandae magnam enim, quibusdam sit.
-                    | Illum quaerat asperiores aliquam voluptate saepe omnis porro excepturi in atque veritatis sapiente ipsam voluptates iste amet deserunt ullam error pariatur, magni consectetur optio nostrum minima dolorum. Soluta animi nihil doloremque ipsa incidunt vitae architecto beatae, maxime libero, dolore corporis vero porro tenetur ipsam modi repudiandae magnam enim, quibusdam sit.
-
-            section(data-project="three")
-                h2 Hello world ! Project three
-                button.close
-                    svg(class="icon icon-close")
-                        use(xlink:href="#icon-close")
-                p
-                    | Lorem ipsum dolor sit amet, consectetur adipisicing elit. Illum praesentium officia, fugit recusandae ipsa, quia velit nulla adipisci? Consequuntur aspernatur at, eaque hic repellendus sit dicta consequatur quae, ut harum ipsam molestias maxime non nisi reiciendis eligendi! Doloremque quia pariatur harum ea amet quibusdam quisquam, quae, temporibus dolores porro doloribus.
-                    | Illum quaerat asperiores aliquam voluptate saepe omnis porro excepturi in atque veritatis sapiente ipsam voluptates iste amet deserunt ullam error pariatur, magni consectetur optio nostrum minima dolorum. Soluta animi nihil doloremque ipsa incidunt vitae architecto beatae, maxime libero, dolore corporis vero porro tenetur ipsam modi repudiandae magnam enim, quibusdam sit.
-                    | Illum quaerat asperiores aliquam voluptate saepe omnis porro excepturi in atque veritatis sapiente ipsam voluptates iste amet deserunt ullam error pariatur, magni consectetur optio nostrum minima dolorum. Soluta animi nihil doloremque ipsa incidunt vitae architecto beatae, maxime libero, dolore corporis vero porro tenetur ipsam modi repudiandae magnam enim, quibusdam sit.
-
