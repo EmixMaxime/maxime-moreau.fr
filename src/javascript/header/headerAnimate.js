@@ -1,6 +1,7 @@
 import {Emix as App} from '../app'
+import Navigate from '../Navigate'
+const navigate = new Navigate()
 // console.log(Emix.isMobile())
-const scrollTo = require('scroll-to')
 const Emix = new App()
 
 export class HeaderAnimate {
@@ -58,13 +59,9 @@ export class HeaderAnimate {
     }
 
     animateAnchor () {
-        const self = this
         this.links.forEach(link => {
             link.addEventListener('click', function () {
-                let target = document.querySelector(this.hash)
-                let y = target.getBoundingClientRect().top + window.scrollY - self.headerFake.clientHeight
-                /* header fake height */
-                scrollTo(0, y)
+                navigate.go(this.hash)
             })
         })
     }
