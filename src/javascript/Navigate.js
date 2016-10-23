@@ -11,6 +11,7 @@ export default class Navigate {
     go (toAnchor) {
         const target = document.querySelector(toAnchor)
         const y = target.getBoundingClientRect().top + window.scrollY - this.headerFakeHeight
+        document.body.classList.remove('cliqued') // TODO: voir pour améliorer pour desktop
         scrollTo(0, y)
     }
 

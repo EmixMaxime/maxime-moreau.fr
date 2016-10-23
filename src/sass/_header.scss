@@ -204,7 +204,7 @@ $header__li_width: 60px;
     transform: none;
   }
   .hero {
-    padding-top: $header_h *2;
+    padding-top: $header_h;
     padding-bottom: $header_h;
   } // Pour centrer verticalement
 
@@ -306,6 +306,9 @@ $header__li_width: 60px;
     transition-timing-function: cubic-bezier(0.2, 1, 0.3, 1);
   }
 
+  body.cliqued {
+      overflow-y: hidden; // Lorsque le menu est ouvert, on interdit le scroll Y sur la page
+  }
   .cliqued {
     .header {
       background-color: $header_bgc;
@@ -331,8 +334,5 @@ $header__li_width: 60px;
       background-color: rgba(0,0,0,0.5);
       opacity: 1;
     }
-    .scroll-resp {
-      overflow-y: hidden;
-    } // Lorsque le menu est ouvert, on interdit le scroll Y sur la page
   }
 }
