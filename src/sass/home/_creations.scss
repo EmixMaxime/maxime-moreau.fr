@@ -140,15 +140,6 @@ section.grid {
 }
 
 /* Content */
-.enter {
-  transition: transform 0.3s;
-  transition-timing-function: cubic-bezier(0.0, 0.0, 0.2, 1);
-}
-
-.leave {
-  transition: transform 0.25s;
-  transition-timing-function: cubic-bezier(0.4, 0.0, 1, 1);
-}
 
 .cd-project-content {
   width: 100%;

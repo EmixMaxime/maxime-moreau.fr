@@ -1,4 +1,5 @@
 /* eslint-disable no-undef */
+require('animations/animations.scss')
 
 class EnterAndLeaveMouvement {
 
