@@ -3,7 +3,8 @@
         .box-title
             h2.title.white Créations
         .row#emitter
-            section.grid
+
+            section.grid(data-target-ref="one")
                 div(data-path-hover="m 180,34.57627 -180,0 L 0,0 180,0 z")
                     figure
                         img(src=require("../../img/sono_mini.png"))
@@ -12,10 +13,10 @@
                         figcaption
                             h2 Sono Light Music
                             p Design simple, efficace
-                            button(data-target="one") View
+                            button View
 
-            section.grid
-                div(data-path-hover="m 180,34.57627 -180,0 L 0,0 180,0 z", data-url="https://github.com/EmixMaxime/Front-end-boilerplate-with-gulp")
+            section.grid(data-target-ref="two")
+                div(data-path-hover="m 180,34.57627 -180,0 L 0,0 180,0 z")
                     figure
                         img(src=require("../../img/1.png"))
                         svg(viewBox="0 0 180 320" preserveAspectRatio="none")
@@ -23,10 +24,10 @@
                         figcaption
                             h2 Crystalline
                             p Soko radicchio bunya nuts gram dulse.
-                            button(data-target="two") View
+                            button View
             
             section.grid
-                div(data-path-hover="m 180,34.57627 -180,0 L 0,0 180,0 z", data-url="https://github.com/EmixMaxime/collection-design")
+                div(data-path-hover="m 180,34.57627 -180,0 L 0,0 180,0 z")
                     figure
                         img(src=require("../../img/1.png"))
                         svg(viewBox="0 0 180 320" preserveAspectRatio="none")
@@ -37,11 +38,12 @@
                             button View
 
         .cd-project-content
+            button.close
+                svg(class="icon icon-close")
+                    use(xlink:href="#icon-close")
+
             section(data-ref="one")
                 h2 Sono Light Music
-                button.close
-                    svg(class="icon icon-close")
-                        use(xlink:href="#icon-close")
                 p
                     | Site créé pour l'entreprise Sono Light Music. Le projet n'a finalement pas abouti sur la volonté de l'entrepreneur.
                 .gallery
@@ -52,6 +54,3 @@
 
             section(data-ref="two")
                 h2 Hello world :)
-                button.close
-                    svg(class="icon icon-close")
-                        use(xlink:href="#icon-close")

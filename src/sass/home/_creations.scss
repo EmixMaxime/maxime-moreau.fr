@@ -159,15 +159,20 @@ section.grid {
   color: #fff;
   background: $background_color-blue;
   transform: translateY(100%);
+
   section {
-    display: none;
+    position: absolute;
+    opacity: 0;
+    display: inline-block; /* clearfix */
     p {
       margin-top: 20px;
     }
   }
-  section.display-block {
-    display: block;
+
+  section.visible {
+    opacity: 1;
   }
+  
   .close {
     position: absolute;
     top: 30px;
