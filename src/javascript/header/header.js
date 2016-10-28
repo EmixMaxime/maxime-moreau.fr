@@ -11,5 +11,13 @@ let optionsHeader = {
     hiddenSelector: '.site-cache' // The selector of the div for hide the website when the header is open
 }
 
-new HeaderResponsive(optionsHeader)
-new HeaderAnimate('.header', '#fake', '.header__nav__link')
+const headerIcon = document.querySelector(optionsHeader.iconSelector)
+const hidden = document.querySelector(optionsHeader.hiddenSelector)
+
+new HeaderResponsive(headerIcon, hidden, optionsHeader)
+
+const header = document.querySelector('#header')
+const headerFake = document.querySelector('#fake')
+const links = header.querySelectorAll('.header__nav__link')
+
+new HeaderAnimate(header, headerFake, links)

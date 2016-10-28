@@ -1,18 +1,31 @@
 export class HeaderResponsive {
 
-    constructor (options) {
-        let iconNode = document.querySelector(options.iconSelector)
-        let hiddenNode = options.hiddenSelector ? document.querySelector(options.hiddenSelector) : null // The hidden effect is optional
+    constructor (trigger, hiddenElement = null, options = {}) {
 
-        if (!iconNode) throw `[HEADER] L\'élement : "${options.iconSelector}" est introuvable dans le DOM`
-        if (options.hiddenSelector && !hiddenNode) throw `[HEADER] L\'élement : "${options.hiddenSelector}" est introuvable dans le DOM`
-
-        let eventCliqued = function (e) {
-            e.preventDefault()
-            document.body.classList.toggle(options.bodyClass)
+        const defaults = {
+            iconSelector: '#header__icon',
+            bodyClass: 'cliqued' // className add to body when the header is open
         }
 
-        iconNode.addEventListener('click', eventCliqued)
-        if (hiddenNode) hiddenNode.addEventListener('click', eventCliqued)
+        this.settings = Object.assign({}, defaults, options)
+        Object.freeze(this.settings)
+
+        this.elements = {trigger, hiddenElement}
+        Object.freeze(this.elements)
+
+        this._run()
+    }
+
+    _run () {
+        const { trigger, hiddenElement } = this.elements
+        const { bodyClass } = this.settings
+
+        const toggleActive = (e) => {
+            e.preventDefault()
+            document.body.classList.toggle(bodyClass)
+        }
+
+        trigger.addEventListener('click', toggleActive)
+        if (hiddenElement) hiddenElement.addEventListener('click', toggleActive)
     }
 }
