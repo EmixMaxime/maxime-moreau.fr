@@ -1,27 +1,33 @@
 export default class AnimateForm {
 
-    constructor (options) {
-        this.options = options
-        this.fields = document.querySelectorAll(options.inputSelector)
-        if (this.fields.length === 0) {
-            console.error(`[FORM] L'élement '${options.inputSelector}' est introuvable dans le DOM`)
+    constructor (inputs, options = {}) {
+
+        const defaults = {
+            labeledClass: 'has-label',
+            focusedClass: 'is-focused'
         }
-        this.animate()
+
+        const settings = Object.assign({}, defaults, options)
+        settings.inputs = inputs
+        this.settings = settings
+        Object.freeze(this.settings)
+
+        this._animate()
     }
 
-    animate () {
-        const self = this
-		this.fields.forEach(field => {
-            field.addEventListener('focus', function () {
-                this.parentNode.classList.add(self.options.focusedClass, self.options.labeledClass) // has-label = show the label on top of the input
+    _animate () {
+        const { inputs, focusedClass, labeledClass } = this.settings
+		inputs.forEach(input => {
+            input.addEventListener('focus', function () {
+                this.parentNode.classList.add(focusedClass, labeledClass) // has-label = show the label on top of the input
             })
 
-            field.addEventListener('blur', function () {
-                let label = this.parentNode
+            input.addEventListener('blur', function () {
+                const label = this.parentNode
                 if (this.value === '') {
-                    label.classList.remove(self.options.labeledClass)
+                    label.classList.remove(labeledClass)
                 }
-                label.classList.remove(self.options.focusedClass)
+                label.classList.remove(focusedClass)
             })
         })
     }

@@ -1,10 +1,12 @@
 require('form/_form.scss')
+
 import AnimateForm from './animateForm'
 
-const optionsA = {
-    inputSelector: '.field-input',
+const options = {
     labeledClass: 'has-label',
     focusedClass: 'is-focused'
 }
 
-new AnimateForm(optionsA)
+const inputs = document.querySelectorAll('.field-input')
+
+new AnimateForm(inputs, options)
