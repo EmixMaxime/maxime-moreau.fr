@@ -2,7 +2,7 @@ import {HeaderResponsive} from './headerResponsive'
 import {HeaderAnimate} from './headerAnimate'
 
 require('_header.scss')
-document.querySelector('.hero__content')
+document.querySelector('.hero_content')
     .classList.add('animated', 'fadeIn')
 
 let optionsHeader = {
