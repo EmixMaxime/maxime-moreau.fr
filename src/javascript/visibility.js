@@ -1,37 +1,52 @@
+/* eslint-disable no-undef */
 export default class Visibility {
 
-    constructor (elements, classHidden, threshold) {
+    constructor (elements, options = {}) {
         this.elements = elements
-        this.threshold = threshold
-        this.classHidden = classHidden
 
-        this._observer = this.observer()
+        const defaults = {
+            hiddenClass: 'hidden',
+            threshold: 0.5
+        }
+
+        this.settings = Object.assign({}, options, defaults)
+        Object.freeze(this.settings)
+
+        this.observer = this._observer()
+        this._animate()
     }
 
-    observer () {
+    _observer () {
+        const { threshold, hiddenClass } = this.settings
+
         return new IntersectionObserver(observables => { // eslint-disable-line no-undef
             // Lancé que si le threshold > 0.5 ou threshold < 0.5
 
             observables.forEach(observable => {
-                if (observable.intersectionRatio > this.threshold) {
-                    observable.target.classList.remove(this.classHidden)
-                    this._observer.unobserve(observable.target)
+
+                if (observable.intersectionRatio > threshold) {
+                    observable.target.classList.remove(hiddenClass)
+                    this.observer.unobserve(observable.target)
                 }
+
             })
         }, {
-            threshold: [this.threshold] // Lorsque l'élement a plus de X % de visible
+            threshold: [threshold] // Lorsque l'élement a plus de X % de visible
         })
     }
 
-    animate () {
-        if (this.elements instanceof NodeList) { // eslint-disable-line no-undef
-            this.elements.forEach(item => {
-                item.classList.add(this.classHidden)
-                this._observer.observe(item)
+    _animate () {
+        const { hiddenClass } = this.settings
+        const elements = this.elements
+
+        if (elements instanceof NodeList) { // eslint-disable-line no-undef
+            elements.forEach(item => {
+                item.classList.add(hiddenClass)
+                this.observer.observe(item)
             })
         } else {
-            this.elements.classList.add(this.classHidden)
-            this._observer.observe(this.elements)
+            elements.classList.add(hiddenClass)
+            this.observer.observe(elements)
         }
     }
 }
