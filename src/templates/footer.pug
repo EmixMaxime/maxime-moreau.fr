@@ -1,16 +1,34 @@
+mixin field-input(type, name, label)
+    .field
+        label(for=name, class="field-label")=label
+        input(type=type, name=name, id=name, class="field-input")
+
+mixin field-textarea(name, label)
+    .field.field-textarea
+        label(for=name, class="field-label")=label
+        textarea(for=name, id=name, class="field-input")
+
 footer#footer.footer
     .site-container.fixed_bug
-        p.footer__quote
-            | Souvent je reçois cette question : 
-            br
-            | Comment tu as eu cette passion si jeune ?
-            br
-            | Je réponds simplement : "OpenClassrooms".
-        p.footer__quote
-            | Tu veux en savoir plus sur mon parcours? 
-            br
-            | Mon histoire est disponible sur le blog d'OpenClassrooms.
-        .footer__quote#citation
+
+        .footer_form#contact
+            h1 Contactez-moi
+            form(action="#", method="POST", class="form" id="form")
+                +field-input('email', 'email', 'Email')
+                +field-textarea('message', 'Message')
+                button(type="submit" value="Envoyer" class="field-submit") Envoyer
+
+        .footer_social
+            h1 Retrouvez moi
+            include ./linksSocial/github
+            include ./linksSocial/twitter
+            include ./linksSocial/facebook
+
+        .footer_quote#citation
             <svg class="icon icon-quotes-left"><use xlink:href="#icon-quotes-left"></use></svg>
-            p Tout ce que je sais, c'est que je ne sais rien
+            p Tout ce que je sais c'est que je ne sais rien
             span.author Socrate
+    .footer_end
+        address
+            | Maxime Moreau : 
+            a(href="mailto:contact@maxime-moreau.fr") contact@maxime-moreau.fr
