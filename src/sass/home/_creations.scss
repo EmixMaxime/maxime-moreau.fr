@@ -7,8 +7,9 @@
 }
 
 section.grid {
-  @include span(12);
   max-width: 300px!important;
+
+  @include span(12);
 }
 
 @include emix-breakpoint(L) {
@@ -19,10 +20,10 @@ section.grid {
 
 .row {
   display: inline-block;
+  width: 300px;
   position: relative;
   left: 50%;
   transform: translateX(-50%);
-  width: 300px;
 }
 
 @include emix-breakpoint(M) {
@@ -107,16 +108,13 @@ section.grid {
   figure img {
     filter: grayscale(0);
   }
-
   figcaption h2,
   figcaption p {
     transform: translateY(0);
   }
-
   figcaption p {
     opacity: 0;
   }
-
   figure button {
     transform: translateY(0);
   }
@@ -150,24 +148,22 @@ section.grid {
   color: #fff;
   background: $background_color-blue;
   transform: translateY(100%);
-
   section {
+    display: inline-block; /* clearfix */
     position: absolute;
     opacity: 0;
-    display: inline-block; /* clearfix */
     p {
       margin-top: 20px;
     }
   }
-
   section.visible {
     opacity: 1;
   }
-  
   .close {
     position: absolute;
     top: 30px;
     right: 0;
+    z-index: 1;
     background: transparent;
     border: none;
     svg {
@@ -183,7 +179,10 @@ section.grid {
 .cd-project-content section .gallery {
   .gallery-picture {
     padding-top: 20px;
+
     @include span(4);
-    img { width: 100%; }
+    img {
+      width: 100%;
+    }
   }
 }
