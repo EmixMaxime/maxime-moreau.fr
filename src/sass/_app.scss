@@ -1,8 +1,8 @@
 @import "variables";
-@import "susy";
+@import "_susy";
 @import "~susy";
 @import "./responsive/mixinResponsive";
-@import "./helpers/tooltip";
+@import "tooltip";
 
 @import url('https://fonts.googleapis.com/css?family=Roboto:100,300');
 @import url('https://fonts.googleapis.com/css?family=Raleway:400,700');

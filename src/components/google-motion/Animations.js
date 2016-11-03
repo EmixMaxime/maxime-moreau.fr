@@ -1,5 +1,5 @@
 /* eslint-disable no-undef */
-require('animations/animations.scss')
+require('./_google-motion.scss')
 
 class EnterAndLeaveMouvement {
 

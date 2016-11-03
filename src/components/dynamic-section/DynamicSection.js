@@ -1,6 +1,6 @@
 /* eslint-disable no-undef */
 /* eslint-disable no-unused-vars  */
-export default class DynamicSections {
+export default class DynamicSection {
 
     constructor (options = { emitterBlock, targetBlock, Animation, targetVisibleClass }) {
 

@@ -1,7 +1,7 @@
 @import "_susy";
-@import "_header";
+@import "../components/header/header";
 @import "_app";
-@import "./form/_form";
+@import "../components/form/form";
 
 @mixin box-title($t_color : ""){
 	@if $t_color == '' {
@@ -15,27 +15,27 @@
 /**
 * TOOLTIP
 */
-@import "./helpers/_tooltip";
+@import "tooltip";
 
 /**
 * PRESENTATION
 */
 
-@import "./home/_presentation";
+@import "presentation";
 
 /**
 * CAREER
 */
 
-@import "./home/_timeline";
+@import "../components/timeline/timeline";
 
-@import "./home/_creations";
+@import "../components/creation/creations";
 
 /**
 * SKILLS
 **/
 
-@import "./home/_skills";
+@import "../components/skill/skills";
 
 /**
 * CONTACT
@@ -47,4 +47,4 @@
 * FOOTER
 **/
 
-@import "./footer/_footer";
+@import "footer";

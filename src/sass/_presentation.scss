@@ -1,6 +1,6 @@
-@import "../_variables";
+@import "variables";
 @import "~susy";
-@import "../responsive/mixinResponsive";
+@import "responsive/mixinResponsive";
 
 .presentation-picture,
 .presentation-profile {
@@ -49,7 +49,7 @@
 
 .presentation-picture {
   height: 200px;
-  background-image: url('../../img/me2.jpg');
+  background-image: url('../img/me2.jpg');
 }
 
 .presentation, .presentation-text {

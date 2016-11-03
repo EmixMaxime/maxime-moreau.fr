@@ -1,6 +1,6 @@
-@import '~susy';
-@import "../variables";
-@import "../responsive/mixinResponsive";
+@import '../../../node_modules/susy';
+@import "../../sass/variables";
+@import "../../sass/responsive/mixinResponsive";
 
 .grid div {
   color: #333;

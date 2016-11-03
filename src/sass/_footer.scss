@@ -1,5 +1,5 @@
-@import "../variables";
-@import "~responsive/_mixinResponsive";
+@import "variables";
+@import "./responsive/mixinResponsive";
 @import "~susy";
 
 .footer {

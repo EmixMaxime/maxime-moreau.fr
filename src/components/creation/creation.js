@@ -2,12 +2,12 @@
 /* eslint-disable no-unexpected-multiline */
 /* eslint-disable padded-blocks */
 /* eslint-disable no-spaced-func */
-require('home/_creations')
+require('./_creations.scss')
 import Snap from 'imports-loader?this=>window,fix=>module.exports=0!../libs/snap.svg-min.js' // About this : https://github.com/adobe-webplatform/Snap.svg/issues/341
 import Animate from './animate'
 // import Navigate from '../Navigate'
-import {EnterAndLeaveMouvement} from '../Animations'
-import DynamicSections from '../DynamicSections'
+import { EnterAndLeaveMouvement } from '../google-motion/Animations'
+import DynamicSections from '../dynamic-section/DynamicSection'
 
 const targets = document.querySelectorAll('.grid > div')
 const animate = new Animate(350, mina.backout)
