@@ -4,7 +4,8 @@
   	"indent": "off",
   	"no-trailing-spaces": "off",
     "no-new": "off",
-    "no-throw-literal": "off"
+    "no-throw-literal": "off",
+    "padded-blocks": "off"
   }
 
 }

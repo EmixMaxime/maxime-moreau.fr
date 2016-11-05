@@ -53,11 +53,13 @@ module.exports = {
     ]
   },
   plugins: [],
-  eslint: {
-    configFile: path.resolve(root, './.eslintrc'),
-    formatter: require('eslint-friendly-formatter')
-  },
-  postcss: function () {
+    eslint: {
+        configFile: path.resolve(root, './.eslintrc'),
+        formatter: require('eslint-friendly-formatter')
+    },
+    postcss: function () {
       return [autoprefixer({browsers: conf.support})];
-  }
+    },
+
+
 }

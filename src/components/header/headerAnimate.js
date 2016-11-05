@@ -1,5 +1,5 @@
-import {Emix as App} from '../app'
-import Navigate from '../Navigate'
+import {Emix as App} from '../../javascript/app'
+import Navigate from '../../javascript/Navigate'
 const navigate = new Navigate()
 const Emix = new App()
 

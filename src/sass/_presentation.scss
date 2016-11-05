@@ -4,12 +4,10 @@
 
 .presentation-picture,
 .presentation-profile {
-  width: 50%;
-  float: left;
-  padding-right: 15px;
-  padding-left: 15px;
+  display: inline-block;
 }
 
+//    transform: translateY(-40px);
 .presentation {
   ul {
     padding: 0;
@@ -48,31 +46,45 @@
 }
 
 .presentation-picture {
-  height: 200px;
-  background-image: url('../img/me2.jpg');
+  height: 250px;
+  background-image: url('~img/me.jpg');
+  background-size: cover;
+
+}
+
+/* Responsive */
+.presentation-profile {
+  @include span(6);
+}
+
+.presentation-picture {
+  @include span(6);
+  overflow: hidden;
 }
 
 .presentation, .presentation-text {
   @include span(12);
 }
+
 .presentation-text {
   margin-top: 20px;
 }
+
 @include emix-breakpoint(S) {
   .presentation-text {
-    @include span(7);
+    @include span(12);
   }
   .presentation {
-    @include span(5);
+    @include span(12);
   }
 }
 
 @include emix-breakpoint(M) {
   .presentation-text {
-    @include span(7);
+    @include span(6);
   }
   .presentation {
-    @include span(5);
+    @include span(6);
   }
 }
 

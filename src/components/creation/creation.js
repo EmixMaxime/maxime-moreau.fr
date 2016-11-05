@@ -3,7 +3,7 @@
 /* eslint-disable padded-blocks */
 /* eslint-disable no-spaced-func */
 require('./_creations.scss')
-import Snap from 'imports-loader?this=>window,fix=>module.exports=0!../libs/snap.svg-min.js' // About this : https://github.com/adobe-webplatform/Snap.svg/issues/341
+import Snap from 'imports-loader?this=>window,fix=>module.exports=0!../../javascript/libs/snap.svg-min.js' // About this : https://github.com/adobe-webplatform/Snap.svg/issues/341
 import Animate from './animate'
 // import Navigate from '../Navigate'
 import { EnterAndLeaveMouvement } from '../google-motion/Animations'

@@ -1,21 +1,8 @@
-@import '../../node_modules/susy/sass/susy';
-@import "../../node_modules/breakpoint-sass/stylesheets/breakpoint";
+@import '~susy'; // https://github.com/jtangelder/sass-loader#imports
+//@import "~breakpoint";
 @import "./responsive/_mixinResponsive";
 
 $debug : false;
-
-.presentation, .presentation-text,
-.career-box, .skill-box,
-.form,
-.footer__quote, .footer__twitter
-{ @include span(12); }
-
-#grid {
-  @include span(4);
-}
-
-.footer__quote { text-align: center; margin-top: 30px!important; }
-
 
 .site-container { width: 100%; }
 
@@ -25,54 +12,12 @@ $debug : false;
 
 @include emix-breakpoint(S) {
   .site-container{ width: 750px; }
-  .hero__content { @include span(10); @include push(1); }
-
-  .presentation-text { @include span(7); }
-  .presentation { @include span(5); }
 }
 
 @include emix-breakpoint(M) {
   .site-container{ width: 970px; }
-  .hero__content { @include span(8); @include push(2); }
-  .presentation { @include span(8); float: right; }
-  .career-box { @include span(6) }
-  .skill-box { @include span(6); }
-
-  .contact_social { @include span(5) }
-  .contact_form { @include span(7) }
-
-  .presentation-text { @include span(7); }
-  .presentation { @include span(5); }
-
-  .footer__quote { text-align: unset; margin-top: 0px!important; @include span(4); }
 }
 
 @include emix-breakpoint(L) {
   .site-container{ width: 1170px; }
-  //.hero__content { @include span(6); @include push(3); }
-  .presentation-text { @include span(6); }
-  .presentation { @include span(6); }
-
-  .career-box { @include span(3); }
-  .skill-box { @include span(4) }
-  .skill-box-push { transform: translateX(100%); }
-
-  .footer__twitter { @include span(3) }
-  .footer__quote { @include span(4) }
-
-  .contact_social, .contact_form { @include span(6) }
-
-  .bg-career { background-attachment: fixed!important; } // ça pompe bcp de ressources, on laisse cet attribu que pr les grand écran (théoriquement pourr pc)
-  #grid {
-    @include span(4);
-  }
-
-  .container-allheight {
-    height: 100vh;
-    min-height: 900px;
-    .site-container {
-      height: 40%!important;
-    }
-  }
-
 }

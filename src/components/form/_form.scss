@@ -1,5 +1,4 @@
-@import "../variables";
-// $color : darken(#30a7b7, 10%);
+@import "../../sass/_variables";
 
 input:-webkit-autofill {
   -webkit-box-shadow: 0 0 0 1000px $header_bgc inset;

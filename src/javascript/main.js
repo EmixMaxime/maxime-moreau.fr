@@ -3,6 +3,12 @@ document.write(tpl()) // à retirer lorsqu'on build
 require('./polyfill/forEach')
 require('intersection-observer')
 
+require('../components/header/header.js')
+require('../components/timeline/timeline.js')
+require('../components/creation/creation.js')
+require('../components/skill/skill.js')
+require('../components/form/form.js')
+
 require('_hero.scss')
 require('_presentation')
 require('_footer.scss')

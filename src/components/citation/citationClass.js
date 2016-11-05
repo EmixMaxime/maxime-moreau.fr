@@ -7,10 +7,10 @@ export default class Citation {
         this.authorElement = authorElement
 
         this.randomMax = this.citations.length - 1 // The last element of citations
-        this.changeCitation()
+        this._changeCitation()
     }
 
-    getCitation () {
+    _getCitation () {
         let randomCitation = ''
         let indexCitation
         let random = () => {
@@ -24,8 +24,8 @@ export default class Citation {
         return randomCitation
     }
 
-    changeCitation () {
-        let changeDom = () => {
+    _changeCitation () {
+        const changeDom = () => {
             // J'ajoute l'animation sur l'opacité :
             this.citationBlock.classList.add('hidden')
         }
@@ -38,7 +38,7 @@ export default class Citation {
             let target = e.target
 
             if (target.classList.contains('hidden')) {
-                let newCitation = this.getCitation()
+                let newCitation = this._getCitation()
                 this.citationElement.textContent = newCitation.content
                 this.authorElement.textContent = newCitation.author
                 this.citationBlock.classList.remove('hidden')
