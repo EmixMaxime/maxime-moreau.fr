@@ -31,13 +31,13 @@
 
 $social-height: 40px;
 .footer_social {
+  text-align: center;
   h1 {
     text-align: center;
   }
   a {
-    display: block;
-    width: 100%;
     margin-top: 20px;
+    padding-left: 20px;
     text-align: center;
   }
   .icon-github, .icon-twitter, .icon-facebook {
@@ -59,6 +59,12 @@ $social-height: 40px;
 
 .footer_form, .footer_social {
   @include span(12);
+}
+
+.footer_social {
+  a {
+    display: inline-block;
+  }
 }
 
 .footer_quote {
