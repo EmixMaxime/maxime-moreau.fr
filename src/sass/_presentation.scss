@@ -33,6 +33,8 @@
     color: $accent_color;
   }
   a {
+    display: inline-block;
+    margin-left: 10px;
     color: inherit;
     text-decoration: none;
     border-color: transparent;
