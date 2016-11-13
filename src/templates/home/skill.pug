@@ -1,8 +1,8 @@
 mixin skill(name, img, style)
-    .skill-box(class=(name == "laravel" ? "skill-box-push" : ''))
-        .skill-box__title(class=(style ? style : name), class=attributes.class)=name
-        .skill-box__container(class=(style ? style : name))
-            img.skill-box__logo(src=require('../img/'+ img), alt=name, style=attributes.style)
+    .skill(class=(name == "laravel" ? "skill-push" : ''))
+        .skill-title(class=(style ? style : name), class=attributes.class)=name
+        .skill-container(class=(style ? style : name))
+            img.skill-logo(src=require('../img/'+ img), alt=name, style=attributes.style)
 
 #skills.site-container
     .animated
@@ -12,5 +12,12 @@ mixin skill(name, img, style)
         +skill('html', 'html.png')(class='ninety')
         +skill('Javascript', 'js.png', 'js')(class='seventy')
         +skill('php', 'php.png')(class='seventy')
-        +skill('laravel', 'laravel.png')(class='sixty', style='margin-top: 10px')
+        +skill('laravel', 'laravel.png')(class='sixty')
+        .skill.skill-push
+            .skill-title.outils.sixty Outils
+            .skill-container.outils
+                img.skill-logo.svg.webpack(src=require('../img/webpack.svg'))
+                img.skill-logo.svg.gulp(src=require('../img/gulp.svg'))
+                img.skill-logo.svg.git(src=require('../img/git.svg'))
+
         

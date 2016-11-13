@@ -1,10 +1,11 @@
 @import "../../sass/responsive/mixinResponsive";
+@import "../../sass/_variables";
 
 .box-title.no-padding {
   padding-bottom: 0;
 }
 
-.skill-box {
+.skill {
   margin-top: 30px;
   text-align: center;
   img {
@@ -13,7 +14,7 @@
   }
 }
 
-.skill-box__title {
+.skill-title {
   position: relative;
   z-index: 1;
   padding-top: 10px;
@@ -23,7 +24,7 @@
   text-transform: uppercase;
 }
 
-.skill-box__title::after {
+.skill-title::after {
   width: 100%;
   position: absolute;
   top: 0;
@@ -54,9 +55,26 @@ $skills : (
   php: (background-color: #6082bb, border-color: #6082bb),
   laravel: (background-color: #e74430, border-color: #e74430),
   symfony: (background-color: #7aba20, border-color: #7aba20),
+  outils: (background-color: $footer_backgroundColor, border-color: $footer_backgroundColor)
 );
 
-.skill-box__container {
+.svg {
+  display: inline-block;
+}
+
+.gulp {
+  width: 50px!important;
+}
+
+.webpack {
+  width: 80px!important;
+}
+
+.git {
+  width: 80px!important;
+}
+
+.skill-container {
   height: 130px;
   background-color: #fff!important;
   border-style: solid;
@@ -66,43 +84,49 @@ $skills : (
 @each $skill, $property in $skills {
   .#{$skill} {
     @each $p, $value in $property {
-      @if($p == background-color) { #{$p} : #{$value}; }
-      @if($p == border-color) { #{$p} : #{$value}; }
+      @if($p == background-color) {
+        #{$p} : #{$value};
+      }
+      @if($p == border-color) {
+        #{$p} : #{$value};
+      }
     }
   }
   .#{$skill}::after {
     @each $p, $value in $property {
-      @if($p == background-color) { #{$p} : darken($value, 10%) }
+      @if($p == background-color) {
+        #{$p} : darken($value, 10%);
+      }
     }
   }
 }
 
 @each $percent, $value in $percents {
-  .#{$percent}::after {
-    transform: scaleX($value);
-  }
   @include emix-breakpoint(M) {
     .hidden .#{$percent}::after {
       transform: scaleX(0);
     }
   }
+  .#{$percent}::after {
+    transform: scaleX($value);
+  }
 }
 
-.skill-box {
+.skill {
   @include span(12);
 }
 
 @include emix-breakpoint(M) {
-  .skill-box {
+  .skill {
     @include span(6);
   }
 }
 
 @include emix-breakpoint(L) {
-  .skill-box {
+  .skill {
     @include span(4);
   }
-  .skill-box-push {
-    transform: translateX(100%);
+  .skill-push {
+    transform: translateX(50%);
   }
 }
