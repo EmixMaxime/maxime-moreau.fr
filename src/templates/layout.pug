@@ -8,8 +8,21 @@ html(lang='fr')
         meta(charset='UTF-8')
         title Maxime |
         meta(name='viewport', content='width=device-width, initial-scale=1.0, maximum-scale=1.0')
-        //link(rel='stylesheet', href='./css/index.css')
-        //link(rel='stylesheet', href='../css/fonts.css')
+        script(type="application/ld+json").
+            {
+              "@context": "http://schema.org",
+              "@type": "Organization",
+              "name" : "Maxime Moreau"
+              "url": "maxime-moreau.fr",
+              "sameAs": [
+                "https://twitter.com/emixdev"
+              ]
+              "contactPoint": [{
+                "@type": "ContactPoint",
+                "telephone": "06-19-01-59-88",
+                "email": "mailto:contact@maxime-moreau.fr"
+              }]
+            }
     include svg/svg
     body
         #fake.fake
