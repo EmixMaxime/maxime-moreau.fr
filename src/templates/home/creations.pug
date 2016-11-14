@@ -17,8 +17,8 @@
 
             section.grid(data-target-ref="two")
                 div(data-path-hover="m 180,34.57627 -180,0 L 0,0 180,0 z")
-                    figure
-                        img(src=require("../../img/1.png"))
+                    figure#figure-boilerplate
+                        img(src=require("../../img/webpack.svg"))
                         svg(viewBox="0 0 180 320" preserveAspectRatio="none")
                             path(d="M 180,160 0,218 0,0 180,0 z")
                         figcaption
@@ -43,7 +43,7 @@
                     use(xlink:href="#icon-close")
 
             section(data-ref="one")
-                h2 Sono Light Music
+                h3 Sono Light Music
                 p
                     | Site créé pour l'entreprise Sono Light Music. Le projet n'a finalement pas abouti sur la volonté de l'entrepreneur.
                     br
@@ -54,11 +54,14 @@
                     .gallery-picture
                         img(src=require('../../img/sono/index_5_m.png'))
 
-            section(data-ref="two")
-                h2 Emix-boilerplate
+            section#boilerplate-section(data-ref="two")
+                h3 Emix-boilerplate
                 p
-                    | Tous les développeurs moderne doivent avoir reccours à des outils tel que Gulp ou Grunt ou encore Webpack.
+                    | Tous les développeurs modernes doivent avoir reccours à des outils tel que Gulp ou Grunt ou encore Webpack.
                     br
-                    | Mais configurer ces outils peut être une tâche fastidieuse et prise de tête. C'est pour cela que j'ai décider de mettre en ligne mes configurations.
+                    | Mais configurer ces outils peut être une tâche fastidieuse et prise de tête. C'est pour cela que j'ai décidé de mettre en ligne mes configurations.
                     br
                     | Les configurations sont disponibles pour Webpack et Gulp, elles regroupent les fonctionnalités incontournables, comme par exemple compiler nos fichiers JavaScript es6 en es5, mais encore SaaS.
+                a.link-gulp(href="#" alt="lien vers mon dépot github pour gulp") Gulp
+                a.link-webpack(href="#" alt="lien vers mon dépot github pour webpack") Webpack
+

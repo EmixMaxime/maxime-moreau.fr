@@ -6,29 +6,50 @@
   color: #333;
 }
 
-section.grid {
-  max-width: 300px!important;
-
-  @include span(12);
-}
-
-@include emix-breakpoint(L) {
-  section.grid {
-    @include span(4);
+.grid {
+  figure {
+    height: 310px;
   }
 }
 
-.row {
+#boilerplate-section a {
   display: inline-block;
-  width: 300px;
-  position: relative;
-  left: 50%;
-  transform: translateX(-50%);
+  width: 120px;
+  height: 30px;
+  margin-top: 20px;
+  font-size: 18px;
+  line-height: 30px;
+  color: #333;
+  text-align: center;
+  text-decoration: none;
+  background-color: #fff;
+}
+
+.link-webpack {
+  margin-left: 10px;
+}
+
+section.grid {
+  max-width: 300px!important;
+
+  @include span(4);
+}
+
+@include emix-breakpoint(S) {
+  .grid figure {
+    height: 400px;
+  }
 }
 
 @include emix-breakpoint(M) {
-  .row {
-    width: auto;
+  .grid figure {
+    height: 450px;
+  }
+}
+
+@include emix-breakpoint(L) {
+  .grid {
+    transform: translateX(50%);
   }
 }
 
@@ -37,7 +58,11 @@ section.grid {
   position: relative;
   margin: 5px;
   overflow: hidden;
-  background: #333;
+  background: #fff;
+}
+
+#figure-boilerplate img {
+  transform: translateY(50%);
 }
 
 .grid figure img {
@@ -177,6 +202,7 @@ section.grid {
 }
 
 .cd-project-content section .gallery {
+  display: inline-block;
   .gallery-picture {
     padding-top: 20px;
 
