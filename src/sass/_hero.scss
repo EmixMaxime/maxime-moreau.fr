@@ -1,6 +1,5 @@
 @import "responsive/mixinResponsive";
 @import "variables";
-
 $hero_height: 500px;
 $hero_content_height: 130px;
 
@@ -37,29 +36,24 @@ $hero_content_height: 130px;
   color: $hero_color;
   text-align: center;
   background-color: rgba(0, 0, 0, 0.5);
-
   h1 {
     font-size: 2.5em;
   }
-
   p {
     font-size: 1.2em;
   }
-
   h1, p {
     font-weight: 300;
     line-height: 50px;
     color: #fff;
     text-transform: uppercase;
   }
-
 }
 
 .hero_social {
   padding-top: 15px;
   clear: both; // Pour "nettoyer" le float left du hero content
   text-align: center;
-
   .box-icon {
     display: inline-block;
     padding-right: 7px;
@@ -76,13 +70,17 @@ $hero_content_height: 130px;
   .hero {
     padding-top: $header_h; // Pour centrer verticalement
     padding-bottom: $header_h;
-  } 
+  }
 }
 
 @include emix-breakpoint(S) {
-  .hero_content { @include span(10); @include push(1); }
+  .hero_content {
+    @include span(10); @include push(1);
+  }
 }
 
 @include emix-breakpoint(M) {
-  .hero_content { @include span(8); @include push(2); }
+  .hero_content {
+    @include span(6); @include push(3);
+  }
 }

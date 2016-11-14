@@ -1,5 +1,5 @@
-const tpl = require('../templates/home.pug')
-document.write(tpl()) // à retirer lorsqu'on build
+// const tpl = require('../templates/home.pug')
+// document.write(tpl()) // à retirer lorsqu'on build
 require('./polyfill/forEach')
 require('intersection-observer')
 
