@@ -25,12 +25,16 @@ $desktop: (
     @include susy-breakpoint($small, $susy) {
       @content;
     }
-    } @else if ($dimension == M) {
+  } @else if ($dimension == M) {
       @include susy-breakpoint($medium, $desktop) {
         @content;
-    }
+      }
   } @else if ($dimension == L) {
     @include susy-breakpoint($large, $desktop) {
+      @content;
+    }
+  } @else {
+    @include susy-breakpoint($dimension) {
       @content;
     }
   }
