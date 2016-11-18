@@ -29,34 +29,10 @@
   margin-left: 10px;
 }
 
-section.grid {
-  max-width: 300px!important;
-
-  @include span(4);
-}
-
-@include emix-breakpoint(S) {
-  .grid figure {
-    height: 400px;
-  }
-}
-
-@include emix-breakpoint(M) {
-  .grid figure {
-    height: 450px;
-  }
-}
-
-@include emix-breakpoint(L) {
-  .grid {
-    transform: translateX(50%);
-  }
-}
-
-
 .grid figure {
+  width: 80%;
   position: relative;
-  margin: 5px;
+  margin: 0 auto;
   overflow: hidden;
   background: #fff;
 }
@@ -169,6 +145,7 @@ section.grid {
   height: 100%;
   position: absolute;
   bottom: 0;
+  z-index: 11;
   padding-top: 30px;
   color: #fff;
   background: $background_color-blue;
@@ -210,5 +187,52 @@ section.grid {
     img {
       width: 100%;
     }
+  }
+}
+
+/* responsive */
+
+section.grid {
+  @include span(12);
+}
+section.grid:not(:first-child) {
+  margin-top: 20px;
+}
+
+.grid figure {
+  height: 400px;
+}
+
+@include emix-breakpoint(500px) {
+  .grid figure {
+    width: 50%;
+  }
+}
+
+@include emix-breakpoint(S) {
+  section.grid {
+    margin: 0!important; // important because section.grid:not(:first-child) pass over this
+
+    @include span(4);
+  }
+  .grid figure {
+    width: 100%;
+    height: 400px;
+    margin: none;
+  }
+}
+
+@include emix-breakpoint(M) {
+  .grid figure {
+    height: 450px;
+  }
+}
+
+@include emix-breakpoint(L) {
+  .grid {
+    transform: translateX(50%);
+  }
+  section.grid {
+    @include span(3);
   }
 }
