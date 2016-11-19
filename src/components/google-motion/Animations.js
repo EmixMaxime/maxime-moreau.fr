@@ -3,7 +3,7 @@ require('./_google-motion.scss')
 
 class EnterAndLeaveMouvement {
 
-    constructor (options = {container, visibleClass, enterClass, leaveClass, ELEM_VISIBLE_STATE, ELEM_NOT_VISIBLE_STATE}) {
+    constructor (options = {}) {
         
         const defaults = {
             visibleClass: 'show',
@@ -36,7 +36,7 @@ class EnterAndLeaveMouvement {
         const leaveScreen = this._transitionEndPromises(ELEM_NOT_VISIBLE_STATE)
         leaveScreen.then(() => {
                 container.classList.remove(leaveClass)
-            })
+        })
 
         return leaveScreen
     }

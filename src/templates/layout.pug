@@ -1,6 +1,6 @@
 mixin header-link(name, href)
-    li.header__nav__li.first
-        a.header__nav__link(href="#" + href)=name
+    li.back-animated-scale.topbar-li
+        a(href="#" + href)=name
 
 doctype html
 html(lang='fr')
@@ -39,18 +39,29 @@ html(lang='fr')
     
     include svg/svg
     body
-        #fake.fake
-        header.header#header
-            a#header__icon.header__icon(href='#')
-            a.header__title(href='#') Maxime
-            // Pour le name
-            nav.header__nav
-              ul.header__nav__ul
+        .fake#fake
+        .topbar#topbar
+          a#topbar-trigger.topbar-trigger(href="#")
+          .topbar-left
+            a.topbar-title(href='#home') Maxime
+            nav.topbar-menu#topbar-menu
+              ul.topbar-ul
                 +header-link('Accueil', 'home')
                 +header-link('Présentation', 'presentation')
                 +header-link('Compétences', 'skills')
                 +header-link('Créations', 'creations')
                 +header-link('Contact', 'contact')
+        //- header.header#header
+        //-     a#header__icon.header__icon(href='#')
+        //-     a.header__title(href='#') Maxime
+        //-     // Pour le name
+        //-     nav.header__nav
+        //-       ul.header__nav__ul
+        //-         +header-link('Accueil', 'home')
+        //-         +header-link('Présentation', 'presentation')
+        //-         +header-link('Compétences', 'skills')
+        //-         +header-link('Créations', 'creations')
+        //-         +header-link('Contact', 'contact')
 
         .scroll-resp
             .site-cache

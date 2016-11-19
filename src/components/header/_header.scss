@@ -1,60 +1,18 @@
 @import "../../sass/variables";
 @import "../../sass/responsive/mixinResponsive";
 
-/**
-* HEADER
+a {
+  color: inherit;
+  text-decoration: none;
+}
+
+/** 
+* Button animated :
 */
 
-.header {
-  width: 100%;
-  height: $header_h;
-  position: fixed;
-  top: 0;
-  //position: fixed;
-  z-index: 999;
-  line-height: $header_h;
-  text-align: center;
-  background-color: $header_bgc;
-  transition-duration: 0.3s;
-  transition-property: background-color;
-  //box-shadow: 0px 4px 15px 0px rgba(0,0,0,.35);
-  ul {
-    padding: 0;
-    margin: 0;
-  }
-}
-
-.fake {
-  width: 100%;
-  height: $header_h;
-}
-
-.animated-scroll {
-  background-color: rgba(darken($header_bgc, 10%), 0.8);
-}
-
-.header__title, .header__nav__li {
-  font-size: 20px;
-  font-weight: 300;
-  color: $header_link_color;
-  text-transform: uppercase;
-  transition-duration: 0.3s;
-  transition-property: color;
-}
-
-// Animation sur les <li>
-.header__nav__li {
-  height: $header_h;
-  float: left;
+.back-animated-scale {
   position: relative;
-  //z-index: 1;
-  list-style: none;
-  transition: 0.3s color;
-  transition-timing-function: cubic-bezier(0.2, 1, 0.3, 1);
-  &:hover {
-    color: #fff;
-  }
-  &:before {
+  &::before {
     width: 100%;
     height: 100%;
     position: absolute;
@@ -68,198 +26,163 @@
     transition-timing-function: cubic-bezier(0.2, 1, 0.3, 1);
     transform: scaleX(0.5);
   }
-
   &:hover::before {
     opacity: 1;
     transform: scaleX(1);
   }
 }
-// Fin animation sur les <li>
 
-.header__title {
-  float: left;
+$topbar-li_height: 50px;
+
+/**
+* TOPBAR  
+*/
+
+/**
+* SMALL SCREEN < 768px
+*/
+
+.topbar-trigger {
+  width: 50px;
+  height: 50px;
+  position: fixed;
+  right: 15px;
+  bottom: 15px;
+  z-index: 999;
+  color: #fff;
+  background-color: darken($header_bgc, 15%);
+  border-radius: 100%;
+  outline: 0;
+  &::after {
+    display: block;
+    width: 18px;
+    position: absolute;
+    top: 8px;
+    left: 17px;
+    content: '';
+    box-shadow: 0 10px 0 1px, 0 16px 0 1px, 0 22px 0 1px;
+  }
+}
+
+.topbar-menu {
+  position: fixed;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  z-index: 999;
+  background-color: $header_bgc;
+  transform: translateY(100%); // hidden by default
+}
+
+.menu-opened {
+  .topbar-menu {
+    transform: translateY(0);
+  }
+  .topbar-trigger {
+    transform: translateY( - $topbar-li_height * 5); // height of .topbar-menu
+    // height of one li * number li (here 5)
+  }
+}
+
+.topbar-li {
+  border-top: 1px solid rgba(255,255,255,0.05);
+  border-bottom: 1px solid darken($header_bgc, 10%);
+}
+
+.topbar {
+  width: 100%;
+  height: $header_h;
+  line-height: $header_h;
+  text-align: center;
+  background-color: $header_bgc;
+  transition-duration: 0.3s;
+  transition-property: background-color;
+  //box-shadow: 0px 4px 15px 0px rgba(0,0,0,.35);
+  ul {
+    padding: 0;
+    margin: 0;
+  }
+  li a {
+    display: block; // to display all width and height of li
+    z-index: 999;
+    padding-right: 10px;
+    padding-left: 10px;
+  }
+}
+
+.topbar-title {
   padding-right: 20px;
   padding-left: 20px;
   font-size: 25px;
   color: $header_title_color;
-  text-decoration: none;
   border-right: 1px solid darken($header_bgc, 8);
 }
 
-.header__nav__link {
-  display: block; // pour que le lien prennent tout le li donc que le lien soit cliquable sur une grande zone
-  padding-right: 10px;
-  padding-left : 10px;
-  color: inherit;
-  text-decoration: none;
+.topbar-title, .topbar-li {
+  font-size: 20px;
+  font-weight: 300;
+  color: $header_link_color;
+  text-transform: uppercase;
+  transition-duration: 0.3s;
+  transition-property: color;
 }
 
-/**
-* HERO
-*/
 
+.topbar-li {
+  height: $topbar-li_height;
+  line-height: $topbar-li_height;
+  list-style: none;
+}
 
-/**
-* RESPONSIVE
-**/
+.topbar-left {
+  float: left;
+}
 
-$icon_width : 50px;
-$header__nav_width : 200px;
-$header__li_width: 60px;
+.topbar-title {
+  display: inline-block;
+}
 
-@media only screen and (max-width: $breakPoint) {
-  //body, html, .site-pusher {
-  //  height: 100%;
-  //  overflow: hidden;
-  //}
-  .fixed_bug {
-    padding-bottom: $header_h;
+/* RESPONSIVE  */
+
+@include emix-breakpoint(M) {
+  .topbar {
+    position: fixed;
+    top: 0;
+    z-index: 999;
   }
-  //.scroll-resp {
-  //  position: absolute;
-  //  top: 0;
-  //  right: 0;
-  //  bottom: 0;
-  //  left: 0;
-  //  overflow-x: hidden;
-  //  overflow-y: scroll;
-  //  -webkit-overflow-scrolling: touch;
-  //  background-color: #fff;
-  //}
-
-  /**
-  * Changements pour régler les problèmes lié à la position fixed du header
-  */
-  .header {
-    position: absolute;
-    transform: none;
-  }
-
-  /**
-  * END
-  */
-
-  // .header__nav, .site-pusher { transition: transform 0.5s; } // à voir pour mettre une accélération avc courbe bézier
-
-  /**
-  * HEADER
-  */
-
-  .header__icon {
-    width: $icon_width;
-    height: $header_h;
+  .topbar-menu {
+    height: 100%;
     float: left;
-    position: relative;
-    z-index: 100; // Pour passer au dessus de .shadow
-    color: #fff; // for box-shadow
-    cursor: pointer;
+    position: initial;
+    line-height: $header_h;
+    transform: none;
     background-color: transparent;
-    border-color: darken($header_bgc, 20%);
-    border-right: 1px solid;
-    outline: 0;
-    transition: 0.3s color, 0.3s background-color, 0.3s border-color;
-    &:after {
-      display: block;
-      width: 18px;
-      position: absolute;
-      top: 15px;
-      left: 15px;
-      content: '';
-      box-shadow: 0 10px 0 1px, 0 16px 0 1px, 0 22px 0 1px;
-    }
   }
-
-  .header__title {
+  .topbar-trigger {
+    display: none;
+  }
+  .topbar-title {
+    float: left;
+  }
+  .topbar-ul {
+    height: 100%;
+  }
+  .topbar-li {
+    display: inline-block;
+    height: 100%;
+    line-height: $header_h;
     border: none;
   }
-
-  .header__nav {
-    width: $header__nav_width;
-    height: 100%;
-    position: absolute;
-    top: $header_h;
-    bottom: 0;
-    left: 0;
-
-    .first {
-      border-top: 1px solid darken($header_bgc, 10%)!important;
-    }
+  .first {
+    border-top: none;
   }
+}
 
-  .header__nav__li {
-    height: $header__li_width;
-    float: none!important;
-    // opacity: 0;
-    line-height: $header__li_width;
-    border-top: 1px solid rgba(255,255,255,0.05);
-    border-bottom: 1px solid darken($header_bgc, 10%);
-    // transform: translateX(-100%);
-    transition: 0.3s transform, 0.3s color;
-    &:before {
-      height: 0; // pour anuler l'animation de départ
-      // Spécifique au site portfolio
-      content: '';
-    }
-    &:hover {
-      color: rgba(0, 0, 0, 0.5);
-    }
-  }
+.fake {
+  width: 100%;
+  height: $header_h;
+}
 
-  .header__nav__link {
-    display: block!important;
-    position: absolute;
-    right: 0;
-    left: 0;
-    color: inherit;
-    text-decoration: none;
-  }
-
-  //.site-pusher{ transform: translateX(0); }
-
-  .header__nav__ul {
-    height: 2000px;
-    padding: 0; // for fix the bug padding
-    margin: 0;
-    background-color: $header_bgc;
-    transition: transform 0.3s;
-    transition-timing-function: cubic-bezier(0.2, 1, 0.3, 1);
-    transform: translateX(-100%);
-  }
-
-  /** Quand on veut afficher le menu **/
-  .site-cache {
-    opacity: 0;
-    transition: 0.5s opacity;
-    transition-timing-function: cubic-bezier(0.2, 1, 0.3, 1);
-  }
-
-  body.cliqued {
-      overflow-y: hidden; // Lorsque le menu est ouvert, on interdit le scroll Y sur la page
-  }
-  .cliqued {
-    .header {
-      background-color: $header_bgc;
-    }
-    .header__nav__ul {
-      transform: translateX(0);
-    }
-    .header__nav__li {
-      opacity: 1;
-      transform: translateX(0);
-    }
-    .shadow {
-      display: none;
-    }
-    .site-cache {
-      height: 5000px; // Pour "forcer"
-      position: absolute;
-      top: $header_h;
-      right: 0;
-      bottom: 0;
-      left: 0;
-      z-index: 100;
-      background-color: rgba(0,0,0,0.5);
-      opacity: 1;
-    }
-  }
+.animated-scroll {
+  background-color: rgba(darken($header_bgc, 10%), 0.8);
 }
