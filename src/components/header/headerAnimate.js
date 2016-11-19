@@ -73,6 +73,7 @@ export class HeaderAnimate {
 
         links.forEach(link => {
             link.addEventListener('click', function () {
+                document.body.classList.remove('menu-opened')
                 navigate.go(this.hash)
             })
         })
