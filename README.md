@@ -3,10 +3,10 @@
 # Utilisation de webpack
 Vous pouvez retrouver ma configuration entière sur mon [dépôt github dédié](https://github.com/EmixMaxime/Front-end-boilerplate-with-webpack)
 <br />
-Pourquoi avoir choisi webpack ?
+Pourquoi avoir choisi webpack ?i
 J'aime la philosophie de cette technologie, grâce à elle je peux bundler mes fichiers.
 De plus, le HMR est un gain de temps incroyable. <br />
-Par contre, cette technologie donne du fil à retordre pour la configurer. Ma configuration n'est pas encore très optimiser. (surtout la partie compilation de Pug!). 
+Par contre, cette technologie donne du fil à retordre pour la configurer. Ma configuration n'est pas encore très optimisée. (surtout la partie compilation de Pug!). 
 
 # Todo list
 Important :
