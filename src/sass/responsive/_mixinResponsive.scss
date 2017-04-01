@@ -6,18 +6,19 @@ $medium: "992px";
 $large: "1200px";
 
 $susy: (
-        container: 960px,
-        columns: 12,
-        gutters: 15px/100px,
-        gutter-position: inside-static,
-        column-width: 100px,
+  container: 960px,
+  columns: 12,
+  gutters: 15px/100px,
+  gutter-position: inside-static,
+  column-width: 100px,
 );
+
 $desktop: (
-        container: 960px,
-        columns: 12,
-        gutters: 30px/100px,
-        gutter-position: inside-static,
-        column-width: 100px,
+  container: 960px,
+  columns: 12,
+  gutters: 30px/100px,
+  gutter-position: inside-static,
+  column-width: 100px,
 );
 
 @mixin emix-breakpoint ($dimension) {
