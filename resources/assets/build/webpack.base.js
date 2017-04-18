@@ -29,43 +29,16 @@ let webpack_base = {
   },
   module: {
     rules: [
-      /** Pour tinymce */
-      {
-        test: require.resolve('tinymce/tinymce'),
-        loaders: [
-          'imports-loader?this=>window',
-          'exports-loader?window.tinymce'
-        ]
-      },
-      {
-        test: /tinymce[\\/]skins[\\/]/,
-        loader: 'file-loader?name=[path][name].[ext]&context=node_modules/tinymce'
-      },
-      {
-        test: /tinymce[\\/](themes|plugins)[\\/]/,
-        loader: 'imports-loader?this=>window'
-      },
-      {
-        // Fonts
-      test: /\.(svg|woff|woff2|ttf|eot|otf)(\?v=[0-9]\.[0-9]\.[0-9])?$/,
-        loader: 'url-loader?limit=10000&name=/fonts/[name].[hash].[ext]?'
-      },
-      /** fin */
-      {
-        test: /\.js$/,
-        loader: 'eslint-loader',
-        exclude: [/node_modules/, /libs/, /build/],
-        enforce: 'pre'
-      },
+      // {
+      //   test: /\.js$/,
+      //   loader: 'eslint-loader',
+      //   exclude: [/node_modules/, /libs/, /build/],
+      //   enforce: 'pre'
+      // },
       {
         test: /\.js$/,
         exclude: [/node_modules/, /libs/],
         loader: 'babel-loader'
-      },
-      {
-        test: /\.vue$/,
-        exclude: [/node_modules/],
-        loader: 'vue-loader'
       },
       {
         test: /\.scss$/,
