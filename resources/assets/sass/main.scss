@@ -1,4 +1,4 @@
-@import url('https://fonts.googleapis.com/css?family=Open+Sans');
+@import url('https://fonts.googleapis.com/css?family=Open+Sans:400,700');
 
 @import "./_settings.scss";
 @import "./_app.scss";
@@ -17,6 +17,7 @@ body {
   background-color: #f1f4f5;
   margin: 0;
   padding: 0;
+  color: darken(#444, 8%);
 }
 
 h1, h2, h3, h4, h5 {
