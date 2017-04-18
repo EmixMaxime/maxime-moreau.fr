@@ -8,3 +8,15 @@
     flex-wrap: nowrap;
   }
 }
+
+@include emix-breakpoint (M) {
+  .presentation-wrapper {
+    background-image: url('../img/bg7.jpg');
+    background-size: cover;
+    height: 100vh;
+    min-height: 640px;
+    max-height: 900px;
+    display: flex;
+    flex-wrap: wrap;
+  }
+}

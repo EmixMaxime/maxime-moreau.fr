@@ -1,15 +1,5 @@
 @import "./_presentation-reset.scss";
 
-.presentation-wrapper {
-  background-image: url('../img/bg7.jpg');
-  background-size: cover;
-  height: 100vh;
-  min-height: 640px;
-  max-height: 900px;
-  display: flex;
-  flex-wrap: wrap;
-}
-
 .presentation-box {
   display: flex;
   align-self: center;
@@ -21,6 +11,12 @@
 
 .presentation-box div:last-child {
   margin-left: 20px;
+}
+
+.presentation-picture {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
 }
 
 .presentation-picture-item {
