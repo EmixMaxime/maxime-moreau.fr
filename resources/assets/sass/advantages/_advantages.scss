@@ -1,0 +1,122 @@
+@import "./_advantages-reset.scss";
+@import "./_advantages-animations.scss";
+
+$line-color: rgba(0,0,0,0.2);
+$label-color: #777777;
+
+.chart {
+  display: flex;
+  justify-content: center;
+  // background-color: mistyrose;
+  margin: 50px;
+  // pas de paddingggg!!!
+  position: relative;
+
+  // Lignes horizontales
+  &::before, &::after {
+    content: '';
+    position: absolute;
+    height: 33.33%; // Il faut 3 "zones" 100/3
+    // Une pour le before, une after et une entre 2
+    width: 100%;
+    border-top: 1px;
+    border-bottom: 1px;
+    border-left: 0;
+    border-right: 0;
+    border-style: dashed;
+    border-color: $line-color;
+  }
+
+  &::after {
+    bottom: 0;
+  }
+}
+
+.chart-wrapper {
+  display: flex;
+}
+
+.chart-legend {
+  color: $label-color;
+  ul {
+    height: 100%;
+  }
+
+  li {
+    height: 33.3333%;
+    padding-top: 10px;
+  }
+}
+
+.chart-items {
+  display: flex;
+  flex-basis: 60%;
+}
+
+// Placement des éléments du graph
+.chart-legend--left {
+  order: 1;
+}
+
+.chart-legend--right {
+  order: 3;
+}
+
+.chart-items {
+  order: 2;
+}
+
+.chart-item {
+  position: relative;
+  height: 300px;
+  flex-basis: 100%;
+  margin: 0 20px;
+  display: flex;
+  align-items: flex-end;
+  justify-content: center;
+  
+  // Lignes verticales au milieux des batons
+  &::before {
+    content: '';
+    position: absolute;
+    z-index: 1; // Pour que la barre passe en dessous
+    height: 100%;
+    width: 1px;
+    border: 1px dashed $line-color;
+  }
+}
+
+.chart-item-baton {
+  height: 80%;
+  z-index: 2; // Pour que la barre passe en dessous
+
+  background-color: $blue;
+  color: #fff;
+  display: flex;
+  flex-basis: 100%;
+  align-items: center;
+  justify-content: center;
+}
+
+.chart-item-text {
+  transform: rotate(-90deg);
+}
+
+.chart-legend--left {
+  display: flex;
+}
+
+// La barre du "moi"
+.chart-legend-title {
+  display: flex;
+  border: 1px solid $label-color;
+  border-right: none;
+  justify-content: center;
+  align-items: center;
+  & span {
+    text-transform: uppercase;
+    font-size: 1.2em;
+    display: inline-block;
+    transform: rotate(-90deg);
+  }
+}

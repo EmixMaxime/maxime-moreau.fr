@@ -1,0 +1,26 @@
+.chart-item-baton {
+  transform: scaleY(0);
+  transition: transform 0.3s;
+  transition-timing-function: cubic-bezier(0.0, 0.0, 0.2, 1);
+  transform-origin: bottom;
+}
+
+.batons--visible {
+  .chart-item-baton {
+    transform: scaleY(1);
+  }
+}
+
+.chart-legend--right {
+  transform: translateY(50px);
+  opacity: 0;
+  transition: transform 0.4s, opacity 0.4s;
+  transition-timing-function: cubic-bezier(0.0, 0.0, 0.2, 1);
+}
+
+.observable--visible {
+  .chart-legend--right {
+    transform: translateY(0);
+    opacity: 1;
+  }
+}
