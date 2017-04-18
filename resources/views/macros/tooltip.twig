@@ -1,0 +1,14 @@
+{#mixin tooltip(content)
+    span.tooltip
+        span.tooltip-item
+            block
+        span.tooltip-content(data-type=attributes.type)=content#}
+
+{% macro tooltip (content, html) %}
+  <span class="tooltip">
+    <span class="tooltip-item">
+      {{ html | raw }}
+    </span>
+    <span class="tooltip-content">{{ content }}</span>
+  </span>
+{% endmacro %}
