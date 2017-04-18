@@ -1,0 +1,44 @@
+.topbar {
+  position: fixed;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  background-color: #14171c;
+}
+
+.topbar-navigation, .topbar-menu {
+  justify-content: center;
+  overflow-x: scroll;
+}
+
+@include emix-breakpoint (600px) {
+
+  .topbar {
+    justify-content: center;
+  }
+
+  .topbar-navigation, .topbar-menu {
+    flex-direction: row;
+    overflow-x: hidden;
+  }
+
+  .topbar-navigation {
+    display: flex;
+    max-width: 75rem;
+    padding: 0 20px;
+  }
+  
+  .topbar-navigation, .topbar-menu {
+    justify-content: flex-end;
+  }
+
+  .topbar-link {
+    font-size: 1.1rem;
+    font-weight: bold;
+  }
+
+  .topbar {
+    position: initial;
+    background-color: transparent;
+  }
+}

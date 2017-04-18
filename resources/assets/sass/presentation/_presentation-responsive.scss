@@ -1,0 +1,10 @@
+.presentation-box {
+  flex-wrap: wrap;
+  justify-content: center;
+}
+
+@include emix-breakpoint (600px) {
+  .presentation-box {
+    flex-wrap: nowrap;
+  }
+}

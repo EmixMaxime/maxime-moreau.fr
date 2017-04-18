@@ -1,0 +1,22 @@
+/**
+ * Les règles génériques
+ **/
+
+.l-container {
+  max-width: 65rem;
+  width: 100%;
+  margin: 0 auto;
+  padding: 0 20px;
+}
+
+.l-container--small {
+  max-width: 58rem;
+  width: 100%;
+}
+
+.l-section {
+  padding: 20px;
+}
+.l-box {
+  background-color: #fff;
+}

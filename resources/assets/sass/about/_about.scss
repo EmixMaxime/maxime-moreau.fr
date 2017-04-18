@@ -1,0 +1,19 @@
+.about-wrapper {
+  display: flex;
+}
+
+.about-personality {
+  flex-basis: 30%;
+  li {
+    line-height: 1.8em;
+  }
+}
+
+.about-story {
+  flex-basis: 70%;
+}
+
+.about-story-p {
+  text-align: justify;
+  line-height: 1.5em;
+}

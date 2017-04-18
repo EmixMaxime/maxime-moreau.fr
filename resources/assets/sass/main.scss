@@ -1,0 +1,32 @@
+@import url('https://fonts.googleapis.com/css?family=Open+Sans');
+
+@import "./_settings.scss";
+@import "./_app.scss";
+@import "./topbar/topbar.scss";
+@import "./presentation/presentation.scss";
+@import "./layout/_layout.scss";
+@import "./about/_about.scss";
+
+*, *::after, *::before {
+  box-sizing: border-box;
+}
+
+body {
+  font-family: 'Open Sans', sans-serif;
+  // background-color: #F9F9FC;
+  background-color: #f1f4f5;
+  margin: 0;
+  padding: 0;
+}
+
+h1, h2, h3, h4, h5 {
+  margin: .4em 0;
+  font-weight: 400;
+  line-height: 1;
+  color: #384455;
+  // color: #323D62;
+}
+
+a {
+  color: inherit;
+}
