@@ -1,11 +1,12 @@
 @import "./_about-reset.scss";
+@import "./_about-responsive.scss";
 
 .about-wrapper {
   display: flex;
+  justify-content: center;
 }
 
 .about-personality {
-  flex-basis: 30%;
   li {
     line-height: 1.8em;
   }
@@ -14,10 +15,6 @@
 .about-personality-item > span {
   color: $accent_color;
   font-weight: 700;
-}
-
-.about-story {
-  flex-basis: 70%;
 }
 
 .about-story-p {

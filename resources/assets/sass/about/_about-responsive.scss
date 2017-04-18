@@ -1,0 +1,16 @@
+.about-wrapper {
+  flex-wrap: wrap;
+}
+
+.about-box {
+  flex-basis: 100%;
+}
+
+@include emix-breakpoint (M) {
+  .about-personality {
+    flex-basis: 29%;
+  }
+  .about-story {
+    flex-basis: 69%;
+  }
+}
