@@ -1,0 +1,96 @@
+{% import 'macros/skillbox.twig' as helpers %}
+
+<div class="l-container skills-section">
+  <h1 class="title">Mes compétences</h1>
+  
+  <h2 class="title">Les langages principaux</h2>
+  <div class="skills-language">
+
+    {{ helpers.skillBox(
+      'HTML/CSS', 'css', 'ninety',
+        "<p>
+          Utilisation du préprocesseur SASS afin de proposer un code maintenable.<br />
+        </p>"
+      )
+    }}
+
+    {{ helpers.skillBox(
+      'Javascript', 'js', 'ninety',
+      "<p>
+        Code exécuté par le navigateur ou nodeJS écrit en ES6/7. Maitrîse de Gulp et webpack.
+      </p>"
+      )
+    }}
+
+    {{ helpers.skillBox(
+      'PHP', 'php', 'ninety',
+      "<p>
+        Utilisation des frameworks Laravel ou Slim afin d'apporter une structure maintenable.
+      </p>"
+      )
+    }}
+
+    {{ helpers.skillBox(
+      'Java', 'java', 'sixty',
+      "<p>
+        Découverte de l'écosystème JAVA (J2EE et Android).
+      </p>"
+      )
+    }}
+
+    {{ helpers.skillBox(
+        'C', 'c', 'sixty',
+        '<p>
+          Les pointeurs et les "segmentation fault" n\'ont plus de secrets pour moi. Découverte de Rust également.
+        </p>'
+      )
+    }}
+
+  </div>
+
+  <h2 class="title">Administration système</h2>
+  <div class="skills-language">
+
+    {{ helpers.skillBox(
+      'PostgreSQL', 'pgsql', 'ninety',
+        "<p>
+          Parce qu'il n'y a pas que MySQL dans la vie !
+          Raprochant le plus Oracle tout en étant open-source.
+        </p>"
+      )
+    }}
+
+    {{ helpers.skillBox(
+      'MongoDB', 'mongodb', 'ninety',
+        "<p>
+          Savoir administrer une base de données NoSQL m'assure une grande polyvalence dû à l'émergence du BigData.
+        </p>"
+      )
+    }}
+
+    {{ helpers.skillBox(
+      'Redis', 'redis', 'ninety',
+        "<p>
+          Cette base de données NoSQL est souvent utilisé pour booster les performances, elle est incontournable.
+        </p>"
+      )
+    }}
+
+    {{ helpers.skillBox(
+      'GNU/Linux', 'linux', 'ninety',
+        "<p>
+          Lorem ipsum dolor sit amet, consectetur adipisicing elit. Pariatur incidunt vel molestias, ad natus mollitia, impedit earum itaque totam beatae a reiciendis sequi nisi aspernatur dolor eveniet iure expedita quasi?
+        </p>"
+      )
+    }}
+
+    {{ helpers.skillBox(
+      'Ngnix', 'ngnix', 'ninety',
+        "<p>
+          Lorem ipsum dolor sit amet, consectetur adipisicing elit. Necessitatibus quam tempore deserunt porro eveniet nostrum assumenda id quas ab quia est nihil blanditiis eius, provident voluptatum similique, aperiam officiis! Reprehenderit!
+        </p>"
+      )
+    }}
+  </div>
+
+</div>

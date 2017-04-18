@@ -1,0 +1,9 @@
+.skills-language {
+  flex-direction: column;
+}
+
+@include emix-breakpoint (370px) {
+  .skills-language {
+    flex-direction: row;
+  }
+}
