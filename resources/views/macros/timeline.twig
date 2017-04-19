@@ -1,0 +1,17 @@
+{% macro timeline (title, content, date) %}
+  <div class="timeline-box">
+
+    <div class="timeline-icon"></div>
+
+    <div class="timeline-box-body">
+      <p class="timeline-box-title">{{ title }}</p>
+
+      <p class="timeline-box-description">
+        {{ content }}
+      </p>
+    </div>
+
+    <span class="timeline-box-date">{{ date }}</span>
+
+  </div>
+{% endmacro %}

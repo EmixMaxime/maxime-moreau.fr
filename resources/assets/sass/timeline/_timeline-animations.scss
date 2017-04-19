@@ -1,0 +1,41 @@
+$translateX: 50px;
+
+.timeline-box-body {
+  opacity: 0;
+  transform: translateX($translateX);
+  transition: transform 0.4s, opacity 0.4s;
+}
+
+.timeline-box:nth-child(even) .timeline-box-body {
+  transform: translateX(-$translateX);
+}
+
+.timeline-icon {
+  animation-name: emix;
+  animation-duration: 0.4s;
+}
+
+.timeline-box.show {
+
+  .timeline-box-body {
+    opacity: 1;
+    transform: translateX(0);
+  }
+
+}
+
+@keyframes emix {
+  from {
+    opacity: 0;
+    transform: scale(0);
+  }
+  50% {
+    opacity: 0.5;
+    transform: scale(1.5);
+  }
+
+  to {
+    opacity: 1;
+    transform: scale(1);
+  }
+}
