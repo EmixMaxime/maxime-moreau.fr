@@ -51,7 +51,6 @@ let webpack_base = {
       },
       {
         test: /\.css$/,
-        exclude: /tinymce[\\/]skins[\\/]/,
         loader: ['css-loader', 'postcss-loader']
       }, {
         test: /\.(png|jpe?g|gif|svg|woff2?|eot|ttf|otf|wav)(\?.*)?$/,
