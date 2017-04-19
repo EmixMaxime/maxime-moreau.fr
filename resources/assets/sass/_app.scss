@@ -10,7 +10,26 @@
 .icon-twitter { fill: #55acee; }
 .icon-facebook { fill: #3b5998 }
 .icon-linkedin { fill: red }
+.icon-redis { fill: #D82C20 }
 
 .title {
   text-align: center;
+}
+
+.sub-title {
+  font-size: 1.2em;
+  text-align: center;
+}
+
+.blue-bg {
+  background-color: $background_color-blue;
+}
+
+.accent-color {
+  color: $accent-color;
+}
+
+.close {
+  border: none;
+  background-color: transparent;
 }

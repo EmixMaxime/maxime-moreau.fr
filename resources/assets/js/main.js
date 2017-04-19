@@ -1,5 +1,6 @@
 // Petit polyfill
 import './advantages';
+import './creations';
 
 if (NodeList.prototype.forEach === undefined) {
   NodeList.prototype.forEach = Array.prototype.forEach;
@@ -10,7 +11,6 @@ const batons = chart.querySelectorAll('[data-percentage]');
 
 batons.forEach(elm => {
   const h = (elm.dataset.percentage / 100) * chart.clientHeight;
-  console.log(h);
   elm.style.height = `${h}px`;
 });
 

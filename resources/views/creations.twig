@@ -1,0 +1,98 @@
+            {#section.grid(data-target-ref="one")
+                div(data-path-hover="m 180,34.57627 -180,0 L 0,0 180,0 z")
+                    figure
+                        img(src=require("../../img/sono_mini.png"))
+                        svg()
+                            path()
+                        figcaption
+                            h2 Sono Light Music
+                            p Design simple, efficace
+                            button View#}
+
+{% macro creation (img, imgAlt, ref, title, description) %}
+  <div class="creations-box l-wrapper">
+    <div class="creation-box-wrapper" data-path-hover="m 180,0 -180,0 L 0,0 180,0 z" data-refwork={{ ref }}>
+      <figure class="creation-box-figure">
+
+        <img class="creation-box-img" src="{{ img }}" alt={{ imgAlt }} />
+
+        <svg viewBox="0 0 180 320" preserveAspectRatio="none">
+          <path d="M 180,160 0,218 0,0 180,0 z" />
+        </svg>
+
+        <figcaption class="creation-box-figcaption">
+          <p class="creation-box-title">{{ title }}</p>
+          <p class="creation-box-desc">{{ description }}</p>
+          <button class="creation-box-btn">En savoir plus</button>
+        </figcaption>
+
+      </figure>
+    </div>  
+  </div>
+{% endmacro %}
+
+{% import _self as creation %}
+
+<div class="l-container">
+  <h1 class="title">Quelques unes de mes créations</h1>
+
+  <div class="creation-wrapper" id="creation-wrapper">
+
+    {{ creation.creation('http://maxime-moreau.fr/sono_mini-4adc9a5.png', 'lol', 1, '24h des IUT Informatique', 'Site static généré avec webpack.') }}
+
+    {{ creation.creation('http://maxime-moreau.fr/sono_mini-4adc9a5.png', 'lol', 2, 'Emixteaches.me', "Futur site d'e-learning. Architecture microservices avec NodeJS et PHP.") }}
+
+    {{ creation.creation('http://maxime-moreau.fr/sono_mini-4adc9a5.png', 'lol', 3, 'Sonolightmusic', 'Ma première expérience, un site static.') }}
+
+  </div>
+</div>
+
+<div class="blue-bg creation-container">
+  <div class="l-container">
+
+  
+  <div class="creation-info-wrapper l-wrapper" id="creation-info-wrapper">
+
+  <button class="close" id="creation-info-close">
+    <svg class="icon icon-close">
+      <use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#icon-close"></use>
+      </svg>
+  </button>
+
+    <div class="creation-info-box" data-work="1">
+
+      <div class="creation-info-slide">
+        <img src="http://placehold.it/450x450" />
+        <img src="http://placehold.it/450x450" />
+        <img src="http://placehold.it/450x450" />
+        <img src="http://placehold.it/450x450" />
+      </div>
+
+      <div class="creation-info-body">
+        <h3>24h des IUT Informatique</h3>
+        <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Deserunt soluta ratione neque nisi. Esse eum ullam corporis odit ipsa eius voluptates repellendus obcaecati, hic incidunt tempora. Minus cumque repudiandae, eos!</p>
+      </div>
+
+    </div>
+
+    <div class="creation-info-box" data-work="2">
+
+      <div class="creation-info-slide">
+        <img src="http://placehold.it/450x450" />
+        <img src="http://placehold.it/450x450" />
+        <img src="http://placehold.it/450x450" />
+        <img src="http://placehold.it/450x450" />
+      </div>
+
+      <div class="creation-info-body">
+        <h3>Emixteaches.me</h3>
+        <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Deserunt soluta ratione neque nisi. Esse eum ullam corporis odit ipsa eius voluptates repellendus obcaecati, hic incidunt tempora. Minus cumque repudiandae, eos!</p>
+      </div>
+
+    </div>
+
+
+  </div>
+</div>
+
+</div>

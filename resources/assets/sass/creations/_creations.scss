@@ -1,0 +1,130 @@
+@import './_creations-animations.scss';
+@import './_creations-responsive.scss';
+
+// RESET
+.creation-box-title {
+  margin: 0;
+}
+
+.creation-box-figure {
+  margin: 0;
+}
+
+// END
+
+.creation-wrapper {
+  color: #fff;
+}
+
+.creation-box-figure {
+  height: 510px;
+}
+
+.creation-box-figure {
+  // width: 80%;
+  position: relative;
+  overflow: hidden;
+  background: #fff;
+}
+
+.creations-box img {
+  transform: translateY(10%); // ancien 50%
+}
+
+.creation-box-img {
+  display: flex;
+  width: 100%;
+  position: relative;
+}
+
+.creation-box-figcaption {
+  width: 100%;
+  height: 100%;
+  position: absolute;
+  top: 0;
+  z-index: 11;
+  padding: 10px;
+  text-align: center;
+}
+
+.creation-box-figure svg {
+  width: 100%;
+  height: 100%;
+  position: absolute;
+  top: -1px; /* fixes rendering issue in FF */
+  z-index: 10;
+}
+
+.creation-box-figure svg path {
+  fill: $blue;
+}
+
+.creation-box-title {
+  font-size: 1.5rem;
+  font-weight: 600;
+  color: #fff;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+}
+
+.creation-box-figcaption,
+.creation-box-title,
+.creation-box-desc,
+.creation-box-btn {
+  backface-visibility: hidden;
+}
+
+.creation-box-btn {
+  width: 100%;
+  height: 40px;
+  position: absolute;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  font-weight: bold;
+  color: #fff;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  background: $blue;
+  border: none;
+}
+
+// Details
+.creation-info-box {
+  display: flex;
+}
+
+.creation-info-slide {
+  position: relative;
+  min-width: 450px; // images photos
+  height: 450px;
+}
+
+.creation-info-slide img {
+  position: absolute;
+  display: inline-block;
+}
+
+.creation-info-body {
+  padding-left: 20px;
+}
+
+.creation-container {
+  position: relative;
+}
+
+
+
+.creation-info-wrapper .close {
+  cursor: pointer;
+  z-index: 999;
+  position: absolute;
+  top: 20px;
+  right: 20px;
+  outline-style: none;
+}
+
+.creation-info-box {
+  position: absolute;
+  overflow: hidden;
+}
