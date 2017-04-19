@@ -1,5 +1,5 @@
 body {
-  margin-bottom: 150px!important;
+  margin-bottom: 150px;
 }
 
 .topbar {
@@ -17,7 +17,9 @@ body {
 }
 
 @include emix-breakpoint (600px) {
-
+  body {
+    margin-bottom: 0;
+  }
   .topbar {
     justify-content: center;
   }
