@@ -9,7 +9,7 @@
   }
 }
 
-@include emix-breakpoint (M) {
+@include emix-breakpoint (600px) {
   .presentation-wrapper {
     background-image: url('../img/bg7.jpg');
     background-size: cover;
