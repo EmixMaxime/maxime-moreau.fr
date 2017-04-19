@@ -25,12 +25,46 @@
   display: flex;
   flex-wrap: wrap;
   justify-content: center;
+  text-align: center;
 }
 
 .l-footer-box {
   padding-left: 10px;
   padding-right: 10px;
-  flex-basis: 33.333%;
+  flex-basis: 100%;
+}
+
+@include emix-breakpoint (620px) {
+  .l-footer-box {
+    flex-basis: 33.333%;
+  }
+}
+
+.l-footer-me {
+  a {
+    color: $accent_color;
+    font-weight: 700;
+  }
+}
+
+.l-footer-social {
+  ul {
+    padding: 0; margin: 0;
+  }
+  li {
+    list-style: none;
+    margin-top: 15px;
+  }
+}
+
+.l-footer-dev {
+  a {
+    color: $accent_color;
+    font-weight: 700;
+  }
+  p {
+    text-align: justify;
+  }
 }
 
 .l-footer-copyright {
@@ -39,5 +73,10 @@
   text-align: center;
   p {
     margin: 0;
+  }
+
+  a {
+    color: $accent_color;
+    font-weight: 700;
   }
 }
