@@ -60,6 +60,7 @@
 }
 
 .skill-box-description {
+  text-align: center;
 }
 
 @each $skill, $property in $skills {
