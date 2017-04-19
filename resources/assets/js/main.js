@@ -1,6 +1,7 @@
 // Petit polyfill
 import './advantages';
 import './creations';
+import './timeline';
 
 if (NodeList.prototype.forEach === undefined) {
   NodeList.prototype.forEach = Array.prototype.forEach;
@@ -17,13 +18,13 @@ batons.forEach(elm => {
 // Observable
 
 const opts = {
-  threshold: [0.7],
+  threshold: [0.5],
 };
 
 const observer = new IntersectionObserver(entries => {
   entries.forEach(entry => {
 
-    if (entry.intersectionRatio > 0.7) {
+    if (entry.intersectionRatio > 0.5) {
       entry.target.classList.add('observable--visible');
       observer.unobserve(entry.target);
       console.log('section visible');
