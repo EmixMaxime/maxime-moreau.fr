@@ -23,7 +23,7 @@
 //     ]
 // }
 {
-  "presets": ["es2016"],
+  "presets": ["es2015"],
   "plugins": [
     "syntax-async-functions"
   ]
