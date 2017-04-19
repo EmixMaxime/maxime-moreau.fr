@@ -13,15 +13,11 @@
 
 .skills-language {
   display: flex;
-  flex-wrap: wrap;
-  justify-content: space-between;
 }
 
 .skills-box {
   display: flex;
   flex-direction: column;
-
-  flex-basis: 19%;
   align-items: center;
 }
 

@@ -2,8 +2,28 @@
   flex-direction: column;
 }
 
-@include emix-breakpoint (370px) {
+.skills-box-logo {
+  width: 100%;
+}
+
+@include emix-breakpoint (550px) {
+
+  .skills-box {
+    padding-left: 15px;
+  }
   .skills-language {
     flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: center;
+  }
+
+  .skills-box {
+    flex-basis: 33.3333%;
+  }
+}
+
+@include emix-breakpoint (L) {
+  .skills-box {
+    flex-basis: 20%;
   }
 }
