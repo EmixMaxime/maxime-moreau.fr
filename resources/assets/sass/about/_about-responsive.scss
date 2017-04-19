@@ -1,12 +1,22 @@
 .about-wrapper {
-  flex-wrap: wrap;
+  align-items: center;
+  flex-direction: column;
 }
 
 .about-box {
   flex-basis: 100%;
 }
 
+@include emix-breakpoint (S) {
+  .about-wrapper {
+    flex-direction: row;
+  }
+}
+
 @include emix-breakpoint (M) {
+  .about-wrapper {
+    justify-content: space-between;
+  }
   .about-personality {
     flex-basis: 29%;
   }

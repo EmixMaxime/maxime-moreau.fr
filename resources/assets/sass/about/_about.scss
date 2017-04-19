@@ -1,5 +1,4 @@
 @import "./_about-reset.scss";
-@import "./_about-responsive.scss";
 
 .about-wrapper {
   display: flex;
@@ -21,3 +20,5 @@
   text-align: justify;
   line-height: 1.5em;
 }
+
+@import "./_about-responsive.scss";
