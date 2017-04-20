@@ -15,32 +15,20 @@
     height: 70px;
     position: fixed;
     top: 0;
+
+    .topbar-link.active {
+      color: #fff;
+    }
+
+    .topbar-link.active::before {
+      border-color: #fff;
+    }
   }
 
   .topbar-link {
     position: relative;
     transition: .3s color;
-  }
-
-  .topbar-link::before {
-    content: '';
-    position: absolute;
-    bottom: 0;
-    left: 0;
-    right: 0;
-    border-bottom: 1px solid;
-    border-color: #fff;
-    transform: scaleX(0);
-    transition: transform .2s ease-in-out;
-  }
-
-  .topbar-link.active::before {
-    border-color: $blue;
-    transform: scaleX(1);
-  }
-
-  .topbar-link.active {
-    color: lighten($blue, 10%);
+    font-weight: 700;
   }
 
   .topbar-link:hover::before {
