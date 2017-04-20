@@ -28,56 +28,93 @@ targets.forEach(elm => {
 
 // Details
 
-const worksWrapper = document.querySelector('#creation-wrapper');
-const worksDetailsWrapper = document.querySelector('#creation-info-wrapper');
+// const worksWrapper = document.querySelector('#creation-wrapper');
+// const worksDetailsWrapper = document.querySelector('#creation-info-wrapper');
 
-const works = Array.from(worksWrapper.querySelectorAll('[data-refwork]'));
-const worksDetails = Array.from(worksDetailsWrapper.querySelectorAll('[data-work]'));
+// const works = Array.from(worksWrapper.querySelectorAll('[data-refwork]'));
+// const worksDetails = Array.from(worksDetailsWrapper.querySelectorAll('[data-work]'));
 
-// work : element, target: element
-const worksTree = works.reduce((acc, work) => {
+// // work : element, target: element
+// const worksTree = works.reduce((acc, work) => {
 
-  const refwork = work.getAttribute('data-refwork');
-  const target = worksDetails.filter(wd => wd.getAttribute('data-work') === refwork)[0];
+//   const refwork = work.getAttribute('data-refwork');
+//   const target = worksDetails.filter(wd => wd.getAttribute('data-work') === refwork)[0];
 
-  acc.set(refwork, target );
-  return acc;
+//   acc.set(refwork, target );
+//   return acc;
 
-}, new Map());
+// }, new Map());
 
-console.log(worksTree);
+// let showedElement = null;
 
-let showedElement = null;
+// const close = document.querySelector('#creation-info-close');
 
-const close = document.querySelector('#creation-info-close');
-console.log({close})
-close.addEventListener('click', () => {
-  showedElement.classList.remove('show');
-  worksDetailsWrapper.classList.remove('show');
-  showedElement = null;
-});
+// close.addEventListener('click', () => {
+//   showedElement.classList.remove('show');
+//   worksDetailsWrapper.classList.remove('show');
+//   showedElement = null;
+// });
 
-works.forEach(work => {
+// function insertAfter (newNode, referenceNode) {
+//   referenceNode.parentNode.insertBefore(newNode, referenceNode.nextSibling);
+// }
 
-  work.addEventListener('click', function (e) {
-    e.preventDefault();
-    const refwork = this.getAttribute('data-refwork');
-    const target = worksTree.get(refwork);
+// const worksNumber = 3;
+
+// works.forEach(work => {
+
+//   work.addEventListener('click', function (e) {
+//     e.preventDefault();
+
+//     const refwork = this.getAttribute('data-refwork');
+//     const target = worksTree.get(refwork);
+
+//     // Travail abandonné
+//     // const windowWidth = window.innerWidth;
+
+//     // let lasts = [];
+//     // let worksInLine = 0;
+
+//     // if (windowWidth < '768') {
+//     //   // J'ajoute juste après cette case
+//     //   worksInLine = 1;
+//     // } else if (windowWidth < '992') {
+//     //   // 2 sur une ligne
+//     //   worksInLine = 2;
+
+//     //   // 2,4,6...
+//     //   let acc = worksInLine;
+//     //   for (let i = 0; i < worksNumber; i++) {
+//     //     lasts.push(acc);
+//     //     acc = acc + worksInLine;
+//     //   }
+
+//     // } else {
+//     //   // 3 sur une ligne
+//     //   worksInLine = 3;
+
+//     //   let acc = worksInLine;
+//     //   for (let i = 0; i < worksNumber; i++) {
+//     //     lasts.push(acc);
+//     //     acc = acc + worksInLine;
+//     //   }
+//     // }
+
     
-    if (showedElement === null) {
-      worksDetailsWrapper.classList.add('show');
-    }
+//     if (showedElement === null) {
+//       worksDetailsWrapper.classList.add('show');
+//     }
 
-    if (showedElement !== target) {
-      if (showedElement) {
-        showedElement.classList.remove('show');
-      }
+//     if (showedElement !== target) {
+//       if (showedElement) {
+//         showedElement.classList.remove('show');
+//       }
 
-      showedElement = target;
-      target.classList.add('show');
-    }
+//       showedElement = target;
+//       target.classList.add('show');
+//     }
 
-  });
+//   });
 
-});
+// });
 
