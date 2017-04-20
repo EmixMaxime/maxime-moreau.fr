@@ -2,6 +2,7 @@
 import './advantages';
 import './creations';
 import './timeline';
+import './topbar';
 
 if (NodeList.prototype.forEach === undefined) {
   NodeList.prototype.forEach = Array.prototype.forEach;

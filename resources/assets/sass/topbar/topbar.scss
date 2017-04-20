@@ -1,7 +1,6 @@
 @import "../helpers/_breakpoints.scss";
 @import "./_topbar-responsive.scss";
 @import "./_topbar-reset.scss";
-@import "./_topbar-animation.scss";
 
 .topbar {
   color: #fff;
@@ -22,6 +21,7 @@
 
 .topbar-navigation, .topbar-menu {
   display: flex;
+  align-items: center;
 }
 
 .topbar-link {
@@ -30,3 +30,5 @@
   align-items: center;
   padding: 20px 15px;
 }
+
+@import "./_topbar-animation.scss";

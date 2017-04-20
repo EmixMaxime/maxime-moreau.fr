@@ -1,4 +1,22 @@
-@include emix-breakpoint ($medium) {
+@include emix-breakpoint (600px) {
+
+  // Animation pour le stick
+
+  .topbar {
+    position: absolute;
+    top: 0;
+    height: $tophar_h;
+    background-color: transparent;
+    transition: .3s background-color;
+  }
+
+  .topbar--stick {
+    background-color: rgba($blue, 0.8%);
+    height: 70px;
+    position: fixed;
+    top: 0;
+  }
+
   .topbar-link {
     position: relative;
     transition: .3s color;

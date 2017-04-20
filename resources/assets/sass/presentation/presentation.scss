@@ -1,5 +1,9 @@
 @import "./_presentation-reset.scss";
 
+.presentation-section {
+  padding-top: 100px;
+}
+
 .presentation-box {
   display: flex;
   align-self: center;
