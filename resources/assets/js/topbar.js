@@ -1,6 +1,6 @@
 // Les mobiles n'ont pas besoin de la sticky bar
 if (window.innerWidth > 600) {
-  const throttle = require('lodash.throttle');
+  const throttle = require('lodash/throttle');
 
   const getTop = elm => {
     return elm.getBoundingClientRect().top
