@@ -7,11 +7,11 @@
       <p class="timeline-box-title">{{ title }}</p>
 
       <p class="timeline-box-description">
-        {{ content }}
+        {{ content | raw }}
       </p>
+      <span class="timeline-box-date">{{ date }}</span>
     </div>
 
-    <span class="timeline-box-date">{{ date }}</span>
 
   </div>
 {% endmacro %}
