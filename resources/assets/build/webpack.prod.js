@@ -20,7 +20,7 @@ webpack_base.plugins.push(
     },
     comments: false
   }),
-  new AssetsPlugin({filename: config.assets_path + 'assets.json'})
+  new AssetsPlugin({filename: './public/assets/' + 'assets.json'})
 )
 
 // VueJS extract
