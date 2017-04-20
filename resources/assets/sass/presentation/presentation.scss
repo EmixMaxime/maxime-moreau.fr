@@ -21,6 +21,13 @@
   display: flex;
   flex-wrap: wrap;
   justify-content: center;
+  align-items: flex-end;
+}
+
+.presentation-picture-wrapper {
+  height: 250px;
+  width: 250px;
+  overflow: hidden;
 }
 
 .presentation-picture-item {

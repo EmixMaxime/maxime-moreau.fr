@@ -4,10 +4,21 @@
 }
 
 @include emix-breakpoint (600px) {
+
   .presentation-box {
     flex-wrap: nowrap;
   }
+
+  // I HATE CSS
+  .presentation-picture {
+    ul {
+      position: relative;
+      top: -70px;
+    }
+  }
+
 }
+
 
 @include emix-breakpoint (600px) {
   .presentation-wrapper {
