@@ -47,15 +47,14 @@ $color-5: #f0ca45;
   height: 30px;
   border-radius: 50%;
   position: relative;
-  left: 2px; // la barre fait 4px /2 pour centrer dessus
-  // To center it on the vertical line
-  transform: translateX(-50%);
+  left: -10px;
   background-color: #75ce66;
 }
 
 .timeline-box-body {
   position: relative;
-  top: -15px; // icon "boule" /2
+  top: -15px; // icon "boule" /2 pour centrer
+  left: 10px; // pour espacer "shame css"
   padding: 20px;
   background: $color-3;
   box-shadow: 0 3px 0 darken($background_color-grey, 5%);
@@ -91,11 +90,11 @@ $color-5: #f0ca45;
 }
 
 .timeline-box-date {
-  display: inline-block;
-}
-
-.timeline-box-date {
-  opacity: 0.7;
+  display: block;
+  margin-top: 15px;
+  color: $accent_color;
+  font-weight: 700;
 }
 
 @import "./_timeline-responsive.scss";
+@import "./_timeline-animations.scss";
