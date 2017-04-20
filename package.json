@@ -13,7 +13,8 @@
   "dependencies": {
     "lodash": "^4.17.4",
     "lodash.debounce": "^4.0.8",
-    "lodash.throttle": "^4.1.1"
+    "lodash.throttle": "^4.1.1",
+    "scroll-to": "^0.0.2"
   },
   "devDependencies": {
     "assets-webpack-plugin": "3.4.0",
