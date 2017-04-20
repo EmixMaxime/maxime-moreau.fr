@@ -22,7 +22,7 @@
 
         <figcaption class="creation-box-figcaption">
           <p class="creation-box-title">{{ title }}</p>
-          <p class="creation-box-desc">{{ description }}</p>
+          <p class="creation-box-desc">{{ description | raw }}</p>
           <a class="creation-box-btn" href={{ href }}>{{ libelle }}</a>
         </figcaption>
 
@@ -41,7 +41,7 @@
     {{ creation.creation(
       'http://maxime-moreau.fr/sono_mini-4adc9a5.png',
       'lol', 1,
-      '24h des IUT Informatique', 'Site static généré avec webpack.',
+      '24h IUT Informatique', 'Site static généré avec webpack. <br/> Le plus gros challenge a été la deadline de 4 jours.',
       'https://maxime-moreau/24', 'Voir le site'
       )
     }}
@@ -50,15 +50,16 @@
       'http://maxime-moreau.fr/sono_mini-4adc9a5.png',
       'lol', 2,
       'Emixteaches.me',
-      "Futur site d'e-learning. Architecture microservices avec NodeJS et PHP.",
+      "Futur site d'e-learning. <br /> Architecture microservices avec NodeJS et PHP. Utilisation du micro-framework ExpressJS & Slim.",
       "https://emixteaches.me", 'Se rendre sur emixteaches.me'
       )
     }}
 
     {{ creation.creation('http://maxime-moreau.fr/sono_mini-4adc9a5.png',
       'lol', 3,
-      'Sonolightmusic', 'Ma première expérience, un site static.',
-      'https://maxime-moreau#', 'Site malheureusement indisponible'
+      'Sonolightmusic',
+      "Ma première expérience. <br /> Site static HTML/CSS/JS avec le préprocesseur SASS et Gulp pour automatiser certaines tâches.",
+      'https://maxime-moreau#', 'Indisponible'
       )
     }}
 
