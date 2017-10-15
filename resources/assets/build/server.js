@@ -1,35 +1,46 @@
 'use strict'
 const WebpackDevServer = require('webpack-dev-server')
 const webpack = require('webpack')
-const webpack_dev = require('./webpack.dev')
+const WebpackDev = require('./webpack.dev')
 const config = require('./config')
-const compiler = webpack(webpack_dev)
-const hotMiddleware = require('webpack-hot-middleware')(compiler)
 const chokidar = require('chokidar')
+const DashboardPlugin = require('webpack-dashboard/plugin')
+
+const compiler = webpack(WebpackDev)
+const hotMiddleware = require('webpack-hot-middleware')(compiler)
 
 // Force le rafraichissement du navigateur
-let refresh = function (path) {
+const refresh = (path) => {
   console.log('* ' + path + ' changed')
   hotMiddleware.publish({action: 'reload'})
 }
 
-let server = new WebpackDevServer(compiler, {
+const server = new WebpackDevServer(compiler, {
   hot: true,
   historyApiFallback: config.historyApiFallback,
   quiet: false,
   noInfo: false,
-  publicPath: webpack_dev.output.publicPath,
+  publicPath: WebpackDev.output.publicPath,
   stats: {
     colors: true,
     chunks: false
-  }
+  },
+
+  // https://webpack.js.org/configuration/dev-server/
+  headers: { 'Access-Control-Allow-Origin': '*' }
+
 })
+
 server.use(hotMiddleware)
+
 server.listen(config.port, function (err) {
   if (err) {
     console.log(err)
     return
   }
+
   chokidar.watch(config.refresh).on('change', refresh)
-  console.log('==> Listening on http://localhost:' + config.port)
+  console.log('=> Listening on http://localhost:' + config.port)
 })
+
+compiler.apply(new DashboardPlugin())

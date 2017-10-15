@@ -1,11 +1,10 @@
 const path = require('path');
 
 const buildPath = path.resolve('./public/assets/');
-console.log(buildPath);
 
 module.exports = {
   entry: {
-    main: ['./resources/assets/sass/main.scss', './resources/assets/js/main.js'],
+    main: ['../sass/main.scss', '../js/main.js'],
   },
   port: 3003,
   html: false,
