@@ -2,54 +2,104 @@
 
 namespace Emix\Asset;
 
-use Psr\Container\ContainerInterface;
+class Asset
+{
 
-class Asset implements AssetInterface {
-
-  public $json = null;
-  private $file = 'http://localhost:8080/assets/assets.json';
+  /**
+   * @var array
+   */
   private $files;
-  private $useWebpack;
 
-  public function __construct (ContainerInterface $container) {
-    $config = $container->get('config');
+  /**
+   * @var String
+   */
+  private $assetsUri;
 
-    $this->useWebpack = $config->get('asset.use_webpack') === true;
+  /**
+   * @var Asset
+   */
+  private static $_instance;
 
-    if (!$this->isLocal() || $this->useWebpack === false) {
-      $assetsInformations = json_decode(file_get_contents(public_path() . '/assets/assets.json'));
+  /**
+   *
+   * @param null|String $assetPathfile - Si c'est pour la prod je donne que $assetPathfile
+   * @param null|String $assetsUri - Si c'est pour le dev, je donne l'uri
+   */
+  public function __construct(?String $assetPathfile = null, ?String $assetsUri = null)
+  {
+    $this->assetsUri = $assetsUri;
 
-      foreach ($assetsInformations as $assetInformations) {
-        foreach ($assetInformations as $key => $value) {
+    // In production, we use the assets.json file.
+    if ($assetPathfile) {
+      [$file, $_ext] = explode('.', $assetPathfile);
 
-          preg_match("/[a-z]+\.\w+/", $value, $filename); // On récupère le filename avec le hash
-          $filename = $filename[0];
+      $serializedFile = "$file.serialized";
 
-          preg_match('/^\w+/', $filename, $filename); // On delete le hash
-          $filename = $filename[0];
+      // The @ operator suppresses errors and warnings but it is a tool of last resort.
+      $updated = @filemtime($serializedFile) !== filemtime($assetPathfile);
 
-          $this->files[$key][$filename] = $value;
+      if($updated) {
+        $assetsInformations = json_decode(file_get_contents($assetPathfile));
+        
+        // Compute things
+        foreach ($assetsInformations as $assetInformations) {
+          foreach ($assetInformations as $key => $value) {
+  
+            // Get filename with hash
+            preg_match("/\w+\.\w+/", $value, $filename);
+            $filename = $filename[0];
+  
+            // Hash deletation
+            preg_match('/^\w+/', $filename, $filename);
+            $filename = $filename[0];
+  
+            $this->files[$key][$filename] = $value;
+          }
         }
+
+        file_put_contents($serializedFile, serialize($this->files));
+
+      } else {
+        $this->files = unserialize(file_get_contents($serializedFile));
       }
+
     }
   }
 
-  public function path (String $file) {
-    $parts = explode('.', $file);
-
-    if ($this->isLocal() === true && $this->useWebpack === true) {
-      if ($parts[1] === 'css') {
-        return; // Parce qu'en mode developpement c'est le fichier javascript qui injecte le style ;)
-      }
-
-      return 'http://localhost:3003/assets/'.$file;
+  /**
+   * @param null|String $assetPathfile
+   * @param null|String $assetsUri
+   * @return Asset
+   */
+  public static function getInstance(?String $assetPathfile = null, ?String $assetsUri = null)
+  {
+    if (is_null(self::$_instance)) {
+      self::$_instance = new Asset($assetPathfile, $assetsUri);
     }
 
-    $files = $this->files[$parts[1]]; // $parts[1] = l'extension
-    return $files[$parts[0]];
+    return self::$_instance;
   }
 
-  private function isLocal () {
-    return strpos($_SERVER['HTTP_HOST'], 'localhost') !== false;
+  /**
+   * @param String $file
+   * @return null|String
+   */
+  public function path(String $file): ?String
+  {
+    [$name, $extension] = explode('.', $file);
+
+    if ($this->assetsUri) {
+      // Because in dev it's the js file who's inject the style
+      if ($extension === 'css') {
+        return null;
+      }
+
+      return $this->assetsUri . '/' . $file;
+    }
+
+    // get files to the given extension
+    $files = $this->files[$extension];
+    return $files[$name];
   }
+
 }
