@@ -23,8 +23,8 @@
 //     ]
 // }
 {
-  "presets": ["es2015"],
-  "plugins": [
-    "syntax-async-functions"
-  ]
+  // "presets": ["es2015"],
+  // "plugins": [
+  //   // "syntax-async-functions"
+  // ]
 }
