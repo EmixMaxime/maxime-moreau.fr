@@ -16,7 +16,7 @@ class HomeController extends BaseController
 
   public function home (RequestInterface $request, ResponseInterface $response)
   {
-    return $this->render($response, 'home.twig');
+    return $this->render($response, 'site/home.twig');
   }
 
 }
