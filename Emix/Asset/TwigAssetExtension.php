@@ -1,14 +1,14 @@
 <?php
 namespace Emix\Asset;
 
-use Emix\asset\AssetInterface;
+use Emix\asset\Asset;
 use Twig_Extension;
 
 class TwigAssetExtension extends Twig_Extension {
 
   private $asset;
 
-  public function __construct (AssetInterface $asset) {
+  public function __construct (Asset $asset) {
     $this->asset = $asset;
   }
 
