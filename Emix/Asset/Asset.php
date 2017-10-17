@@ -99,7 +99,7 @@ class Asset
 
     // get files to the given extension
     $files = $this->files[$extension];
-    return $files[$name];
+    return $files[$name] ?? null;
   }
 
 }
