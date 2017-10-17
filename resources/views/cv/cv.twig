@@ -9,6 +9,13 @@
   </div>
 {% endmacro %}
 
+{% macro personalityBox(title, name, percentage) %}
+  <div class="personality-box">
+    <p>{{ title }}</p>
+    <div class="personality-box-progress {{ percentage }}"></div>
+  </div>
+{% endmacro %}
+
 {#
 https://myfrenchcity.com/edition-nationale/vie-pratique-usa/travailler-aux-usa/cv-americain-faire-et-ne-pas-faire/
 il faut rédiger les expériences !
@@ -22,19 +29,19 @@ http://www.studyrama-emploi.com/home_article.php?id=1448
       <div class="l-wrapper">
         <div class="l-content l-spaces">
 
-          <h1 class="title">Web developer <span class="underlined">fullstack</span></h1>
+          <h1 class="title"><span class="underlined">Full Stack</span> web developer</h1>
 
           <section class="work-xp">
-            <h1>Work experience</h1>
+            <h1 class="section-title work-xp-title">Work experience</h1>
 
-            <ol class="l-spaces-tb">
+            <ol class="l-subcontent">
               <li>
+                <h3><span class="strong">Founder and manager</span> | mxteaches.me </h3>
+                <p>Lorem ipsum, dolor sit amet consectetur adipisicing elit. Reiciendis odio quidem quas blanditiis eum harum expedita corrupti ipsum, suscipit, fugit in eos dolores placeat voluptatem. Laborum nihil natus possimus incidunt.</p>
+              </li>
+              <li class="l-mt3">
                 <h3><span class="strong">Front-end developer</span> | viously.com </h3>
                 <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Voluptatum ex labore nulla repellendus doloribus eveniet officiis eaque. Culpa quis eum, veniam vero tenetur eius harum similique saepe qui? Laboriosam, odio!</p>
-              </li>
-              <li class="l-spaces-tb">
-                <h3><span class="strong">Fullstack developer and manager</span> | mxteaches.me </h3>
-                <p>Lorem ipsum, dolor sit amet consectetur adipisicing elit. Reiciendis odio quidem quas blanditiis eum harum expedita corrupti ipsum, suscipit, fugit in eos dolores placeat voluptatem. Laborum nihil natus possimus incidunt.</p>
               </li>
             </ol>
           </section>
@@ -42,26 +49,37 @@ http://www.studyrama-emploi.com/home_article.php?id=1448
 
           {% import _self as helpers %}
 
-          <section>
-            <h1>Professionnal skills</h1>
-            <div class="l-wrapper pro-skills-wrapper">
+          <section class="pro-skills">
+            <h1 class="section-title pro-skills-title">Professionnal skills</h1>
+            <div class="l-subcontent l-wrapper">
               {{ helpers.skillBox('HTML / CSS', 'css', 'ninety') }}
               {{ helpers.skillBox('Javascript', 'js', 'ninety') }}
               {{ helpers.skillBox('VueJS', 'vuejs', 'ninety') }}
+              {{ helpers.skillBox('Webpack', 'webpack', 'eighty') }}
               {{ helpers.skillBox('Functionnal programming', 'fp', 'eighty') }}
               {{ helpers.skillBox('PHP', 'php', 'ninety') }}
               {{ helpers.skillBox('Laravel', 'laravel', 'ninety') }}
             </div>
           </section>
 
-          <h2>Education</h2>
           {#
             N.B : ne développez pas cette rubrique au détriment de celle consacrée à l’expérience professionnelle.
             En effet, vos diplômes impressionneront moins les recruteurs américains que vos différentes réalisations. 
           #}
+          <section class="education">
+            <h1 class="section-title education-title">Education</h1>
 
-          <h2>Community involvement</h2>
-          <h2>Activities and interests</h2>
+          </section>
+          
+          <section class="cm">
+            <h1 class="section-title cm-title">Community involvement</h1>
+
+          </section>
+
+          <!-- <section class="activities">
+            <h1>Activities and interests</h1>
+
+          </section> -->
         </div>
   
         <div class="l-sidebar l-spaces">
@@ -72,6 +90,7 @@ http://www.studyrama-emploi.com/home_article.php?id=1448
             <p>Objetive: dev frontend</p>
 
             <h2>Personnal skills</h2>
+            {{ helpers.personalityBox('Communication', 'cm', 'seventy') }}
           </div>
         </div>
       </div>

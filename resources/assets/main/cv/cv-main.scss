@@ -2,14 +2,11 @@
 // @import '../../sass/skills/_skills.scss';
 
 $backgroundColor: #fff;
+$gutters: 8px;
 
 ol {
   list-style: none;
   padding: 0;
-}
-
-.l-spaces-tb {
-  padding: 20px 0;
 }
 
 .l-spaces {
@@ -90,16 +87,18 @@ h1,h2,h3,h4,h5,h6 {
  */
 
 .pro-skills-wrapper {
-  justify-content: space-between;
+  // justify-content: space-between;
   flex-wrap: wrap;
+  margin-left: -8px;
 }
 
 .skills-box {
+  margin-left: 8px;
+
   position: relative;
   text-align: center;
   color: #fff;
   z-index: 1;
-  text-transform: uppercase;
   overflow: hidden;
 }
 
@@ -109,4 +108,58 @@ h1,h2,h3,h4,h5,h6 {
   margin: 0;
   margin-top: 16px;
   // border-radius: 25px;
+}
+
+
+.l-subcontent {
+  // 24 = icon size
+  padding-left: $gutters + 24;
+  padding-top: 20px;
+  padding-bottom: 20px;
+}
+
+.section-title {
+  display: flex;
+  align-items: center;
+
+  &::before {
+    content: '';
+    width: 24px;
+    height: 24px;
+    background-size: 24px;
+    background-repeat: no-repeat;
+    margin-right: $gutters;
+  }
+}
+
+/**
+ * WORK
+ */
+
+.work-xp-title::before {
+  background-image: url('./img/ic_work_black_24px.svg');
+}
+
+/**
+ * pro skills
+ */
+
+.pro-skills-title::before {
+  background-image: url('./img/ic_assignment_turned_in_black_24px.svg');
+}
+
+/**
+ * education
+ */
+
+.education-title::before {
+  background-image: url('./img/ic_school_black_24px.svg');
+}
+
+/**
+ * cm
+ */
+
+.cm-title::before {
+  background-image: url('./img/ic_face_black_24px.svg');
 }
