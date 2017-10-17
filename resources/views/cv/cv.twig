@@ -1,0 +1,77 @@
+{% extends 'cv/cv-layout.twig' %}
+
+{# include cv.css in header and cv.js at the end of the body#}
+{% set assets = ['cv'] %}
+
+{% macro skillBox(title, name, percertage) %}
+  <div class="skills-box">
+    <p class="skills-box-title {{ name }} {{ percentage }}">{{ title }}</p>
+  </div>
+{% endmacro %}
+
+{#
+https://myfrenchcity.com/edition-nationale/vie-pratique-usa/travailler-aux-usa/cv-americain-faire-et-ne-pas-faire/
+il faut rédiger les expériences !
+
+http://www.studyrama-emploi.com/home_article.php?id=1448
+#}
+{% block content %}
+  <div class="l-main">
+    <div class="l-container">
+
+      <div class="l-wrapper">
+        <div class="l-content">
+          <h1>Web developer fullstack</h1>
+
+          <section>
+            <h2>Work experience</h2>
+
+            <ol>
+              <li>
+                <h3>front-end developer | viously.com </h3>
+                <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Voluptatum ex labore nulla repellendus doloribus eveniet officiis eaque. Culpa quis eum, veniam vero tenetur eius harum similique saepe qui? Laboriosam, odio!</p>
+              </li>
+              <li>
+                <h3>fullstack developer and manager | mxteaches.me </h3>
+                <p>Lorem ipsum, dolor sit amet consectetur adipisicing elit. Reiciendis odio quidem quas blanditiis eum harum expedita corrupti ipsum, suscipit, fugit in eos dolores placeat voluptatem. Laborum nihil natus possimus incidunt.</p>
+              </li>
+            </ol>
+          </section>
+          <p></p>
+
+          <section>
+            <h2>Professionnal skills</h2>
+            <div class="l-wrapper">
+              {{ _self.skillBox('Javascript', 'js', 'ninety')}}
+              <p class="skills-box skills-box-htmlcss">HTML / CSS</p>
+              <p class="skills-box"> JavaScript </p> <p class="skills-box"> VueJS </p>
+              <p class="skills-box">Functionnal programming</p>
+              <p class="skills-box">PHP</p>
+              <p class="skills-box">Laravel</p>
+            </div>
+          </section>
+
+          <h2>Education</h2>
+          {#
+            N.B : ne développez pas cette rubrique au détriment de celle consacrée à l’expérience professionnelle.
+            En effet, vos diplômes impressionneront moins les recruteurs américains que vos différentes réalisations. 
+          #}
+
+          <h2>Community involvement</h2>
+          <h2>Activities and interests</h2>
+        </div>
+  
+        <div class="l-sidebar">
+          <div class="l-box">
+            <h2>Maxime moreau</h2>
+            <p>contact@maxime-moreau.fr</p>
+            <p>+336.19.01.59.88</p>
+            <p>Objetive: dev frontend</p>
+
+            <h2>Personnal skills</h2>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+{% endblock %}
