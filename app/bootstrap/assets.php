@@ -12,6 +12,7 @@ if (ASSETS_DELIVERED_WEBPACK === false) {
   $assetsFileinfo = getenv('ASSETS_FILEINFO');
 
   $file = root_path() . '/' . $assetsFileinfo;
+  define('ASSETS_FILEINFO_PATH', $file);
   if (!file_exists($file)) {
     throw new Exception('something wrong');
   }
