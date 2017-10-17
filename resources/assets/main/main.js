@@ -1,9 +1,11 @@
-// Petit polyfill
-import './advantages';
-import './creations';
-import './timeline';
-import './topbar';
+import './main.scss';
 
+import '../js/advantages';
+import '../js/creations';
+import '../js/timeline';
+import '../js/topbar';
+
+// Petit polyfill
 if (NodeList.prototype.forEach === undefined) {
   NodeList.prototype.forEach = Array.prototype.forEach;
 }
