@@ -2,7 +2,7 @@
 const path = require('path')
 const webpack = require('webpack')
 const ExtractTextPlugin = require('extract-text-webpack-plugin')
-const config = require('./config')
+const config = require('./config/config.js')
 const StyleLintPlugin = require('stylelint-webpack-plugin')
 const FriendlyErrorsWebpackPlugin = require('friendly-errors-webpack-plugin')
 

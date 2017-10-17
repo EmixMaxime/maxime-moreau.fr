@@ -3,7 +3,7 @@ const webpack = require('webpack')
 const Merge = require('webpack-merge')
 
 const BaseConfig = require('./webpack.base')
-const config = require('./config')
+const config = require('./config/config.js')
 
 const OptimizeCSSPlugin = require('optimize-css-assets-webpack-plugin')
 const ProgressBarPlugin = require('progress-bar-webpack-plugin')

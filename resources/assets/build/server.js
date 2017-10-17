@@ -2,7 +2,7 @@
 const WebpackDevServer = require('webpack-dev-server')
 const webpack = require('webpack')
 const WebpackDev = require('./webpack.dev')
-const config = require('./config')
+const config = require('./config/config.js')
 const chokidar = require('chokidar')
 const DashboardPlugin = require('webpack-dashboard/plugin')
 

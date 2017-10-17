@@ -3,7 +3,7 @@ const path = require('path')
 const webpack = require('webpack')
 const Merge = require('webpack-merge')
 const BaseConfig = require('./webpack.base')
-const config = require('./config')
+const config = require('./config/config.js')
 const { BundleAnalyzerPlugin } = require('webpack-bundle-analyzer')
 
 // Je ne sais pas trop pourquoi, mais voilà :-)

@@ -1,6 +1,7 @@
 const path = require('path')
+const entrypoints = require('./entrypoints')
 
-const envPath = path.resolve(__dirname, '../../../')
+const envPath = path.resolve(__dirname, '../../../../')
 process.env.ROOT_PATH = envPath;
 
 require('dotenv').config({ path: `${envPath}/.env` })
@@ -12,10 +13,7 @@ const ASSETS_PUBLIC_PATH = process.env.ASSETS_PUBLIC_PATH
 const [_protocol, _url, port] = ASSETS_DELIVERED_WEBPACK_URI.split(':')
 
 module.exports = {
-  entry: {
-    main: ['../sass/main.scss', '../js/main.js'],
-    cv: ['../pages/cv/cv.js']
-  },
+  entry: entrypoints,
   port,
   html: false,
   browsers: ['last 2 versions', 'ie > 8'],
