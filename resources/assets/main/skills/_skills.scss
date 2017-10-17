@@ -1,0 +1,58 @@
+/**
+ * General skill things.
+ */
+
+@import './_skills-variables.scss';
+
+@each $skill, $property in $skills {
+  .#{$skill} {
+    @each $p, $value in $property {
+      @if($p == background-color) {
+        #{$p} : #{$value};
+      }
+      @if($p == border-color) {
+        #{$p} : #{$value};
+      }
+    }
+  }
+  .#{$skill}::after {
+    @each $p, $value in $property {
+      @if($p == background-color) {
+        #{$p} : darken($value, 10%);
+      }
+    }
+  }
+}
+
+@each $percent, $value in $percents {
+  @include emix-breakpoint(M) {
+    .hidden .#{$percent}::after {
+      transform: scaleX(0);
+    }
+  }
+  .#{$percent}::after {
+    transform: scaleX($value);
+  }
+}
+
+.skills-box-title {
+  position: relative;
+  z-index: 1;
+  text-transform: uppercase;
+  text-align: center;
+  color: #fff;
+  width: 100%;
+}
+
+.skills-box-title::after {
+  width: 100%;
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  z-index: -1;
+  content: '';
+  transition: transform 0.3s;
+  transition-timing-function: cubic-bezier(0.0, 0.0, 0.2, 1);
+  transform-origin: 0;
+}

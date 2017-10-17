@@ -3,7 +3,7 @@
 {# include cv.css in header and cv.js at the end of the body#}
 {% set assets = ['cv'] %}
 
-{% macro skillBox(title, name, percertage) %}
+{% macro skillBox(title, name, percentage) %}
   <div class="skills-box">
     <p class="skills-box-title {{ name }} {{ percentage }}">{{ title }}</p>
   </div>
@@ -17,37 +17,40 @@ http://www.studyrama-emploi.com/home_article.php?id=1448
 #}
 {% block content %}
   <div class="l-main">
-    <div class="l-container">
+    <div class="">
 
       <div class="l-wrapper">
-        <div class="l-content">
-          <h1>Web developer fullstack</h1>
+        <div class="l-content l-spaces">
 
-          <section>
-            <h2>Work experience</h2>
+          <h1 class="title">Web developer <span class="underlined">fullstack</span></h1>
 
-            <ol>
+          <section class="work-xp">
+            <h1>Work experience</h1>
+
+            <ol class="l-spaces-tb">
               <li>
-                <h3>front-end developer | viously.com </h3>
+                <h3><span class="strong">Front-end developer</span> | viously.com </h3>
                 <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Voluptatum ex labore nulla repellendus doloribus eveniet officiis eaque. Culpa quis eum, veniam vero tenetur eius harum similique saepe qui? Laboriosam, odio!</p>
               </li>
-              <li>
-                <h3>fullstack developer and manager | mxteaches.me </h3>
+              <li class="l-spaces-tb">
+                <h3><span class="strong">Fullstack developer and manager</span> | mxteaches.me </h3>
                 <p>Lorem ipsum, dolor sit amet consectetur adipisicing elit. Reiciendis odio quidem quas blanditiis eum harum expedita corrupti ipsum, suscipit, fugit in eos dolores placeat voluptatem. Laborum nihil natus possimus incidunt.</p>
               </li>
             </ol>
           </section>
           <p></p>
 
+          {% import _self as helpers %}
+
           <section>
-            <h2>Professionnal skills</h2>
-            <div class="l-wrapper">
-              {{ _self.skillBox('Javascript', 'js', 'ninety')}}
-              <p class="skills-box skills-box-htmlcss">HTML / CSS</p>
-              <p class="skills-box"> JavaScript </p> <p class="skills-box"> VueJS </p>
-              <p class="skills-box">Functionnal programming</p>
-              <p class="skills-box">PHP</p>
-              <p class="skills-box">Laravel</p>
+            <h1>Professionnal skills</h1>
+            <div class="l-wrapper pro-skills-wrapper">
+              {{ helpers.skillBox('HTML / CSS', 'css', 'ninety') }}
+              {{ helpers.skillBox('Javascript', 'js', 'ninety') }}
+              {{ helpers.skillBox('VueJS', 'vuejs', 'ninety') }}
+              {{ helpers.skillBox('Functionnal programming', 'fp', 'eighty') }}
+              {{ helpers.skillBox('PHP', 'php', 'ninety') }}
+              {{ helpers.skillBox('Laravel', 'laravel', 'ninety') }}
             </div>
           </section>
 
@@ -61,7 +64,7 @@ http://www.studyrama-emploi.com/home_article.php?id=1448
           <h2>Activities and interests</h2>
         </div>
   
-        <div class="l-sidebar">
+        <div class="l-sidebar l-spaces">
           <div class="l-box">
             <h2>Maxime moreau</h2>
             <p>contact@maxime-moreau.fr</p>

@@ -1,0 +1,112 @@
+@import '../../sass/_settings.scss';
+// @import '../../sass/skills/_skills.scss';
+
+$backgroundColor: #fff;
+
+ol {
+  list-style: none;
+  padding: 0;
+}
+
+.l-spaces-tb {
+  padding: 20px 0;
+}
+
+.l-spaces {
+  padding: 20px 40px;
+}
+
+.title {
+  text-align: center;
+  padding-bottom: 0.8em;
+  font-weight: 700;
+  font-size: 2.5rem!important;
+}
+
+.underlined {
+  position: relative;
+  &::after {
+    content: '';
+    position: absolute;
+    left: 0;
+    bottom: -5px;
+    height: 5px;
+    width: 100%;
+    background-color: #30a7b7;
+    background-image: linear-gradient(147deg, #30a7b7 0%, hsl(157, 58%, 45%) 74%);
+    
+  }
+}
+
+.l-main {
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+  overflow: hidden;
+}
+
+.l-container {
+  max-width: 75rem;
+  width: 100%;
+  padding-left: 8px;
+  padding-right: 8px;
+}
+
+.l-wrapper {
+  display: flex;
+  flex-wrap: wrap;
+}
+
+.l-content {
+  // prend la place restante
+  flex-basis: 0;
+  flex-grow: 1;
+}
+
+.l-sidebar {
+  flex-basis: 30%;
+  height: 500px;
+  background-color: darken($backgroundColor, 2%);
+}
+
+.l-main {
+  height: 420mm; width: 297mm;
+  margin: 0 auto;
+  background: $backgroundColor;
+}
+
+// A4 sizes https://stackoverflow.com/questions/3341485/how-to-make-a-html-page-in-a4-paper-size-pages
+body {
+  height: 420mm; width: 297mm;
+  margin: 0 auto !important;
+}
+
+h1,h2,h3,h4,h5,h6 {
+  color: #474747;
+}
+
+/**
+ * PRO SKILLS
+ */
+
+.pro-skills-wrapper {
+  justify-content: space-between;
+  flex-wrap: wrap;
+}
+
+.skills-box {
+  position: relative;
+  text-align: center;
+  color: #fff;
+  z-index: 1;
+  text-transform: uppercase;
+  overflow: hidden;
+}
+
+.skills-box-title {
+  overflow: hidden;
+  padding: 10px 15px;
+  margin: 0;
+  margin-top: 16px;
+  // border-radius: 25px;
+}

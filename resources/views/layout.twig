@@ -7,6 +7,8 @@
 
     {% block head %}
 
+      <link rel="stylesheet" href="{{ asset('main.css') }}">
+
       {% for assetname in assets %}
         <link rel="stylesheet" href="{{ asset(assetname ~ '.css') }}">
       {% endfor %}
@@ -21,6 +23,7 @@
     {% endblock %}
 
     <script src="{{ asset('manifest.js') }}" charset="utf-8"></script>
+    <script src="{{ asset('main.js') }}" charset="utf-8"></script>
 
     {% for assetname in assets %}
       <script src="{{ asset(assetname ~ '.js') }}"></script>
