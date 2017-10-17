@@ -4,11 +4,8 @@
   "description": "",
   "main": "",
   "scripts": {
-    "updates": "npm-check-updates -u",
-    "build": "rimraf public/assets && webpack --config resources/assets/build/webpack.prod.js",
-    "dev": "node resources/assets/build/server.js"
   },
-  "author": "Grafikart <contact@grafikart.fr>",
+  "author": "Maxime Moreau <contact@maxime-moreau.fr>",
   "license": "MIT",
   "dependencies": {
     "lodash": "^4.17.4",
