@@ -2,12 +2,11 @@
 
 require('../vendor/autoload.php');
 
-// Load the configuration
-$dotenv = new \Dotenv\Dotenv(dirname(__DIR__));
-$dotenv->load();
-
 $pathHelpers = \Emix\Support\PathHelpers::getInstance();
 require('../Emix/helpers.php');
+
+require('../app/bootstrap/bootstrap.php');
+
 
 $configRepository = \Emix\Config\ConfigRepository::getInstance();
 
