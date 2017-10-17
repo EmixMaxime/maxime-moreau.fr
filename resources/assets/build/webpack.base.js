@@ -3,6 +3,7 @@ const path = require('path')
 const webpack = require('webpack')
 const ExtractTextPlugin = require('extract-text-webpack-plugin')
 const config = require('./config/config.js')
+const alias = require('./config/alias')
 const StyleLintPlugin = require('stylelint-webpack-plugin')
 const FriendlyErrorsWebpackPlugin = require('friendly-errors-webpack-plugin')
 
@@ -37,13 +38,7 @@ const webpackBase = {
   },
   resolve: {
     extensions: ['.js', '.vue', '.css', '.json'],
-    alias: {
-      root: path.join(__dirname, '../js'),
-      components: path.join(__dirname, '../js/components'),
-      utils: path.join(__dirname, '../js/utils'),
-      vue: 'vue/dist/vue.js',
-      main: path.join(__dirname, '../js/main')
-    },
+    alias,
     // https://webpack.js.org/configuration/resolve/#resolve-modules
     modules: ['node_modules', path.resolve(__dirname, 'node_modules')]
   },
