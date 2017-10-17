@@ -1,4 +1,4 @@
-.PHONY: dev
+.PHONY: phpserve dev build pdf
 
 BUILD_FOLDER = ./resources/assets/build
 DIST_FOLDER = ./public/assets
@@ -12,3 +12,6 @@ dev:
 build:
 	rm -R $(DIST_FOLDER)
 	cd $(BUILD_FOLDER) && npm run build
+
+pdf:
+	php ./generation-pdf.php
