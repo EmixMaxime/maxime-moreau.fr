@@ -25,6 +25,10 @@ const extractCss = new ExtractTextPlugin({
 })
 
 const webpackBase = {
+  // https://github.com/webpack-contrib/css-loader/issues/447
+  node: {
+    fs: 'empty'
+  },
   entry: config.entry,
   output: {
     path: config.assets_path,

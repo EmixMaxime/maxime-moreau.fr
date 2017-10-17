@@ -15,6 +15,8 @@ const refresh = (path) => {
   hotMiddleware.publish({action: 'reload'})
 }
 
+compiler.apply(new DashboardPlugin())
+
 const server = new WebpackDevServer(compiler, {
   hot: true,
   historyApiFallback: config.historyApiFallback,
@@ -32,15 +34,12 @@ const server = new WebpackDevServer(compiler, {
 })
 
 server.use(hotMiddleware)
+chokidar.watch(config.refresh).on('change', refresh)
+console.log('=> Listening on http://localhost:' + config.port)
 
 server.listen(config.port, function (err) {
   if (err) {
     console.log(err)
     return
   }
-
-  chokidar.watch(config.refresh).on('change', refresh)
-  console.log('=> Listening on http://localhost:' + config.port)
 })
-
-compiler.apply(new DashboardPlugin())
