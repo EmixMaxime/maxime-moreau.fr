@@ -1,6 +1,13 @@
 <?php
 use Emix\Support\PathHelpers;
 
+if (!function_exists('root_path')) {
+  function root_path()
+  {
+      return realpath('../');
+  }
+}
+
 if (!function_exists('env')) {
   
   function env (String $key, String $default = NULL) {
