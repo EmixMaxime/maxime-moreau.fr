@@ -37,12 +37,25 @@ http://www.studyrama-emploi.com/home_article.php?id=1448
             <ol class="l-subcontent">
               <li>
                 <h3><span class="strong">Founder and manager</span> | mxteaches.me </h3>
-                <p>Lorem ipsum, dolor sit amet consectetur adipisicing elit. Reiciendis odio quidem quas blanditiis eum harum expedita corrupti ipsum, suscipit, fugit in eos dolores placeat voluptatem. Laborum nihil natus possimus incidunt.</p>
+                <p class="strong">Challenging project raising technical and transversal skills.</p>
+                <ul>
+                  <li>Developed the entire platform using micro-services. API Rest and Authentification in NodeJS, views rended by PHP with Twig.</li>
+                  <li>Design conception.</li>
+                  <li>Created VueJS components, used </li>
+                  <li>Asked peoples and analyzed the market to meet the needs.</li>
+                  <li>Installed and managed server (debian).</li>
+                </ul>
               </li>
               <li class="l-mt3">
                 <h3><span class="strong">Front-end developer</span> | viously.com </h3>
-                <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Voluptatum ex labore nulla repellendus doloribus eveniet officiis eaque. Culpa quis eum, veniam vero tenetur eius harum similique saepe qui? Laboriosam, odio!</p>
+                <ul>
+                  <li>Improved UI according to stakeholders feedbacks.</li>
+                  <li>Improved performance to save server resources and speedup the load time by 20%.</li>
+                  <li>Analyzed and drafted reports for my R&D on new technologies and made presentations for developers and managers.</li>
+                  <li>Migrated some technologies to increase developers productivity.</li>
+                </ul>
               </li>
+
             </ol>
           </section>
           <p></p>
@@ -52,13 +65,14 @@ http://www.studyrama-emploi.com/home_article.php?id=1448
           <section class="pro-skills">
             <h1 class="section-title pro-skills-title">Professionnal skills</h1>
             <div class="l-subcontent l-wrapper">
+              {{ helpers.skillBox('Git', 'git', 'seventy') }}
               {{ helpers.skillBox('HTML / CSS', 'css', 'ninety') }}
               {{ helpers.skillBox('Javascript', 'js', 'ninety') }}
-              {{ helpers.skillBox('VueJS', 'vuejs', 'ninety') }}
+              {{ helpers.skillBox('VueJS', 'vuejs', 'eighty') }}
               {{ helpers.skillBox('Webpack', 'webpack', 'eighty') }}
               {{ helpers.skillBox('Functionnal programming', 'fp', 'eighty') }}
               {{ helpers.skillBox('PHP', 'php', 'ninety') }}
-              {{ helpers.skillBox('Laravel', 'laravel', 'ninety') }}
+              {{ helpers.skillBox('Laravel', 'laravel', 'eighty') }}
             </div>
           </section>
 
@@ -70,7 +84,7 @@ http://www.studyrama-emploi.com/home_article.php?id=1448
             <h1 class="section-title education-title">Education</h1>
             <ol class="l-subcontent">
               <li>
-                <h3>Two-year course in IT.</h3>
+                <h3>Associate Degree in IT.</h3>
               </li>
               <li class="l-mt3">
                 <h3>A-level specialized in IT.</h3>
@@ -82,10 +96,18 @@ http://www.studyrama-emploi.com/home_article.php?id=1448
             <h1 class="section-title cm-title">Community involvement</h1>
             <ol class="l-subcontent">
               <li>
-                <h3 class="strong">Tutor in web developement for beginners.</h3>
-                <p>
-                  <span class="strong">Helped</span> beginners in HTML/CSS, JavaScript, and the C language using mxteaches.me as a support.
-                </p>
+                <h3 class="strong">Tutor for beginners.</h3>
+                <ul>
+                  <li>
+                    <span class="strong">Helped</span> beginners in HTML/CSS, JavaScript, and the C language using mxteaches.me as a support.
+                  </li>
+                  <li>
+                    <span class="strong">Introduced</span> basis algorithms.
+                  </li>
+                  <li>
+                    <span class="strong">Assisted</span> seniors for numeric environments.
+                  </li>
+                </ul>
                 
               </li>
             </ol>
@@ -98,17 +120,21 @@ http://www.studyrama-emploi.com/home_article.php?id=1448
         </div>
   
         <div class="l-sidebar l-spaces">
-          <div class="l-box">
-            <h2>Maxime moreau</h2>
+          <div class="l-mt3">
+            <h2 class="l-mt1 sidebar-title">Maxime moreau</h2>
+            <p><span class="strong">Objetive</span>: front-end developer</p>
             <p>contact@maxime-moreau.fr</p>
-            <p>+336.19.01.59.88</p>
-            <p>Objetive: dev frontend</p>
+            <p>+33 6.19.01.59.88</p>
 
-            <h2>Personnal skills</h2>
+            <h2 class="l-mt6">Personnal skills</h2>
             {{ helpers.personalityBox('Communication', 'cm', 'seventy') }}
             {{ helpers.personalityBox('Well-organized', 'cm', 'eighty') }}
             {{ helpers.personalityBox('Determinated', 'cm', 'eighty') }}
             {{ helpers.personalityBox('Curious', 'curious', 'ninety') }}
+
+            <h2 class="l-mt6">Languages</h2>
+            <p>Mother tongue: french.</p>
+            <p>Second tongue: english.</p>
 
           </div>
         </div>
