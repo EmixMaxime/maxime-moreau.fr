@@ -22,7 +22,7 @@
 
 @include emix-breakpoint (600px) {
   .presentation-wrapper {
-    // background-image: url('../img/bg.jpg');
+    background-image: url(./img/bg.jpg);
     background-size: cover;
     height: 100vh;
     min-height: 640px;
