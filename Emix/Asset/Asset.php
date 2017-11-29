@@ -33,7 +33,7 @@ class Asset
     if ($assetPathfile) {
       [$file, $_ext] = explode('.', $assetPathfile);
 
-      $serializedFile = "$file.serialized";
+      $serializedFile = "$file.serializeddddd";
 
       // The @ operator suppresses errors and warnings but it is a tool of last resort.
       $updated = @filemtime($serializedFile) !== filemtime($assetPathfile);
@@ -43,21 +43,22 @@ class Asset
         
         // Compute things
         foreach ($assetsInformations as $assetInformations) {
-          foreach ($assetInformations as $key => $value) {
+          foreach ($assetInformations as $extension => $value) {
   
             // Get filename with hash
-            preg_match("/\w+\.\w+/", $value, $filename);
+            preg_match("/(?:[^_\W]|-)+\.\w+/", $value, $filename);
             $filename = $filename[0];
-  
+
+            
             // Hash deletation
-            preg_match('/^\w+/', $filename, $filename);
+            preg_match('/^(?:[^_\W]|-)+/', $filename, $filename);
             $filename = $filename[0];
-  
-            $this->files[$key][$filename] = $value;
+
+            $this->files[$extension][$filename] = $value;
           }
         }
 
-        file_put_contents($serializedFile, serialize($this->files));
+        // file_put_contents($serializedFile, serialize($this->files));
 
       } else {
         $this->files = unserialize(file_get_contents($serializedFile));
