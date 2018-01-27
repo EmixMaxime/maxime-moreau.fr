@@ -65,8 +65,5 @@
     "webpack-dev-server": "^2.7.1",
     "webpack-hot-middleware": "^2.13.0",
     "webpack-merge": "^4.1.0"
-  },
-  "dependencies": {
-    "fs": "0.0.1-security"
   }
 }
