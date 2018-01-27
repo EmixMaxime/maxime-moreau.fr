@@ -3,3 +3,6 @@ vendor
 node_modules
 .env
 package-json.lock
+deploy.sh
+deploy_exclude
+Makefile
