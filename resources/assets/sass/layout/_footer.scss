@@ -1,12 +1,23 @@
 .l-footer {
-  background-color: $footer_backgroundColor;
+  background-color: $footer_background-color;
   * {
-    color: #FFFFFF;
+    color: $footer_p_color;
   }
 
   address {
     font-style: inherit;
   }
+
+  .pre-title {
+    text-transform: uppercase;
+    
+    // add a bit of letter-spacing when using uppercase.
+    letter-spacing: 2px;
+    text-align: center;
+    font-size: .875rem;
+    color: $footer_p_light_color;
+  }
+
 }
 
 // 2 profondeur pour passer au dessus du style de l-container :-)
@@ -16,7 +27,9 @@
 }
 
 .l-footer-box-title {
-  font-size: 1.5rem;
+  color: $footer_title_color;
+  font-size: 1rem;
+  text-transform: uppercase;
   margin: 0;
   margin-bottom: .5em;
 }
@@ -25,7 +38,7 @@
   display: flex;
   flex-wrap: wrap;
   justify-content: center;
-  text-align: center;
+  // text-align: center;
 }
 
 .l-footer-box {
@@ -40,11 +53,10 @@
   }
 }
 
-.l-footer-me {
-  a {
-    color: $accent_color;
-    font-weight: 700;
-  }
+
+.l-footer-me a, .l-footer-dev a, .l-footer-copyright a {
+  color: hsl(220, 21%, 59%);
+  font-weight: 700;
 }
 
 .l-footer-social {
@@ -58,25 +70,16 @@
 }
 
 .l-footer-dev {
-  a {
-    color: $accent_color;
-    font-weight: 700;
-  }
   p {
     text-align: justify;
   }
 }
 
 .l-footer-copyright {
-  background-color: $footer_backgroundColor2;
+  background-color: $footer_background-color2;
   padding: 20px 0;
   text-align: center;
   p {
     margin: 0;
-  }
-
-  a {
-    color: $accent_color;
-    font-weight: 700;
   }
 }

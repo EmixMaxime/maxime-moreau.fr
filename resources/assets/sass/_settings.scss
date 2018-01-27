@@ -1,6 +1,6 @@
 $tophar_h: 80px;
 
-$blue: #30a7b7;
+$blue: hsl(187, 58%, 45%);
 // autre bleu : 3498db
 $title_color : #283c4f;
 $color : #444444;
@@ -13,7 +13,11 @@ $background_color-blue: #30a7b7;
 $header_title_color: #E3F2FD;
 
 // Footer
-$footer_backgroundColor: #171B23;
-$footer_backgroundColor2: #14181E;
+$footer_background-color: hsl(220, 21%, 11%);
+$footer_background-color2: hsl(220, 21%, 10%);
+
+$footer_title_color: hsl(220, 21%, 39%);
+$footer_p_color: hsl(220, 21%, 80%);
+$footer_p_light_color: hsl(220, 21%, 85%);
 
 $p_light : #777777;
