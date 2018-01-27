@@ -43,6 +43,10 @@ class ViewServiceProvider extends ServiceProvider
       $assetExtension = $container->get(TwigAssetExtension::class);
       $twigEnv->addExtension($assetExtension);
 
+      // Add some variables
+      $twigEnv->addGlobal('env', $env);
+
+
       return $view;
     };
   }
