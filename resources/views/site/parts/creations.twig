@@ -1,13 +1,3 @@
-            {#section.grid(data-target-ref="one")
-                div(data-path-hover="m 180,34.57627 -180,0 L 0,0 180,0 z")
-                    figure
-                        img(src=require("../../img/sono_mini.png"))
-                        svg()
-                            path()
-                        figcaption
-                            h2 Sono Light Music
-                            p Design simple, efficace
-                            button View#}
 
 {% macro creation (img, imgAlt, ref, title, description, href, libelle) %}
   <div class="creations-box l-wrapper">
@@ -49,9 +39,9 @@
     {{ creation.creation(
       'emixteachesme-mini.png',
       'lol', 2,
-      'Emixteaches.me',
+      'mxteaches.me',
       "Futur site d'e-learning. <br /> Architecture microservices avec NodeJS et PHP. Utilisation du micro-framework ExpressJS & Slim.",
-      "https://emixteaches.me", 'Se rendre sur emixteaches.me'
+      "https://mxteaches.me", 'Se rendre sur mxteaches.me'
       )
     }}
 
