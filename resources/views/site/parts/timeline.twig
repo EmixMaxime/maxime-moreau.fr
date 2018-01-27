@@ -1,6 +1,6 @@
 {% import 'macros/timeline.twig' as helpers %}
 
-  <h1 class="title l-wrapper">Parcours scolaire</h1>
+  <h1 class="title l-wrapper">Mon parcours</h1>
   <div class="l-container timeline-container l-wrapper" id="timeline">
 
     <div class="timeline-wrapper">
@@ -8,9 +8,16 @@
         <div class="timeline">
 
             {{ helpers.timeline(
+                "Poursuite d'étude, premier travail, projet",
+                "La formation initiale me lasse, cela manque de challenge. Je décide donc d'intégrer la formation en alternance qui propose de mélanger cours et travail en entreprise. Je décide également de me lancer dans la création d'<a href='https://mxteaches.me'>mxteaches.me</a> afin de partager mes connaissances.",
+                '2017 - 2018'
+                )
+            }}
+
+            {{ helpers.timeline(
                 'Entrée 1ère année DUT Informatique',
                 "La formation autodidacte alliée à une formation post-bac est la meilleure option. C'est pour cela que j'ai choisi de poursuivre mes études à l'IUT du Littoral Côte d'Opale de Calais en intégrant le DUT Informatique.",
-                '2016'
+                '2016 - 2017'
                 )
             }}
 
