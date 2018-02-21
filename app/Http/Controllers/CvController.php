@@ -14,9 +14,14 @@ class CvController extends BaseController
     parent::__construct($container);
   }
 
-  public function __invoke(RequestInterface $request, ResponseInterface $response)
+  public function en(RequestInterface $request, ResponseInterface $response)
   {
-    return $this->render($response, 'cv/cv.twig');
+    return $this->render($response, 'cv/cv-en.twig');
+  }
+
+  public function fr(RequestInterface $request, ResponseInterface $response)
+  {
+    return $this->render($response, 'cv/cv-fr.twig');
   }
 
 }
