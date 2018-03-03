@@ -1,20 +1,9 @@
+{% import 'cv/macros.twig' as helpers %}
 {% extends 'cv/cv-layout.twig' %}
 
 {# include cv.css in header and cv.js at the end of the body#}
 {% set assets = ['cv'] %}
 
-{% macro skillBox(title, name, percentage) %}
-  <div class="skills-box">
-    <p class="skills-box-title {{ name }} {{ percentage }}">{{ title }}</p>
-  </div>
-{% endmacro %}
-
-{% macro personalityBox(title, name, percentage) %}
-  <div class="personality-box l-mt3">
-    <p class="personality-box-title">{{ title }}</p>
-    <div class="personality-box-progress {{ name }} {{ percentage }}"></div>
-  </div>
-{% endmacro %}
 
 {#
 https://myfrenchcity.com/edition-nationale/vie-pratique-usa/travailler-aux-usa/cv-americain-faire-et-ne-pas-faire/
@@ -62,8 +51,6 @@ http://www.studyrama-emploi.com/home_article.php?id=1448
           </section>
           <p></p>
 
-          {% import _self as helpers %}
-
           <section class="pro-skills">
             <h1 class="section-title pro-skills-title">Professionnal skills</h1>
             <div class="l-subcontent l-wrapper">
@@ -80,7 +67,7 @@ http://www.studyrama-emploi.com/home_article.php?id=1448
 
           {#
             N.B : ne développez pas cette rubrique au détriment de celle consacrée à l’expérience professionnelle.
-            En effet, vos diplômes impressionneront moins les recruteurs américains que vos différentes réalisations. 
+            En effet, vos diplômes impressionneront moins les recruteurs américains que vos différentes réalisations.
           #}
           <section class="education">
             <h1 class="section-title education-title">Education</h1>
@@ -93,7 +80,7 @@ http://www.studyrama-emploi.com/home_article.php?id=1448
               </li>
             </ol>
           </section>
-          
+
           <section class="cm">
             <h1 class="section-title cm-title">Community involvement</h1>
             <ol class="l-subcontent">
@@ -110,7 +97,7 @@ http://www.studyrama-emploi.com/home_article.php?id=1448
                     <span class="strong">Assisted</span> seniors for numeric environments.
                   </li>
                 </ul>
-                
+
               </li>
             </ol>
           </section>
@@ -120,11 +107,11 @@ http://www.studyrama-emploi.com/home_article.php?id=1448
 
           </section> -->
         </div>
-  
+
         <div class="l-sidebar l-spaces">
           <div class="l-mt3">
             <h2 class="l-mt1 sidebar-title">Maxime moreau</h2>
-            <p><span class="strong">Objetive</span>: front-end and lead developer.</p>
+            <p><span class="strong">Objective</span>: front-end and lead developer.</p>
             <p>contact@maxime-moreau.fr</p>
             <p>+33 6.19.01.59.88</p>
 
