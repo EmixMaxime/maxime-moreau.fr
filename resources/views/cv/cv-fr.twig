@@ -1,0 +1,102 @@
+{% import 'cv/macros.twig' as helpers %}
+{% extends 'cv/cv-layout.twig' %}
+
+{% set assets = ['cv'] %}
+
+{% set title = 'Développeur web <span class="underlined">full stack</span>' %}
+
+{% block content %}
+<div class="l-main">
+	<div class="l-wrapper">
+		<div class="l-content l-spaces">
+			<h1 class="title">
+				{{ title | raw }}
+			</h1>
+			<section class="education">
+				<h1 class="section-title education-title">Formation</h1>
+				<ol class="l-subcontent">
+					<li>
+						<ul>
+							<li>
+								DUT Informatique - ULCO (Calais) - 2016-2018
+							</li>
+							<li>
+								Baccalauréat série STI2D (Sciences et Technologies de l'Industrie et du Développement Durable) option SIN (Système Information Numérique) - Lycée Blaise Pascal Longueness - 2013-2016
+							</li>
+						</ul>
+					</li>
+				</ol>
+			</section>
+
+			<section class="pro-skills">
+				<h1 class="section-title pro-skills-title">Compétences techniques</h1>
+				<div class="l-subcontent l-wrapper">
+					{{ helpers.skillBox('Git', 'git', 'seventy') }}
+					{{ helpers.skillBox('HTML / CSS', 'css', 'ninety') }}
+					{{ helpers.skillBox('Javascript', 'js', 'ninety') }}
+					{{ helpers.skillBox('VueJS', 'vuejs', 'eighty') }}
+					{{ helpers.skillBox('Webpack', 'webpack', 'eighty') }}
+					{{ helpers.skillBox('PHP', 'php', 'eighty') }}
+					{{ helpers.skillBox('Java', 'java', 'sixty') }}
+					{{ helpers.skillBox('NodeJS', 'nodejs', 'ninety') }}
+				</div>
+
+				<p>Veille technologique : langages Rust, Go & Elixir.</p>
+
+				<p>Paradigmes de programmation</p>
+				<div class="l-subcontent l-wrapper">
+					{{ helpers.skillBox('Programmation fonctionnelle', 'fp', 'seventy') }}
+					{{ helpers.skillBox('Programmation orientée objet', 'poo', 'eighty') }}
+				</div>
+
+				<p>Administration système (linux)</p>
+				<div class="l-subcontent l-wrapper">
+					{{ helpers.skillBox('PostgreSQL', 'pgsql', 'seventy') }}
+					{{ helpers.skillBox('MongoDB', 'mongodb', 'sixty') }}
+					{{ helpers.skillBox('Redis', 'redis', 'seventy') }}
+					{{ helpers.skillBox('Gnu/Linux', 'linux', 'seventy') }}
+					{{ helpers.skillBox('Nginx', 'ngnix', 'eighty') }}
+				</div>
+
+				<p>Os principaux : Debian / Ubuntu</p>
+				<p>Outils : Ansible Docker</p>
+			</section>
+
+			<section class="work-xp">
+				<h1 class="section-title work-wp-title">Expérience</h1>
+
+				<ol class="l-subcontent">
+					<li>
+						<h3>
+							<span class="strong">Développeur front-end</span> | viously.com
+						</h3>
+						<p class="date">Actuellement depuis Août 2017.</p>
+					</li>
+
+					<li>
+						<h3>
+							<span class="strong">Fondateur et gérant</span> | mxteaches.me
+						</h3>
+						<p class="date">Actuellement depuis Octobre 2017.</p>
+						<p class="strong">Projet challengeant, nécessitant des compétences techniques et transversales</p>
+					</li>
+				</ol>
+			</section>
+
+			<section class="hobbies">
+				<h1 class="section-title hobbies-title">Loisirs</h1>
+				<ol class="l-subcontent">
+					<ul>
+						<li>Veille technologique</li>
+						<li>VTT</li>
+						<li>Tennis de table</li>
+					</ul>
+				</ol>
+			</section>
+		</div>
+
+		{% include 'cv/sidebar-fr.twig' %}
+	</div>
+
+</div>
+{% endblock content %}
