@@ -1,0 +1,12 @@
+{% macro skillBox(title, name, percentage) %}
+  <div class="skills-box">
+    <p class="skills-box-title {{ name }} {{ percentage }}">{{ title }}</p>
+  </div>
+{% endmacro %}
+
+{% macro personalityBox(title, name, percentage) %}
+  <div class="personality-box l-mt3">
+    <p class="personality-box-title">{{ title }}</p>
+    <div class="personality-box-progress {{ name }} {{ percentage }}"></div>
+  </div>
+{% endmacro %}
