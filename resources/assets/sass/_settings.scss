@@ -2,9 +2,18 @@ $tophar_h: 80px;
 
 $blue: hsl(187, 58%, 45%);
 // autre bleu : 3498db
-$title_color : #283c4f;
-$color : #444444;
+
+$title_color :hsl(0, 0%, 19%);
+
+/**
+ * Text colors
+ */
+$color: hsl(0, 0%, 23%);
+$color-light: hsl(0, 0%, 30%);
+$dark-color: hsl(0, 0%, 19%);
+
 $accent_color: lighten(#25828f, 10%);
+
 
 $background_color-grey: #ebebeb;
 $background_color-blue: #30a7b7;

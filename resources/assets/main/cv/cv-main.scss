@@ -1,4 +1,7 @@
 @import '../../sass/_settings.scss';
+@import './cv-settings.scss';
+@import './headings.scss';
+
 // @import '../../sass/skills/_skills.scss';
 
 $backgroundColor: #fff;
@@ -8,25 +11,30 @@ $text-shadow: 0 1px 2px rgba(0,0,0,.2);
 
 body {
   margin: 0 auto !important;
-}
-
-h1,h2,h3,h4,h5,h6 {
-  color: #474747;
+  background-color: #fff;
+  line-height: 25px;
 }
 
 .date {
   margin-top: -5px;
-  color: lighten(#444, 15%);
+  color: $color-light;
 }
 
 ol {
   list-style: none;
   padding: 0;
 
-  ul li {
+  ul > li {
     line-height: 1.5;
+  }
+
+  ul > li:not(:last-child) {
     margin-bottom: 1rem;
   }
+}
+
+.l-content > section {
+  margin-bottom: $gutters *6;
 }
 
 .l-main {
@@ -82,10 +90,6 @@ ol {
   font-size: 2.5rem!important;
 }
 
-.sidebar-title {
-  font-weight: 700;
-}
-
 .underlined {
   position: relative;
   &::after {
@@ -132,15 +136,16 @@ ol {
   text-shadow: $text-shadow;
 }
 
+$title-icon-size: 24px;
 
 .l-subcontent {
-  // 24 = icon size
-  padding-left: $gutters + 24;
-  padding-top: 20px;
-  padding-bottom: 20px;
+  padding-left: $gutters + $title-icon-size;
+  padding-top: $gutters;
+  padding-bottom: $gutters;
 }
 
 .section-title {
+  font-size: 24px;
   display: flex;
   align-items: center;
 
@@ -154,36 +159,12 @@ ol {
   }
 }
 
-/**
- * WORK
- */
-
-.work-xp-title::before {
-  background-image: url('./img/ic_work_black_24px.svg');
-}
-
-/**
- * pro skills
- */
-
-.pro-skills-title::before {
-  background-image: url('./img/ic_assignment_turned_in_black_24px.svg');
-}
-
-/**
- * education
- */
-
-.education-title::before {
-  background-image: url('./img/ic_school_black_24px.svg');
-}
-
-/**
- * cm
- */
-
-.cm-title::before {
-  background-image: url('./img/ic_face_black_24px.svg');
+.section-subtitle {
+  margin-left: $gutters + $title-icon-size;
+  font-size: 17px;
+  margin-top: -4px;
+  margin-bottom: 0;
+  color: $dark-color;
 }
 
 /**

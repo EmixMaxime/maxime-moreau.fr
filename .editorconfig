@@ -18,3 +18,7 @@ ident_size = 4
 [*.js]
 indent_style = space
 indent_size = 2
+
+[*.scss]
+indent_style = space
+indent_size = 2

@@ -2,6 +2,7 @@
 @import './_headings.scss';
 @import './skills/_skills.scss';
 @import './layout/_margin.sass';
+@import './flexbox.scss';
 
 *, *::after, *::before {
   box-sizing: border-box;
@@ -15,4 +16,8 @@ body {
 
 .strong {
   font-weight: 700;
+}
+
+.not-strong {
+  font-weight: 400;
 }

@@ -5,6 +5,19 @@
 
 {% set title = 'Développeur web <span class="underlined">full stack</span>' %}
 
+{% macro educationItem(whatItIs, where, when) %}
+<li class="edutaction_item">
+	<div class="education_item_what">
+		{{ whatItIs }}
+	</div>
+	<div class="education_item_when l-mt1">
+		{{ where }} - {{ when }}
+	</div>
+</li>
+{% endmacro %}
+
+{% import _self as selfHelpers %}
+
 {% block content %}
 <div class="l-main">
 	<div class="l-wrapper">
@@ -17,12 +30,12 @@
 				<ol class="l-subcontent">
 					<li>
 						<ul>
-							<li>
-								DUT Informatique - ULCO (Calais) - 2016-2018
-							</li>
-							<li>
-								Baccalauréat série STI2D (Sciences et Technologies de l'Industrie et du Développement Durable) option SIN (Système Information Numérique) - Lycée Blaise Pascal Longueness - 2013-2016
-							</li>
+							{{ selfHelpers.educationItem('DUT Informatique', 'ULCO (Calais)', '2016-2018') }}
+							{{ selfHelpers.educationItem(
+								"Baccalauréat série STI2D (Sciences et Technologies de l'Industrie et du Développement Durable) option SIN (Système Information Numérique)",
+								"Lycée Blaise Pascal Longueness",
+								"2013-2016"
+							) }}
 						</ul>
 					</li>
 				</ol>
@@ -30,6 +43,7 @@
 
 			<section class="pro-skills">
 				<h1 class="section-title pro-skills-title">Compétences techniques</h1>
+				<p class="section-subtitle">Veille technologique : langages Rust, Go & Elixir. <br /> Apprentissage : Docker / Ansible.</p>
 				<div class="l-subcontent l-wrapper">
 					{{ helpers.skillBox('Git', 'git', 'seventy') }}
 					{{ helpers.skillBox('HTML / CSS', 'css', 'ninety') }}
@@ -41,15 +55,13 @@
 					{{ helpers.skillBox('NodeJS', 'nodejs', 'ninety') }}
 				</div>
 
-				<p>Veille technologique : langages Rust, Go & Elixir.</p>
-
-				<p>Paradigmes de programmation</p>
+				<p class="section-subtitle l-mt2 strong">Paradigmes de programmation</p>
 				<div class="l-subcontent l-wrapper">
 					{{ helpers.skillBox('Programmation fonctionnelle', 'fp', 'seventy') }}
 					{{ helpers.skillBox('Programmation orientée objet', 'poo', 'eighty') }}
 				</div>
 
-				<p>Administration système (linux)</p>
+				<p class="section-subtitle l-mt2 strong">Administration système (linux)</p>
 				<div class="l-subcontent l-wrapper">
 					{{ helpers.skillBox('PostgreSQL', 'pgsql', 'seventy') }}
 					{{ helpers.skillBox('MongoDB', 'mongodb', 'sixty') }}
@@ -57,31 +69,9 @@
 					{{ helpers.skillBox('Gnu/Linux', 'linux', 'seventy') }}
 					{{ helpers.skillBox('Nginx', 'ngnix', 'eighty') }}
 				</div>
-
-				<p>Os principaux : Debian / Ubuntu</p>
-				<p>Outils : Ansible Docker</p>
 			</section>
 
-			<section class="work-xp">
-				<h1 class="section-title work-wp-title">Expérience</h1>
-
-				<ol class="l-subcontent">
-					<li>
-						<h3>
-							<span class="strong">Développeur front-end</span> | viously.com
-						</h3>
-						<p class="date">Actuellement depuis Août 2017.</p>
-					</li>
-
-					<li>
-						<h3>
-							<span class="strong">Fondateur et gérant</span> | mxteaches.me
-						</h3>
-						<p class="date">Actuellement depuis Octobre 2017.</p>
-						<p class="strong">Projet challengeant, nécessitant des compétences techniques et transversales</p>
-					</li>
-				</ol>
-			</section>
+			{% include 'cv/fr/xp.twig'  %}
 
 			<section class="hobbies">
 				<h1 class="section-title hobbies-title">Loisirs</h1>
