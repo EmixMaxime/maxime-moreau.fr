@@ -4,6 +4,6 @@ require './vendor/autoload.php';
 
 use Spatie\Browsershot\Browsershot;
 
-Browsershot::url('http://localhost:7000/cv')
+Browsershot::url('http://localhost:7000/cv-fr')
   ->showBackground()
-  ->savePdf('cv.pdf');
+  ->savePdf('cv-fr.pdf');

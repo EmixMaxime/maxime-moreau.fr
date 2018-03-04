@@ -21,3 +21,18 @@ body {
 .not-strong {
   font-weight: 400;
 }
+
+.text-center {
+  text-align: center;
+}
+
+.ul-reset {
+  padding: 0;
+}
+
+.li-reset {
+  list-style: none;
+  & li {
+    list-style: none;
+  }
+}

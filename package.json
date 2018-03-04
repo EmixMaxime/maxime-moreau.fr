@@ -3,8 +3,7 @@
   "version": "0.0.1",
   "description": "",
   "main": "",
-  "scripts": {
-  },
+  "scripts": {},
   "author": "Maxime Moreau <contact@maxime-moreau.fr>",
   "license": "MIT",
   "dependencies": {
@@ -12,5 +11,8 @@
     "lodash.debounce": "^4.0.8",
     "lodash.throttle": "^4.1.1",
     "scroll-to": "^0.0.2"
+  },
+  "devDependencies": {
+    "puppeteer": "^1.1.1"
   }
 }

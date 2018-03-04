@@ -1,0 +1,53 @@
+{% macro experienceItem(title, where, when, content) %}
+<li>
+    <p class="h5">{{ title }} | {{ where }}</p>
+    <p class="date">{{ when }}</p>
+    {{ content | raw }}
+</li>
+{% endmacro %}
+
+{% import _self as selfHelpers %}
+
+<section class="work-xp">
+<h1 class="section-title work-xp-title">Work experience</h1>
+
+{% set mxteachesmeDescription %}
+    <ul>
+        <li>Developed the entire platform using micro-services. API Rest and Authentification in NodeJS, views rendered by PHP with Twig.</li>
+        <li>Designed brand.</li>
+        <li>Created VueJS components, used SASS preprocessor, webpack.</li>
+        <li>Asked peoples and analyzed the market to meet the needs and seize opportunities.</li>
+        <li>Installed, secured and managed server (debian).</li>
+        <li>Analyzed and improved performances. <span class="strong">Load time average is only 1.8 seconds on 3G</span> network for the more heavily page.</li>
+    </ul>
+
+    {# <p class="strong">Challenging project raising technical and transversal skills.</p> #}
+{% endset %}
+
+{% set viouslyDescription %}
+    <ul>
+        <li>Improved UI according to stakeholders feedbacks.</li>
+        <li>Analyzed and drafted reports for my R&D on new technologies and made presentations for developers and managers.</li>
+        <li>Migrated some technologies to increase developers productivity.</li>
+    </ul>
+{% endset %}
+
+<ol class="l-subcontent">
+    <li>
+        {{ selfHelpers.experienceItem(
+            'Founder and manager',
+            'mxteaches.me',
+            'Currently since January 2017.',
+            mxteachesmeDescription
+        ) }}
+
+        {{ selfHelpers.experienceItem(
+            'Front-end developer',
+            'viously.com',
+            'Currently since August 2017.',
+            viouslyDescription
+        ) }}
+
+    </li>
+</ol>
+</section>

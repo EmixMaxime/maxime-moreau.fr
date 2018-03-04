@@ -1,91 +1,30 @@
-{% import 'cv/macros.twig' as helpers %}
 {% extends 'cv/cv-layout.twig' %}
 
 {% set assets = ['cv'] %}
 
-{% set title = 'Développeur web <span class="underlined">full stack</span>' %}
+{# {% set title = 'Développeur web <span class="underlined">full stack</span>' %} #}
+{% set title = "Contrat de professionnalisation <span class='underlined'>informatique</span>" %}
 
-{% macro educationItem(whatItIs, where, when) %}
-<li class="edutaction_item">
-	<div class="education_item_what">
-		{{ whatItIs }}
-	</div>
-	<div class="education_item_when l-mt1">
-		{{ where }} - {{ when }}
-	</div>
-</li>
-{% endmacro %}
 
 {% import _self as selfHelpers %}
 
 {% block content %}
 <div class="l-main">
+
 	<div class="l-wrapper">
 		<div class="l-content l-spaces">
 			<h1 class="title">
 				{{ title | raw }}
 			</h1>
-			<section class="education">
-				<h1 class="section-title education-title">Formation</h1>
-				<ol class="l-subcontent">
-					<li>
-						<ul>
-							{{ selfHelpers.educationItem('DUT Informatique', 'ULCO (Calais)', '2016-2018') }}
-							{{ selfHelpers.educationItem(
-								"Baccalauréat série STI2D (Sciences et Technologies de l'Industrie et du Développement Durable) option SIN (Système Information Numérique)",
-								"Lycée Blaise Pascal Longueness",
-								"2013-2016"
-							) }}
-						</ul>
-					</li>
-				</ol>
-			</section>
 
-			<section class="pro-skills">
-				<h1 class="section-title pro-skills-title">Compétences techniques</h1>
-				<p class="section-subtitle">Veille technologique : langages Rust, Go & Elixir. <br /> Apprentissage : Docker / Ansible.</p>
-				<div class="l-subcontent l-wrapper">
-					{{ helpers.skillBox('Git', 'git', 'seventy') }}
-					{{ helpers.skillBox('HTML / CSS', 'css', 'ninety') }}
-					{{ helpers.skillBox('Javascript', 'js', 'ninety') }}
-					{{ helpers.skillBox('VueJS', 'vuejs', 'eighty') }}
-					{{ helpers.skillBox('Webpack', 'webpack', 'eighty') }}
-					{{ helpers.skillBox('PHP', 'php', 'eighty') }}
-					{{ helpers.skillBox('Java', 'java', 'sixty') }}
-					{{ helpers.skillBox('NodeJS', 'nodejs', 'ninety') }}
-				</div>
+			{% include 'cv/fr/education.twig' %}
+			{% include 'cv/fr/competences.twig' %}
+			{% include 'cv/fr/xp.twig' %}
+			{% include 'cv/fr/loisirs.twig' %}
 
-				<p class="section-subtitle l-mt2 strong">Paradigmes de programmation</p>
-				<div class="l-subcontent l-wrapper">
-					{{ helpers.skillBox('Programmation fonctionnelle', 'fp', 'seventy') }}
-					{{ helpers.skillBox('Programmation orientée objet', 'poo', 'eighty') }}
-				</div>
-
-				<p class="section-subtitle l-mt2 strong">Administration système (linux)</p>
-				<div class="l-subcontent l-wrapper">
-					{{ helpers.skillBox('PostgreSQL', 'pgsql', 'seventy') }}
-					{{ helpers.skillBox('MongoDB', 'mongodb', 'sixty') }}
-					{{ helpers.skillBox('Redis', 'redis', 'seventy') }}
-					{{ helpers.skillBox('Gnu/Linux', 'linux', 'seventy') }}
-					{{ helpers.skillBox('Nginx', 'ngnix', 'eighty') }}
-				</div>
-			</section>
-
-			{% include 'cv/fr/xp.twig'  %}
-
-			<section class="hobbies">
-				<h1 class="section-title hobbies-title">Loisirs</h1>
-				<ol class="l-subcontent">
-					<ul>
-						<li>Veille technologique</li>
-						<li>VTT</li>
-						<li>Tennis de table</li>
-					</ul>
-				</ol>
-			</section>
 		</div>
 
-		{% include 'cv/sidebar-fr.twig' %}
+		{% include 'cv/fr/sidebar.twig' %}
 	</div>
 
 </div>
