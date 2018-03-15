@@ -1,8 +1,10 @@
 @import url('https://fonts.googleapis.com/css?family=Open+Sans:400,700');
+@import '../sass/_settings.scss';
 @import './_headings.scss';
 @import './skills/_skills.scss';
 @import './layout/_margin.sass';
 @import './flexbox.scss';
+@import '../sass/reset.scss';
 
 *, *::after, *::before {
   box-sizing: border-box;
@@ -11,7 +13,7 @@
 body {
   margin: 0;
   font-family: 'Open Sans', sans-serif;
-  color: darken(#444, 8%);
+  color: $color;
 }
 
 .strong {

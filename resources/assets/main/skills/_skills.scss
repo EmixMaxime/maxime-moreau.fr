@@ -3,6 +3,7 @@
  */
 
 @import './_skills-variables.scss';
+@import '../../sass/helpers/_breakpoints.scss';
 
 @each $skill, $property in $skills {
 
