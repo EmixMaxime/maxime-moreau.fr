@@ -1,0 +1,28 @@
+{% macro educationItem(whatItIs, where, when) %}
+<li class="edutaction_item">
+	<div class="education_item_what">
+		{{ whatItIs }}
+	</div>
+	<div class="education_item_when l-mt1">
+		{{ where }} - {{ when }}
+	</div>
+</li>
+{% endmacro %}
+
+{% import _self as selfHelpers %}
+
+<section class="education">
+    <h1 class="section-title education-title">Formation</h1>
+    <ol class="l-subcontent">
+        <li>
+            <ul>
+                {{ selfHelpers.educationItem('DUT Informatique', 'ULCO (Calais)', '2016-2018') }}
+                {{ selfHelpers.educationItem(
+                    "Baccalauréat série STI2D (Sciences et Technologies de l'Industrie et du Développement Durable) option SIN (Système Information Numérique)",
+                    "Lycée Blaise Pascal Longuenesse",
+                    "2013-2016"
+                ) }}
+            </ul>
+        </li>
+    </ol>
+</section>

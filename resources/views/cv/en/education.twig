@@ -1,0 +1,33 @@
+{#
+N.B : ne développez pas cette rubrique au détriment de celle consacrée à l’expérience professionnelle.
+En effet, vos diplômes impressionneront moins les recruteurs américains que vos différentes réalisations.
+#}
+
+{% macro educationItem(whatItIs, where, when) %}
+<li class="edutaction_item">
+    {{ whatItIs }} | {{ where }} - {{ when }}
+</li>
+{% endmacro %}
+
+{% import _self as selfHelpers %}
+
+<section class="education">
+    <h1 class="section-title education-title">Education</h1>
+    <ol class="l-subcontent">
+        <li>
+            <ul>
+                {{ selfHelpers.educationItem(
+                    'Associate Degree in IT',
+                    'France',
+                    '2016-2018'
+                ) }}
+
+                {{ selfHelpers.educationItem(
+                    'A-level specialized in IT.',
+                    'France',
+                    '2013-2016'
+                ) }}
+            </ul>
+        </li>
+    </ol>
+</section>

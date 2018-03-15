@@ -1,0 +1,41 @@
+{% import 'cv/macros.twig' as helpers %}
+
+<section class="pro-skills">
+    <h1 class="section-title pro-skills-title">Compétences</h1>
+    <p class="section-subtitle">Veille technologique : langages Rust, Go & Elixir <br /> Apprentissage : Docker / Ansible</p>
+    <div class="l-subcontent l-wrapper">
+        {{ helpers.skillBox('Git', 'git', 'seventy') }}
+        {{ helpers.skillBox('HTML / CSS', 'css', 'ninety') }}
+        {{ helpers.skillBox('Javascript', 'js', 'ninety') }}
+        {{ helpers.skillBox('VueJS', 'vuejs', 'eighty') }}
+        {{ helpers.skillBox('Webpack', 'webpack', 'eighty') }}
+        {{ helpers.skillBox('PHP', 'php', 'eighty') }}
+        {{ helpers.skillBox('Java', 'java', 'sixty') }}
+        {{ helpers.skillBox('NodeJS', 'nodejs', 'ninety') }}
+    </div>
+
+    <p class="section-subtitle l-mt2 strong">Paradigmes de programmation</p>
+    <div class="l-subcontent l-wrapper">
+        {{ helpers.skillBox('Programmation fonctionnelle', 'fp', 'seventy') }}
+        {{ helpers.skillBox('Programmation orientée objet', 'poo', 'eighty') }}
+    </div>
+
+    <p class="section-subtitle l-mt2 strong">Administration système</p>
+    <div class="l-subcontent l-wrapper">
+        {{ helpers.skillBox('PostgreSQL', 'pgsql', 'seventy') }}
+        {{ helpers.skillBox('MongoDB', 'mongodb', 'sixty') }}
+        {{ helpers.skillBox('Redis', 'redis', 'seventy') }}
+        {{ helpers.skillBox('Gnu/Linux', 'linux', 'seventy') }}
+        {{ helpers.skillBox('Nginx', 'ngnix', 'eighty') }}
+    </div>
+
+    <p class="section-subtitle l-mt2 strong">Générales</p>
+    <ol class="l-subcontent l-wrapper">
+        <li>
+            <ul>
+                <li>Gestion de projet : SCRUM, Kaban, méthode LEAN startup</li>
+                <li>Communication</li>
+            </ul>
+        </li>
+    </ol>
+</section>

@@ -1,4 +1,3 @@
-@import "./_skills-reset.scss";
 @import "./_skills-responsive.scss";
 
 .skills-section .icon {
@@ -29,6 +28,7 @@
 }
 
 .skills-box-title {
+  margin: 0;
   font-size: 24px;
   // font-size: 1.5em;
   padding-bottom: 10px;

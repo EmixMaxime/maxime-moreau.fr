@@ -1,0 +1,37 @@
+{% macro experienceItem(title, where, when) %}
+    <li>
+        <p class="h5 flex justify-between">
+            <span>{{ title }}</span>
+            <span class="not-strong">{{ where}}</span>
+        </p>
+        <div class="date">{{ when }}</div>
+    </li>
+{% endmacro %}
+
+{% import _self as selfHelpers %}
+
+<section class="work-xp">
+    <h1 class="section-title work-xp-title">Expérience</h1>
+
+    <ol class="l-subcontent">
+        {# <li>
+            <h3>
+                <span class="strong">Développeur front-end</span> | viously.com
+            </h3>
+            <p class="date">.</p>
+        </li> #}
+
+        {{ selfHelpers.experienceItem(
+            'Développeur web front-end',
+            'Viously',
+            'Actuellement depuis Août 2017'
+        ) }}
+
+        {{ selfHelpers.experienceItem(
+            'Fondateur et gérant',
+            'Mxteachesme',
+            'Actuellement depuis Octobre 2017'
+        ) }}
+
+    </ol>
+</section>

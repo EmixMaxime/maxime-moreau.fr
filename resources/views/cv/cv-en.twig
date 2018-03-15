@@ -3,18 +3,7 @@
 {# include cv.css in header and cv.js at the end of the body#}
 {% set assets = ['cv'] %}
 
-{% macro skillBox(title, name, percentage) %}
-  <div class="skills-box">
-    <p class="skills-box-title {{ name }} {{ percentage }}">{{ title }}</p>
-  </div>
-{% endmacro %}
-
-{% macro personalityBox(title, name, percentage) %}
-  <div class="personality-box l-mt3">
-    <p class="personality-box-title">{{ title }}</p>
-    <div class="personality-box-progress {{ name }} {{ percentage }}"></div>
-  </div>
-{% endmacro %}
+{# {% set isForPapper = true %} #}
 
 {#
 https://myfrenchcity.com/edition-nationale/vie-pratique-usa/travailler-aux-usa/cv-americain-faire-et-ne-pas-faire/
@@ -22,125 +11,25 @@ il faut rédiger les expériences !
 
 http://www.studyrama-emploi.com/home_article.php?id=1448
 #}
-{% block content %}
-  <div class="l-main">
 
-      <div class="l-wrapper">
+{% set title = "Full Stack <span class='underlined'>web developer</span>" %}
+
+{% block content %}
+<div class="l-main">
+
+    <div class="l-wrapper">
         <div class="l-content l-spaces">
 
-          <h1 class="title"><span class="underlined">Full Stack</span> web developer</h1>
+            <h1 class="title">{{ title | raw }}</h1>
 
-          <section class="work-xp">
-            <h1 class="section-title work-xp-title">Work experience</h1>
-
-            <ol class="l-subcontent">
-              <li>
-                <h3><span class="strong">Founder and manager</span> | mxteaches.me </h3>
-                <p class="date">Currently since January 2017.</p>
-                <p class="strong">Challenging project raising technical and transversal skills.</p>
-                <ul>
-                  <li>Developed the entire platform using micro-services. API Rest and Authentification in NodeJS, views rendered by PHP with Twig.</li>
-                  <li>Designed brand.</li>
-                  <li>Created VueJS components, used SASS preprocessor, webpack.</li>
-                  <li>Asked peoples and analyzed the market to meet the needs and seize opportunities.</li>
-                  <li>Installed, secured and managed server (debian).</li>
-                  <li>Analyzed and improved performances. <span class="strong">Load time average is only 1.8 seconds on 3G</span> network for the more heavily page.</li>
-                </ul>
-              </li>
-              <li class="l-mt3">
-                <h3><span class="strong">Front-end developer</span> | viously.com </h3>
-                <p class="date">Currently since August 2017.</p>
-                <ul>
-                  <li>Improved UI according to stakeholders feedbacks.</li>
-                  <li>Improved performance to save server resources and <span class="strong">speed up the load time by 20%.</span></li>
-                  <li>Analyzed and drafted reports for my R&D on new technologies and made presentations for developers and managers.</li>
-                  <li>Migrated some technologies to increase developers productivity.</li>
-                </ul>
-              </li>
-
-            </ol>
-          </section>
-          <p></p>
-
-          {% import _self as helpers %}
-
-          <section class="pro-skills">
-            <h1 class="section-title pro-skills-title">Professionnal skills</h1>
-            <div class="l-subcontent l-wrapper">
-              {{ helpers.skillBox('Git', 'git', 'seventy') }}
-              {{ helpers.skillBox('HTML / CSS', 'css', 'ninety') }}
-              {{ helpers.skillBox('Javascript', 'js', 'ninety') }}
-              {{ helpers.skillBox('VueJS', 'vuejs', 'eighty') }}
-              {{ helpers.skillBox('Webpack', 'webpack', 'eighty') }}
-              {{ helpers.skillBox('Functionnal programming', 'fp', 'eighty') }}
-              {{ helpers.skillBox('PHP', 'php', 'ninety') }}
-              {{ helpers.skillBox('Laravel', 'laravel', 'eighty') }}
-            </div>
-          </section>
-
-          {#
-            N.B : ne développez pas cette rubrique au détriment de celle consacrée à l’expérience professionnelle.
-            En effet, vos diplômes impressionneront moins les recruteurs américains que vos différentes réalisations. 
-          #}
-          <section class="education">
-            <h1 class="section-title education-title">Education</h1>
-            <ol class="l-subcontent">
-              <li>
-                <h3>Associate Degree in IT.</h3>
-              </li>
-              <li class="l-mt3">
-                <h3>A-level specialized in IT.</h3>
-              </li>
-            </ol>
-          </section>
-          
-          <section class="cm">
-            <h1 class="section-title cm-title">Community involvement</h1>
-            <ol class="l-subcontent">
-              <li>
-                <h3 class="strong">Tutor for beginners</h3>
-                <ul>
-                  <li>
-                    <span class="strong">Helped</span> beginners in HTML/CSS, JavaScript, and the C language using mxteaches.me as a support.
-                  </li>
-                  <li>
-                    <span class="strong">Introduced</span> basis algorithms.
-                  </li>
-                  <li>
-                    <span class="strong">Assisted</span> seniors for numeric environments.
-                  </li>
-                </ul>
-                
-              </li>
-            </ol>
-          </section>
-
-          <!-- <section class="activities">
-            <h1>Activities and interests</h1>
-
-          </section> -->
+            {% include 'cv/en/xp.twig' %}
+            {% include 'cv/en/skills.twig' %}
+            {% include 'cv/en/education.twig' %}
+            {% include 'cv/en/community.twig' %}
         </div>
-  
-        <div class="l-sidebar l-spaces">
-          <div class="l-mt3">
-            <h2 class="l-mt1 sidebar-title">Maxime moreau</h2>
-            <p><span class="strong">Objetive</span>: front-end and lead developer.</p>
-            <p>contact@maxime-moreau.fr</p>
-            <p>+33 6.19.01.59.88</p>
 
-            <h2 class="l-mt6">Personnal skills</h2>
-            {{ helpers.personalityBox('Communication', 'cm', 'seventy') }}
-            {{ helpers.personalityBox('Well-organized', 'cm', 'eighty') }}
-            {{ helpers.personalityBox('Determinated', 'cm', 'eighty') }}
-            {{ helpers.personalityBox('Curious', 'curious', 'ninety') }}
+        {% include 'cv/en/sidebar.twig' %}
 
-            <h2 class="l-mt6">Languages</h2>
-            <p>Mother tongue: french.</p>
-            <p>Second tongue: english.</p>
-
-          </div>
-        </div>
-      </div>
     </div>
-  </div>
-{% endblock %}
+</div>
+{% endblock content %}

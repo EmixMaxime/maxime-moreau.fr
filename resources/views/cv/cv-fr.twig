@@ -1,0 +1,31 @@
+{% extends 'cv/cv-layout.twig' %}
+
+{% set assets = ['cv'] %}
+
+{# {% set title = 'Développeur web <span class="underlined">full stack</span>' %} #}
+{% set title = "Contrat de professionnalisation <span class='underlined'>informatique</span>" %}
+
+
+{% import _self as selfHelpers %}
+
+{% block content %}
+<div class="l-main">
+
+	<div class="l-wrapper">
+		<div class="l-content l-spaces">
+			<h1 class="title">
+				{{ title | raw }}
+			</h1>
+
+			{% include 'cv/fr/education.twig' %}
+			{% include 'cv/fr/competences.twig' %}
+			{% include 'cv/fr/xp.twig' %}
+			{% include 'cv/fr/loisirs.twig' %}
+
+		</div>
+
+		{% include 'cv/fr/sidebar.twig' %}
+	</div>
+
+</div>
+{% endblock content %}
