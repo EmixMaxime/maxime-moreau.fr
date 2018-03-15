@@ -23,32 +23,32 @@
   align-items: center;
 }
 
-.topbar-link::before {
-  content: '';
-  position: absolute;
-  bottom: 0;
-  left: 0;
-  right: 0;
-  border-bottom: 1px solid;
-  border-color: #fff;
-  transform: scaleX(0);
-  transition: transform .2s ease-in-out;
-}
-
 .topbar-link {
   display: flex;
   justify-content: center;
   align-items: center;
   padding: 20px 15px;
-}
 
-.topbar-link.active::before {
-  border-color: $blue;
-  transform: scaleX(1);
-}
+  &::before {
+    content: '';
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    border-bottom: 1px solid;
+    border-color: #fff;
+    transform: scaleX(0);
+    transition: transform .2s ease-in-out;
+  }
 
-.topbar-link.active {
-  color: lighten($blue, 10%);
+  &.active {
+    color: lighten($blue, 10%);
+  }
+
+  &.active::before {
+    border-color: $blue;
+    transform: scaleX(1);
+  }
 }
 
 @import "./_topbar-animation.scss";
