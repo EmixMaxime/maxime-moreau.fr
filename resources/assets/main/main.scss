@@ -3,7 +3,8 @@
 @import './_headings.scss';
 @import './skills/_skills.scss';
 @import './layout/_margin.sass';
-@import './flexbox.scss';
+@import '../sass/general/flexbox.scss';
+@import '../sass/general/text-alignement.scss';
 @import '../sass/reset.scss';
 
 *, *::after, *::before {
