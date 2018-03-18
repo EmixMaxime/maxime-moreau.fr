@@ -2,8 +2,8 @@
 
 @import "../sass/helpers/_breakpoints.scss";
 @import "../sass/tooltip/_tooltip.scss";
-
 @import "../sass/_app.scss";
+
 @import "../sass/topbar/topbar.scss";
 @import "../sass/presentation/presentation.scss";
 @import "../sass/layout/_layout.scss";
@@ -14,6 +14,5 @@
 @import "../sass/timeline/_timeline.scss";
 
 body {
-  // background-color: #F9F9FC;
-  background-color: #f1f4f5;
+  background-color: hsl(240, 40%, 98%);
 }
