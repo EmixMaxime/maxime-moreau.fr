@@ -6,11 +6,6 @@
 </li>
 {% endmacro %}
 
-{% import _self as selfHelpers %}
-
-<section class="work-xp">
-<h1 class="section-title work-xp-title">Work experience</h1>
-
 {% set mxteachesmeDescription %}
     <ul>
         <li>Developed the entire platform using micro-services. API Rest and Authentification in NodeJS, views rendered by PHP with Twig.</li>
@@ -32,22 +27,24 @@
     </ul>
 {% endset %}
 
-<ol class="l-subcontent">
-    <li>
-        {{ selfHelpers.experienceItem(
-            'Founder and manager',
-            'mxteaches.me',
-            'Currently since January 2017.',
-            mxteachesmeDescription
-        ) }}
+{% import _self as selfHelpers %}
 
-        {{ selfHelpers.experienceItem(
-            'Front-end developer',
-            'viously.com',
-            'Currently since August 2017.',
-            viouslyDescription
-        ) }}
+<section class="work-xp">
+    <h1 class="section-title work-xp-title">Work experience</h1>
 
-    </li>
-</ol>
+    <ol class="l-subcontent">
+            {{ selfHelpers.experienceItem(
+                'Founder and manager',
+                'mxteaches.me',
+                'Currently since January 2017.',
+                mxteachesmeDescription
+            ) }}
+
+            {{ selfHelpers.experienceItem(
+                'Front-end developer',
+                'viously.com',
+                'Currently since August 2017.',
+                viouslyDescription
+            ) }}
+    </ol>
 </section>
