@@ -1,32 +1,40 @@
 {% import 'macros/timeline.twig' as helpers %}
 <section class="l-section">
-    <h1 class="h2 text-center">Mon parcours</h1>
-  
-      <div class="timeline-wrapper">
-  
-          <div class="timeline" id="timeline">
-  
-              {{ helpers.timeline(
-                  "Poursuite d'étude, premier travail, projet",
-                  "La formation initiale me lasse, cela manque de challenge. Je décide donc d'intégrer la formation en alternance qui propose de mélanger cours et travail en entreprise. Je décide également de me lancer dans la création d'<a href='https://mxteaches.me'>mxteaches.me</a> afin de partager mes connaissances.",
-                  '2017 - 2018'
-                  )
-              }}
-  
-              {{ helpers.timeline(
-                  'Entrée 1ère année DUT Informatique',
-                  "La formation autodidacte alliée à une formation post-bac est la meilleure option. C'est pour cela que j'ai choisi de poursuivre mes études à l'IUT du Littoral Côte d'Opale de Calais en intégrant le DUT Informatique.",
-                  '2016 - 2017'
-                  )
-              }}
-  
-              {{ helpers.timeline(
-                  'Obtention du baccalauréat',
-                  "Baccalauréat technologique STI2D (Sciences et Technologies de l'Industrie et du Développement Durable), spécialité SIN (Système d'Information et Numérique) <strong> mention bien </strong>. <br />À travers lequel j'ai acquis des connaissances générales sur la technologie car il n'y a pas que le web dans la vie.",
-                  '2013 - 2016'
-                  )
-              }}
-          </div>
-      
-      </div>
+    <div class="l-container">
+        <h1 class="h2 text-center">Mon parcours</h1>
+    
+        <div class="timeline-wrapper">
+
+            <div class="timeline" id="timeline">
+
+            {{ helpers.timeline (
+                "2ème année DUT Informatique par alternance",
+                "La formation initiale me lasse, cela manque de challenge. Je décide donc d'intégrer la formation en alternance qui propose de mélanger cours et travail en entreprise. J'intègre le pôle développement front-end chez Viously pour une durée d'un an.",
+                "2017 - 2018"
+            )}}
+
+                {{ helpers.timeline(
+                    "mxteaches.me, le lancement !",
+                    "Je décide également de me lancer dans la création d'<a href='https://mxteaches.me'>mxteaches.me</a> afin de partager mes connaissances.Je décide également de me lancer dans la création d'<a href='https://mxteaches.me'>mxteaches.me</a> afin de partager mes connaissances.Je décide également de me lancer dans la création d'<a href='https://mxteaches.me'>mxteaches.me</a> afin de partager mes connaissances.",
+                    '2017'
+                    )
+                }}
+
+                {{ helpers.timeline(
+                    'Entrée 1ère année DUT Informatique',
+                    "La formation autodidacte alliée à une formation post-bac est la meilleure option. C'est pour cela que j'ai choisi de poursuivre mes études à l'IUT du Littoral Côte d'Opale de Calais en intégrant le DUT Informatique.",
+                    '2016 - 2017'
+                    )
+                }}
+
+                {{ helpers.timeline(
+                    'Obtention du baccalauréat',
+                    "Baccalauréat technologique STI2D (Sciences et Technologies de l'Industrie et du Développement Durable), spécialité SIN (Système d'Information et Numérique) <strong> mention bien </strong>. <br />À travers lequel j'ai acquis des connaissances générales sur la technologie car il n'y a pas que le web dans la vie.",
+                    '2013 - 2016'
+                    )
+                }}
+            </div>
+        
+        </div>
+    </div>
 </section>
