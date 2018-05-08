@@ -1,19 +1,9 @@
-//$main-text: #7f8c97; // main text
-
-$color-1: #303e49;
-$color-2: #c03b44;
-$color-3: #fff;
-$color-4: #75ce66;
-$color-5: #f0ca45;
-
 .timeline {
   display: flex;
   flex-wrap: wrap;
   width: 100%;
   position: relative;
   margin: 2em 0;
-
-  text-align: justify;
 
   // &:first-child {
   //   margin-top: 0;
@@ -34,7 +24,7 @@ $color-5: #f0ca45;
 // The vertical line
 .timeline-wrapper::before {
   content: '';
-  width: 4px;
+  width: 3px;
   height: 100%;
   position: absolute;
   background: darken($background_color-grey, 5%);
@@ -44,31 +34,33 @@ $color-5: #f0ca45;
   display: flex;
 }
 
+$icon-dimension: 30px;
+
 .timeline-icon {
-  width: 30px;
-  height: 30px;
+  width: $icon-dimension;
+  height: $icon-dimension;
   border-radius: 50%;
   position: relative;
   left: -10px;
-  background-color: #75ce66;
+  background-color: lighten($blue, 5%);
 }
 
 .timeline-box-body {
   position: relative;
-  top: -15px; // icon "boule" /2 pour centrer
+  top: -$icon-dimension/2; // icon "boule" /2 pour centrer
   left: 10px; // pour espacer "shame css"
   padding: 20px;
-  background: $color-3;
-  box-shadow: 0 3px 0 darken($background_color-grey, 5%);
+  background: #fff;
+  box-shadow: 0 3px 2px darken($background_color-grey, 5%);
 
   // Small arrow
   &::before {
+    content: '';
     width: 0;
     height: 0;
     position: absolute;
     top: 16px;
     right: 100%;
-    content: '';
     border: 13px solid transparent;
   }
 
@@ -82,20 +74,22 @@ $color-5: #f0ca45;
 }
 
 .timeline-box-title {
-  font-size: 1.5rem;
+  font-size: 1.1rem;
+  font-weight: bold;
   margin: 0;
-  margin-bottom: .5em;
+  margin-bottom: .8em;
 }
 
 .timeline-box-description {
   margin: 0;
+  line-height: 1.4em;
+  text-align: justify;
 }
 
 .timeline-box-date {
   display: block;
   margin-top: 15px;
-  color: $accent_color;
-  font-weight: 700;
+  color: hsl(0, 0%, 50%);
 }
 
 @import "./_timeline-responsive.scss";

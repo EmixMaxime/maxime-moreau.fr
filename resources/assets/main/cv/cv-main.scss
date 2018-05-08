@@ -1,6 +1,6 @@
 @import '../../sass/_settings.scss';
 @import './cv-settings.scss';
-@import './headings.scss';
+@import './_cv-headings.scss';
 
 // @import '../../sass/skills/_skills.scss';
 
@@ -142,6 +142,10 @@ $title-icon-size: 24px;
   padding-left: $gutters + $title-icon-size;
   padding-top: $gutters;
   padding-bottom: $gutters;
+
+  & > li:first-of-type > .h5 {
+    margin-top: 0;
+  }
 }
 
 .section-title {

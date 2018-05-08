@@ -5,23 +5,7 @@ import '../../js/creations';
 import '../../js/timeline';
 import '../../js/topbar';
 
-console.log('site-main.js')
-
-// Petit polyfill
-if (NodeList.prototype.forEach === undefined) {
-  NodeList.prototype.forEach = Array.prototype.forEach;
-}
-
-const chart = document.querySelector('#chart');
-const batons = chart.querySelectorAll('[data-percentage]');
-
-batons.forEach(elm => {
-  const h = (elm.dataset.percentage / 100) * chart.clientHeight;
-  elm.style.height = `${h}px`;
-});
-
 // Observable
-
 const opts = {
   threshold: [0.5],
 };

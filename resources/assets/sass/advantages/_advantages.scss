@@ -58,12 +58,12 @@ $label-color: #777777;
   order: 1;
 }
 
-.chart-legend--right {
-  order: 3;
-}
-
 .chart-items {
   order: 2;
+}
+
+.chart-legend--right {
+  order: 3;
 }
 
 .chart-item {
@@ -91,7 +91,9 @@ $label-color: #777777;
   z-index: 2; // Pour que la barre passe en dessous
 
   background-color: $blue;
-  color: #fff;
+  background-image: linear-gradient(0deg, hsl(187, 58%, 45%) 0%, hsl(167, 58%, 55%) 100%);
+
+  color: hsl(187, 58%, 95%);
   display: flex;
   flex-basis: 100%;
   align-items: center;

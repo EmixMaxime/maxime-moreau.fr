@@ -23,41 +23,42 @@
 
 {% import _self as creation %}
 
-<div class="l-container" id="creations">
-  <h1 class="title">Quelques unes de mes créations</h1>
-
-  <div class="creation-wrapper" id="creation-wrapper">
-
-    {{ creation.creation(
-      '24h-mini.png',
-      'lol', 1,
-      '24h IUT Informatique', 'Site static généré avec webpack. <br/> Le plus gros challenge a été la deadline de 4 jours.',
-      'https://maxime-moreau.fr/24h/index.html', 'Voir le site'
-      )
-    }}
-
-    {{ creation.creation(
-      'emixteachesme-mini.png',
-      'lol', 2,
-      'mxteaches.me',
-      "Futur site d'e-learning. <br /> Architecture microservices avec NodeJS et PHP. Utilisation du micro-framework ExpressJS & Slim.",
-      "https://mxteaches.me", 'Se rendre sur mxteaches.me'
-      )
-    }}
-
-    {{ creation.creation('sonolight-mini.png',
-      'lol', 3,
-      'Sonolightmusic',
-      "Ma première expérience. <br /> Site static HTML/CSS/JS avec le préprocesseur SASS et Gulp pour automatiser certaines tâches.",
-      'https://maxime-moreau#', 'Indisponible'
-      )
-    }}
-
-  </div>
-</div>
-
-<div class="blue-bg creation-container">
+<section class="l-section l-section--blue" id="creations">
   <div class="l-container">
+    <h1 class="h2 text-center">Quelques unes de mes créations</h1>
+
+    <div class="creation-wrapper" id="creation-wrapper">
+
+      {{ creation.creation(
+        '24h-mini.png',
+        'lol', 1,
+        '24h IUT Informatique', 'Site static généré avec webpack. <br/> Le plus gros challenge a été la deadline de 4 jours.',
+        'https://maxime-moreau.fr/24h/index.html', 'Voir le site'
+        )
+      }}
+
+      {{ creation.creation(
+        'emixteachesme-mini.png',
+        'lol', 2,
+        'mxteaches.me',
+        "Futur site d'e-learning. <br /> Architecture microservices avec NodeJS et PHP. Utilisation du micro-framework ExpressJS & Slim.",
+        "https://mxteaches.me", 'Se rendre sur mxteaches.me'
+        )
+      }}
+
+      {{ creation.creation('sonolight-mini.png',
+        'lol', 3,
+        'Sonolightmusic',
+        "Ma première expérience. <br /> Site static HTML/CSS/JS avec le préprocesseur SASS et Gulp pour automatiser certaines tâches.",
+        'https://maxime-moreau#', 'Indisponible'
+        )
+      }}
+    </div>
+  </div>
+</section>
+
+{# <div class="blue-bg creation-container">
+  <div class="l-container"> #}
 
   
   {#<div class="creation-info-wrapper l-wrapper" id="creation-info-wrapper">
@@ -102,6 +103,6 @@
 
 
   </div>#}
-</div>
+{# </div>
 
-</div>
+</div> #}

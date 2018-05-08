@@ -1,12 +1,16 @@
 @import "./_presentation-reset.scss";
 
 .presentation-section {
-  padding-top: 100px;
+  margin-top: 100px;
+  box-shadow: 0 15px 35px rgba(50,50,93,.1), 0 5px 15px rgba(0,0,0,.07);
 }
 
 .presentation-box {
   display: flex;
   align-self: center;
+  padding: $gutters*2 0;
+  border-top-left-radius: 5px;
+  border-top-right-radius: 5px;
 }
 
 .presentation-me {
@@ -21,24 +25,21 @@
   display: flex;
   flex-wrap: wrap;
   justify-content: center;
-  align-items: flex-end;
+  align-items: center;
 }
 
 .presentation-picture-wrapper {
   height: 250px;
   width: 250px;
   overflow: hidden;
-}
-
-.presentation-picture-item {
-  text-align: center;
-  font-size: 1.1rem;
-  margin-top: 0.8em;
+  border-radius: 250px;
 }
 
 .presentation-me-item {
-  border-bottom: 1px solid rgba(0,0,0,0.1);
-  margin-bottom: 10px;
+  padding: 10px;
+  &:nth-child(2n) {
+    background-color: hsl(187, 18%, 97%);
+  }
 }
 
 .presentation-me-item-title {
@@ -52,6 +53,7 @@
   align-items: center;
   height: 60px;
   background-color: $blue;
+  background-image: linear-gradient(0deg, hsl(187, 58%, 45%) 0%, hsl(177, 58%, 55%) 100%);
 }
 
 .presentation-social svg {
@@ -62,4 +64,36 @@
   margin-left: 30px;
 }
 
-@import "./_presentation-responsive.scss";
+.presentation-box {
+  flex-wrap: wrap;
+  justify-content: center;
+}
+
+@include emix-breakpoint (600px) {
+
+  .presentation-box {
+    flex-wrap: nowrap;
+  }
+
+  // I HATE CSS
+  .presentation-picture {
+    ul {
+      position: relative;
+      top: -70px;
+    }
+  }
+
+}
+
+
+@include emix-breakpoint (600px) {
+  .presentation-wrapper {
+    background-image: url(./img/bg.jpg);
+    background-size: cover;
+    height: 100vh;
+    min-height: 700px;
+    max-height: 900px;
+    display: flex;
+    flex-wrap: wrap;
+  }
+}

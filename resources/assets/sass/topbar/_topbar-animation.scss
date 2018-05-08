@@ -11,17 +11,25 @@
   }
 
   .topbar--stick {
-    background-color: rgba($blue, 0.8%);
+    background-color: #fff;
     height: 70px;
     position: fixed;
     top: 0;
 
     .topbar-link.active {
-      color: #fff;
+      color: $blue;
+    }
+
+    .topbar-link {
+      color: $color;
     }
 
     .topbar-link.active::before {
       border-color: #fff;
+    }
+
+    .topbar-link::before {
+      border-color: $color;
     }
   }
 
