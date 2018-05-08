@@ -5,18 +5,12 @@ import '../../js/creations';
 import '../../js/timeline';
 import '../../js/topbar';
 
-console.log('site-main.js')
-
-// Petit polyfill
-if (NodeList.prototype.forEach === undefined) {
-  NodeList.prototype.forEach = Array.prototype.forEach;
-}
-
 const chart = document.querySelector('#chart');
 const batons = chart.querySelectorAll('[data-percentage]');
 
-batons.forEach(elm => {
-  const h = (elm.dataset.percentage / 100) * chart.clientHeight;
+[].map.call(batons, elm => {
+  // const h = (elm.dataset.percentage / 100) * chart.clientHeight;
+  const h = (elm.dataset.percentage / 100) * 300;
   elm.style.height = `${h}px`;
 });
 
