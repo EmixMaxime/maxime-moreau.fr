@@ -27,6 +27,10 @@
     .topbar-link.active::before {
       border-color: #fff;
     }
+
+    .topbar-link::before {
+      border-color: $color;
+    }
   }
 
   .topbar-link {
