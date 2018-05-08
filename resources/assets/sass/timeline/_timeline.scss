@@ -59,7 +59,7 @@ $color-5: #f0ca45;
   left: 10px; // pour espacer "shame css"
   padding: 20px;
   background: $color-3;
-  box-shadow: 0 3px 0 darken($background_color-grey, 5%);
+  box-shadow: 0 3px 2px darken($background_color-grey, 5%);
 
   // Small arrow
   &::before {
