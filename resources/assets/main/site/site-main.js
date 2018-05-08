@@ -5,17 +5,7 @@ import '../../js/creations';
 import '../../js/timeline';
 import '../../js/topbar';
 
-const chart = document.querySelector('#chart');
-const batons = chart.querySelectorAll('[data-percentage]');
-
-[].map.call(batons, elm => {
-  // const h = (elm.dataset.percentage / 100) * chart.clientHeight;
-  const h = (elm.dataset.percentage / 100) * 300;
-  elm.style.height = `${h}px`;
-});
-
 // Observable
-
 const opts = {
   threshold: [0.5],
 };
