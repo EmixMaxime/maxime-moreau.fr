@@ -1,105 +1,106 @@
 {% import 'macros/skillbox.twig' as helpers %}
 
 <section class="l-section skills-section" id="skills">
-  <h1 class="h2 text-center">Mes compétences</h1>
-  <p class="sub-title">
-    Féru des nouvelles technologies web.<br />
-    Grande capacité d'adaptation et polyvalent, maîtrise de la programmation fonctionnelle et orientée objet.
-  </p>
+  <div class="l-container">
+    <h1 class="h2 text-center">Mes compétences</h1>
+    <p class="sub-title">
+      Féru des nouvelles technologies web.<br />
+      Grande capacité d'adaptation et polyvalent, maîtrise de la programmation fonctionnelle et orientée objet.
+    </p>
 
-  <h2 class="h3 text-center">Les langages principaux</h2>
-  <div class="skills-language">
+    <h2 class="h3 text-center">Les langages principaux</h2>
+    <div class="skills-language">
 
-    {{ helpers.skillBox(
-      'HTML/CSS', 'css', 'ninety',
+      {{ helpers.skillBox(
+        'HTML/CSS', 'css', 'ninety',
+          "<p>
+            Utilisation du préprocesseur SASS afin de proposer un code maintenable. Compatible avec les anciens navigateurs ou récents selon les besoins.<br />
+          </p>"
+        )
+      }}
+
+      {{ helpers.skillBox(
+        'Javascript', 'js', 'ninety',
         "<p>
-          Utilisation du préprocesseur SASS afin de proposer un code maintenable. Compatible avec les anciens navigateurs ou récents selon les besoins.<br />
+          Éxécuté par le navigateur ou NodeJS.
+          Utilisation de l'ES6/7, le code est ensuite transpilé en fonction des besoins. Gulp et webpack sont de l'aventure.
         </p>"
-      )
-    }}
+        )
+      }}
 
-    {{ helpers.skillBox(
-      'Javascript', 'js', 'ninety',
-      "<p>
-        Éxécuté par le navigateur ou NodeJS.
-        Utilisation de l'ES6/7, le code est ensuite transpilé en fonction des besoins. Gulp et webpack sont de l'aventure.
-      </p>"
-      )
-    }}
+      {{ helpers.skillBox(
+        'PHP', 'php', 'ninety',
+        "<p>
+          Utilisation du framework Laravel ou Slim afin d'apporter une structure maintenable.
+        </p>"
+        )
+      }}
 
-    {{ helpers.skillBox(
-      'PHP', 'php', 'ninety',
-      "<p>
-        Utilisation du framework Laravel ou Slim afin d'apporter une structure maintenable.
-      </p>"
-      )
-    }}
+      {{ helpers.skillBox(
+        'Java', 'java', 'sixty',
+        "<p>
+          Découverte de l'écosystème JAVA (J2EE et Android).
+        </p>"
+        )
+      }}
 
-    {{ helpers.skillBox(
-      'Java', 'java', 'sixty',
-      "<p>
-        Découverte de l'écosystème JAVA (J2EE et Android).
-      </p>"
-      )
-    }}
+      {{ helpers.skillBox(
+          'C', 'c', 'seventy',
+          '<p>
+            Les pointeurs et les "segmentation fault" n\'ont plus de secrets pour moi. Découverte de Rust également.
+          </p>'
+        )
+      }}
 
-    {{ helpers.skillBox(
-        'C', 'c', 'seventy',
-        '<p>
-          Les pointeurs et les "segmentation fault" n\'ont plus de secrets pour moi. Découverte de Rust également.
-        </p>'
-      )
-    }}
+    </div>
 
+    <h2 class="h3 text-center">Administration système</h2>
+    <p class="sub-title">
+      Intéressé par les technologies telles que Docker et Ansible. <br />
+      Capable de vous accompagner lors de la mise en production, configuration de serveurs HTTP, base de données...
+    </p>
+    <div class="skills-language l-wrapper">
+
+      {{ helpers.skillBox(
+        'PostgreSQL', 'pgsql', 'seventy',
+          "<p>
+            Parce qu'il n'y a pas que MySQL dans la vie !
+            De la conception à la gestion et l'automatisation avec le langage PL/pgSQL.
+          </p>"
+        )
+      }}
+
+      {{ helpers.skillBox(
+        'MongoDB', 'mongodb', 'sixty',
+          "<p>
+            Savoir administrer une base de données NoSQL m'assure une grande polyvalence dû à l'émergence du BigData.
+          </p>"
+        )
+      }}
+
+      {{ helpers.skillBox(
+        'Redis', 'redis', 'sixty',
+          "<p>
+            Cette base de données NoSQL est souvent utilisée pour booster les performances, elle est incontournable.
+          </p>"
+        )
+      }}
+
+      {{ helpers.skillBox(
+        'GNU/Linux', 'linux', 'seventy',
+          "<p>
+            Administrer un serveur devient incontournable pour un développeur. Le terminal ne me fait plus peur, c'est devenu un ami quotidien.
+          </p>"
+        )
+      }}
+
+      {{ helpers.skillBox(
+        'Ngnix', 'ngnix', 'seventy',
+          "<p>
+            La configuration des serveurs HTTP est primordiale. Capable également de gérer apache2 dans une moindre mesure.
+          </p>"
+        )
+      }}
+    </div>
   </div>
-
-  <h2 class="h3 text-center">Administration système</h2>
-  <p class="sub-title">
-    Intéressé par les technologies telles que Docker et Ansible. <br />
-    Capable de vous accompagner lors de la mise en production, configuration de serveurs HTTP, base de données...
-  </p>
-  <div class="skills-language l-wrapper">
-
-    {{ helpers.skillBox(
-      'PostgreSQL', 'pgsql', 'seventy',
-        "<p>
-          Parce qu'il n'y a pas que MySQL dans la vie !
-          De la conception à la gestion et l'automatisation avec le langage PL/pgSQL.
-        </p>"
-      )
-    }}
-
-    {{ helpers.skillBox(
-      'MongoDB', 'mongodb', 'sixty',
-        "<p>
-          Savoir administrer une base de données NoSQL m'assure une grande polyvalence dû à l'émergence du BigData.
-        </p>"
-      )
-    }}
-
-    {{ helpers.skillBox(
-      'Redis', 'redis', 'sixty',
-        "<p>
-          Cette base de données NoSQL est souvent utilisée pour booster les performances, elle est incontournable.
-        </p>"
-      )
-    }}
-
-    {{ helpers.skillBox(
-      'GNU/Linux', 'linux', 'seventy',
-        "<p>
-          Administrer un serveur devient incontournable pour un développeur. Le terminal ne me fait plus peur, c'est devenu un ami quotidien.
-        </p>"
-      )
-    }}
-
-    {{ helpers.skillBox(
-      'Ngnix', 'ngnix', 'seventy',
-        "<p>
-          La configuration des serveurs HTTP est primordiale. Capable également de gérer apache2 dans une moindre mesure.
-        </p>"
-      )
-    }}
-  </div>
-
 </section>
