@@ -5,10 +5,11 @@
   color: #fff;
   display: flex;
   width: 100%;
+  // border-bottom: 1px solid hsl(240, 40%, 91%);
+  box-shadow: 0px 2px 4px rgba(0,0,0,0.18);
 }
 
 .topbar-background {
-  // background-image: url('../img/bg.jpg');
   background-size: cover;
   height: 100vh;
   width: 100%;
