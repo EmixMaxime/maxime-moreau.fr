@@ -1,12 +1,16 @@
 @import "./_presentation-reset.scss";
 
 .presentation-section {
-  padding-top: 100px;
+  margin-top: 100px;
+  box-shadow: 0 15px 35px rgba(50,50,93,.1), 0 5px 15px rgba(0,0,0,.07);
 }
 
 .presentation-box {
   display: flex;
   align-self: center;
+  padding: $gutters*2 0;
+  border-top-left-radius: 5px;
+  border-top-right-radius: 5px;
 }
 
 .presentation-me {
@@ -52,6 +56,7 @@
   align-items: center;
   height: 60px;
   background-color: $blue;
+  background-image: linear-gradient(0deg, hsl(187, 58%, 45%) 0%, hsl(177, 58%, 55%) 100%);
 }
 
 .presentation-social svg {
