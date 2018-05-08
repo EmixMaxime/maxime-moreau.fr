@@ -12,7 +12,6 @@ const observer = new IntersectionObserver(entries => {
     if (entry.intersectionRatio > 0.7) {
       entry.target.classList.add('show');
       observer.unobserve(entry.target);
-      console.log('timeline box visible');
     }
 
   });
