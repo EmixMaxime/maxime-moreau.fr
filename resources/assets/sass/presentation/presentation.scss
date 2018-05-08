@@ -25,24 +25,21 @@
   display: flex;
   flex-wrap: wrap;
   justify-content: center;
-  align-items: flex-end;
+  align-items: center;
 }
 
 .presentation-picture-wrapper {
   height: 250px;
   width: 250px;
   overflow: hidden;
-}
-
-.presentation-picture-item {
-  text-align: center;
-  font-size: 1.1rem;
-  margin-top: 0.8em;
+  border-radius: 250px;
 }
 
 .presentation-me-item {
-  border-bottom: 1px solid rgba(0,0,0,0.1);
-  margin-bottom: 10px;
+  padding: 10px;
+  &:nth-child(2n) {
+    background-color: hsl(187, 18%, 97%);
+  }
 }
 
 .presentation-me-item-title {
