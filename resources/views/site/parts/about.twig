@@ -1,45 +1,41 @@
 {% import 'macros/tooltip.twig' as helpers %}
 
-<div class="l-container">
+<section class="about l-section" id="about">
+  <h1 class="h2 text-center">À propos de moi</h1>
+  <div class="about-wrapper">
 
-  <section class="about l-section" id="about">
-    <h1 class="h2 text-center">À propos de moi</h1>
-    <div class="about-wrapper">
-
-      <div class="about-personality about-box l-section">
-        <h2 class="h4 not-strong">Ma personnalité</h2>
-        <ul>
-          <li class="about-personality-item"><span>Hobbies : </span>veille technologique, VTT.</li>
-          <li class="about-personality-item">
-            <span>Séries tv préférées : </span>
-            <a target="_blank" href="https://fr.wikipedia.org/wiki/Silicon_Valley_(s%C3%A9rie_t%C3%A9l%C3%A9vis%C3%A9e)">Silicon Valley</a> 
-            <a target="_blank" href="https://fr.wikipedia.org/wiki/Mr._Robot_(s%C3%A9rie_t%C3%A9l%C3%A9vis%C3%A9e)"> Mr. Robot</a> 
-            <a href="https://fr.wikipedia.org/wiki/The_Walking_Dead_(s%C3%A9rie_t%C3%A9l%C3%A9vis%C3%A9e)">The walking dead</a> 
-          </li>
-          <li class="about-personality-item">
-            <span>Playlists de travail : </span>
-            <a href="https://open.spotify.com/user/spotify/playlist/37i9dQZF1DX720GaRlTmKS">Concentration Maximum</a> 
-            <a href="https://open.spotify.com/user/spotify/playlist/37i9dQZF1DWZa8CSUr0hCY">Chill Beats</a>
-            <a href="https://www.youtube.com/watch?v=xrbrQhpvn8E">Beats to relax/study to</a>
-          </li>
-        </ul>
-      </div>
-
-      <div class="about-story about-box l-section">
-        <h2 class="h4 not-strong">Mon histoire</h2>
-        <p class="about-story-p">
-          Depuis l'âge de 14 ans je m'intéresse au développement web. Depuis cet âge, je jongle entre mes cours scolaires et mon apprentissage autodidacte.
-          Pendant que la plupart des adolescents s'amusaient sur des jeux vidéo, je m'amusais à apprendre comment créer un site web.
-          Je ne cesse de développer et de m'autoformer, grâce à ce merveilleux outil qu'est Internet.
-          Voici quelques sites où je me suis formé :
-          {{ helpers.tooltip('Grafikart est un site proposant des tutoriels portés sur le développement web, géré par un développeur free-lance qui nous fait découvrir son métier à travers des tutoriels et formations vidéo.', '<a target="_blank" class="accent-color" href="https://grafikart.fr">Grafikart</a>') }}
-
-          {{ helpers.tooltip('Codeschool est un site Américain, vous apprenez en regardant les vidéos puis vous devez valider vos connaissances avec les challanges, où vous devez mettre en pratique à travers leur éditeur de code en ligne interactif.', '<a target="_blank"  class="accent-color" href="https://codeschool.com">Codeschool</a>') }}
-
-          {{ helpers.tooltip("Openclassrooms la référence des MOOC's français.", '<a class="accent-color" href="https://openclassrooms.com">Openclassrooms</a>') }}
-      </p>
-      </div>
+    <div class="about-personality about-box l-section">
+      <h2 class="h4 not-strong">Ma personnalité</h2>
+      <ul>
+        <li class="about-personality-item"><span>Hobbies : </span>veille technologique, VTT.</li>
+        <li class="about-personality-item">
+          <span>Séries tv préférées : </span>
+          <a target="_blank" href="https://fr.wikipedia.org/wiki/Silicon_Valley_(s%C3%A9rie_t%C3%A9l%C3%A9vis%C3%A9e)">Silicon Valley</a> 
+          <a target="_blank" href="https://fr.wikipedia.org/wiki/Mr._Robot_(s%C3%A9rie_t%C3%A9l%C3%A9vis%C3%A9e)"> Mr. Robot</a> 
+          <a href="https://fr.wikipedia.org/wiki/The_Walking_Dead_(s%C3%A9rie_t%C3%A9l%C3%A9vis%C3%A9e)">The walking dead</a> 
+        </li>
+        <li class="about-personality-item">
+          <span>Playlists de travail : </span>
+          <a href="https://open.spotify.com/user/spotify/playlist/37i9dQZF1DX720GaRlTmKS">Concentration Maximum</a> 
+          <a href="https://open.spotify.com/user/spotify/playlist/37i9dQZF1DWZa8CSUr0hCY">Chill Beats</a>
+          <a href="https://www.youtube.com/watch?v=xrbrQhpvn8E">Beats to relax/study to</a>
+        </li>
+      </ul>
     </div>
-  </section>
 
-</div>
+    <div class="about-story about-box l-section">
+      <h2 class="h4 not-strong">Mon histoire</h2>
+      <p class="about-story-p">
+        Depuis l'âge de 14 ans je m'intéresse au développement web. Depuis cet âge, je jongle entre mes cours scolaires et mon apprentissage autodidacte.
+        Pendant que la plupart des adolescents s'amusaient sur des jeux vidéo, je m'amusais à apprendre comment créer un site web.
+        Je ne cesse de développer et de m'autoformer, grâce à ce merveilleux outil qu'est Internet.
+        Voici quelques sites où je me suis formé :
+        {{ helpers.tooltip('Grafikart est un site proposant des tutoriels portés sur le développement web, géré par un développeur free-lance qui nous fait découvrir son métier à travers des tutoriels et formations vidéo.', '<a target="_blank" class="accent-color" href="https://grafikart.fr">Grafikart</a>') }}
+
+        {{ helpers.tooltip('Codeschool est un site Américain, vous apprenez en regardant les vidéos puis vous devez valider vos connaissances avec les challanges, où vous devez mettre en pratique à travers leur éditeur de code en ligne interactif.', '<a target="_blank"  class="accent-color" href="https://codeschool.com">Codeschool</a>') }}
+
+        {{ helpers.tooltip("Openclassrooms la référence des MOOC's français.", '<a class="accent-color" href="https://openclassrooms.com">Openclassrooms</a>') }}
+    </p>
+    </div>
+  </div>
+</section>
