@@ -1,1 +1,0 @@
-webpackJsonp([1],{2:function(a,b,c){a.exports=c("JcF2")},JcF2:function(a,b,c){"use strict";Object.defineProperty(b,"__esModule",{value:!0});var d=c("To/m"),e=c.n(d);console.log("main.js")},"To/m":function(){}},[2]);
