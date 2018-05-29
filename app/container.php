@@ -39,5 +39,19 @@ $container['lang'] = function() use ($configRepository) {
 	return new \Emix\Lang\Lang($cookieLang, $httpAcceptLang, $langConfig['supported'], $langConfig['default']);
 };
 
+$container['translator'] = function() use($configRepository) {
+	$langConfig = $configRepository->get('lang');
+	$translator = new Symfony\Component\Translation\Translator('en_US');
+	// $translator = new Symfony\Component\Translation\Translator('fr_FR');
+	$s = require($langConfig['path'] . '/fr_FR.php');
+
+	$arrayLoader = $yamlLoader = new \Symfony\Component\Translation\Loader\ArrayLoader();
+	$translator->addLoader('array', $arrayLoader);
+
+	$translator->addResource('array', $s, 'en_US');
+
+	return $translator;
+};
+
 $view = new \App\Providers\ViewServiceProvider($app);
 $view->run();
