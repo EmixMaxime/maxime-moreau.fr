@@ -17,7 +17,7 @@ use Twig_SimpleFunction;
 class ViewServiceProvider extends ServiceProvider
 {
 
-  public function run ()
+  public function run()
   {
     $this->container['view'] = function (ContainerInterface $container): Twig {
       $config = $container->get('config');
@@ -34,7 +34,11 @@ class ViewServiceProvider extends ServiceProvider
 
       // Instantiate and add Slim specific extension
       $basePath = rtrim(str_ireplace('index.php', '', $container['request']->getUri()->getBasePath()), '/');
-      $view->addExtension(new TwigExtension($container['router'], $basePath));
+	  $view->addExtension(new TwigExtension($container['router'], $basePath));
+	  
+	  // Add translator
+	  $translator = $container['translator'];
+	  $view->addExtension(new \Symfony\Bridge\Twig\Extension\TranslationExtension($translator));
 
 
       $twigEnv = $view->getEnvironment();
