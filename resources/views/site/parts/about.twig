@@ -2,11 +2,11 @@
 
 <section class="about l-section" id="about">
 <div class="l-container">
-    <h1 class="h2 text-center">À propos de moi</h1>
+    <h1 class="h2 text-center">{{ "À propos de moi" | trans }}</h1>
     <div class="about-wrapper">
 
       <div class="about-personality about-box l-section">
-        <h2 class="h4 not-strong">Ma personnalité</h2>
+        <h2 class="h4 not-strong">{{ "Ma personnalité" | trans }}</h2>
         <ul>
           <li class="about-personality-item"><span>Hobbies : </span>veille technologique, VTT.</li>
           <li class="about-personality-item">
@@ -25,12 +25,15 @@
       </div>
 
       <div class="about-story about-box l-section">
-        <h2 class="h4 not-strong">Mon histoire</h2>
+        <h2 class="h4 not-strong">{{ "Mon histoire" | trans }}</h2>
         <p class="about-story-p">
-          Depuis l'âge de 14 ans je m'intéresse au développement web. Depuis cet âge, je jongle entre mes cours scolaires et mon apprentissage autodidacte.
-          Pendant que la plupart des adolescents s'amusaient sur des jeux vidéo, je m'amusais à apprendre comment créer un site web.
-          Je ne cesse de développer et de m'autoformer, grâce à ce merveilleux outil qu'est Internet.
-          Voici quelques sites où je me suis formé :
+          {{
+            "Depuis l'âge de 14 ans je m'intéresse au développement web. Depuis cet âge, je jongle entre mes cours scolaires et mon apprentissage autodidacte.
+            Pendant que la plupart des adolescents s'amusaient sur des jeux vidéo, je m'amusais à apprendre comment créer un site web.
+            Je ne cesse de développer et de m'autoformer, grâce à ce merveilleux outil qu'est Internet.
+            Voici quelques sites où je me suis formé :"
+            | trans
+          }}
           {{ helpers.tooltip('Grafikart est un site proposant des tutoriels portés sur le développement web, géré par un développeur free-lance qui nous fait découvrir son métier à travers des tutoriels et formations vidéo.', '<a target="_blank" class="accent-color" href="https://grafikart.fr">Grafikart</a>') }}
 
           {{ helpers.tooltip('Codeschool est un site Américain, vous apprenez en regardant les vidéos puis vous devez valider vos connaissances avec les challanges, où vous devez mettre en pratique à travers leur éditeur de code en ligne interactif.', '<a target="_blank"  class="accent-color" href="https://codeschool.com">Codeschool</a>') }}
