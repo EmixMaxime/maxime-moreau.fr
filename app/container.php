@@ -29,5 +29,15 @@ $container[TwigAssetExtension::class] = function (ContainerInterface $container)
   return new \Emix\Asset\TwigAssetExtension($container[\Emix\Asset\Asset::class]);
 };
 
+$container['lang'] = function() use ($configRepository) {
+	$cookieLang = $_COOKIE['user_lang'] ?? null;
+	$httpAcceptLang = $_SERVER["HTTP_ACCEPT_LANGUAGE"] ?? null;
+	$langConfig = $configRepository->get('lang');
+
+
+	// String $cookieLang, String $httpAcceptLang, array $supportedLanguages, String $defaultLang
+	return new \Emix\Lang\Lang($cookieLang, $httpAcceptLang, $langConfig['supported'], $langConfig['default']);
+};
+
 $view = new \App\Providers\ViewServiceProvider($app);
 $view->run();
