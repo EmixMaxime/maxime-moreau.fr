@@ -10,30 +10,30 @@
 
 <section class="l-section" id="advantages-section">
   <div class="l-container">
-    <h1 class="h2 text-center">Mes atouts</h1>
+    <h1 class="h2 text-center">{{ "Mes atouts" | trans }}</h1>
 
     <div class="chart" id="chart">
     
       <div class="chart-legend chart-legend--left">
         <div class="chart-legend-title">
-          <span>Moi</span>
+          <span>{{ "moi" | trans }}</span>
         </div>
       </div>
       
       <div class="chart-legend chart-legend--right">
         <ul>
           <li class="chart-legend-item">Linus Torvlads</li>
-          <li class="chart-legend-item">Très bon</li>
-          <li class="chart-legend-item">Bon</li>
+          <li class="chart-legend-item">{{ "Très bon" | trans }}</li>
+          <li class="chart-legend-item">{{ "Bon" | trans }}</li>
         </ul>
       </div>
 
 
       <div class="chart-items">
-        {{ chartItem('Curieux', 88) }}
-        {{ chartItem('Sérieux', 78) }}
-        {{ chartItem('Ambitieux', 69) }}
-        {{ chartItem('Leader-ship', 58) }}
+        {{ chartItem('Curieux' | trans, 88) }}
+        {{ chartItem('Sérieux' | trans, 78) }}
+        {{ chartItem('Ambitieux' | trans, 69) }}
+        {{ chartItem('Leadership', 58) }}
       </div>
 
     </div>
