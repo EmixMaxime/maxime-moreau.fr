@@ -10,19 +10,25 @@
         </div>
 
         <div class="presentation-me">
-          <h1 class="title h4">Bonjour, je m'appelle Maxime Moreau,</h1>
-          <p>étudiant en 2ème année de DUT Informatique en alternance.</p>
+          <h1 class="title h4">
+            {{"Bonjour, je m'appelle %name%" | trans({'%name%' : 'Maxime Moreau'})}}
+          </h1>
+          
+          <p>
+            {{ "étudiant en 2ème année de DUT Informatique en alternance." | trans }}
+          </p>
           <ul>
 
             <li class="presentation-me-item">
-              <p class="presentation-me-item-title">Status</p>
-              <p><strong>Apprenti développeur web à <a href="http://www.viously.com/">Visouly</a></strong></p>
+              <p class="presentation-me-item-title">{{ "Status" | trans}}</p>
+              <p><strong>{{ "Apprenti développeur web à" | trans }} <a href="http://www.viously.com/">Visouly</a></strong></p>
             </li>
             <li class="presentation-me-item">
-              <p class="presentation-me-item-title">Âge</p>
-              <p>19 ans</p>
+              <p class="presentation-me-item-title">{{ "Âge" | trans }}</p>
+              <p>{{ "%age% ans" | trans({"%age%": '19'}) }}</p>
             </li>
 
+            {# En anglais, je mets le pays #}
             <li class="presentation-me-item">
               <p class="presentation-me-item-title">Région</p>
               <p>Hauts-de-France (62)</p>
@@ -34,8 +40,8 @@
             </li>
 
             <li class="presentation-me-item">
-              <p class="presentation-me-item-title">Secteur d'activité</p>
-              <p>Développement web full-stack</p>
+              <p class="presentation-me-item-title">{{ "Secteur d'activité" | trans }}</p>
+              <p>{{ "Développement web full-stack" | trans }}</p>
             </li>
           </ul>
         </div>
