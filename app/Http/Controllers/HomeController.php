@@ -9,14 +9,15 @@ use Psr\Http\Message\ResponseInterface;
 class HomeController extends BaseController
 {
 
-	public function __construct (ContainerInterface $container)
+	public function __construct(ContainerInterface $container)
 	{
 		parent::__construct($container);
 	}
 
-	public function home (RequestInterface $request, ResponseInterface $response)
+	public function home(RequestInterface $request, ResponseInterface $response)
 	{
-		return $this->render($response, 'site/home.twig');
+		$data = $this->getData(['skills']);
+		return $this->render($response, 'site/home.twig', compact('data'));
 	}
 
 }
