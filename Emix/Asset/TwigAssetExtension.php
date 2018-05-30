@@ -1,7 +1,7 @@
 <?php
 namespace Emix\Asset;
 
-use Emix\asset\Asset;
+use Emix\Asset\Asset;
 use Twig_Extension;
 
 class TwigAssetExtension extends Twig_Extension {

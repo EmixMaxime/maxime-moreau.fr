@@ -3,6 +3,7 @@
 use Emix\Asset\Asset;
 use Emix\Asset\TwigAssetExtension;
 use Emix\Config\ConfigRepository;
+use Emix\Twig\TwigEnvExtension;
 use Psr\Container\ContainerInterface;
 
 $container = $app->getContainer();
@@ -29,6 +30,10 @@ $container[TwigAssetExtension::class] = function (ContainerInterface $container)
   return new \Emix\Asset\TwigAssetExtension($container[\Emix\Asset\Asset::class]);
 };
 
+$container[TwigEnvExtension::class] = function ($container) {
+	return new \Emix\Twig\TwigEnvExtension($container['config']);
+};
+
 $container['lang'] = function() use ($configRepository) {
 	$cookieLang = $_COOKIE['user_lang'] ?? null;
 	$httpAcceptLang = $_SERVER["HTTP_ACCEPT_LANGUAGE"] ?? null;
@@ -53,5 +58,5 @@ $container['translator'] = function() use($configRepository) {
 	return $translator;
 };
 
-$view = new \App\Providers\ViewServiceProvider($app);
-$view->run();
+$viewServiceProvider = new \App\Providers\ViewServiceProvider($container);
+$viewServiceProvider->run();
