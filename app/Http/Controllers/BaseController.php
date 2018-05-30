@@ -41,6 +41,7 @@ class BaseController
 	{
 		$dataPath = $this->pathHelpers->data;
 		$arr = [];
+		$translator = $this->container->get('translator');
 
 		foreach (glob("${dataPath}/*.data.php") as $path) {
 			$filename = basename($path, '.data.php');
