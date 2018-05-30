@@ -25,9 +25,11 @@
     <script src="{{ asset('manifest.js') }}" charset="utf-8"></script>
     <script src="{{ asset('main.js') }}" charset="utf-8"></script>
 
-    {% for assetname in assets %}
-      <script src="{{ asset(assetname ~ '.js') }}"></script>
-    {% endfor %}
+    {% if assets is defined %}
+      {% for assetname in assets %}
+        <script src="{{ asset(assetname ~ '.js') }}"></script>
+      {% endfor %}
+    {% endif %}
 
     {% block js %}
     {% endblock %}
