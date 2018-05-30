@@ -48,12 +48,30 @@ $container['translator'] = function() use($configRepository) {
 	$langConfig = $configRepository->get('lang');
 	$translator = new Symfony\Component\Translation\Translator('en_US');
 	// $translator = new Symfony\Component\Translation\Translator('fr_FR');
-	$s = require($langConfig['path'] . '/fr_FR.php');
+	
+	$path = $langConfig['path'];
+	
+	$arr = [];
+	foreach (glob("${path}/fr_FR/*.fr_FR.php") as $path) {
+		$filename = basename($path);
+		$arr[basename($filename)] = include($path);
+	}
+
+	$translations = [];
+
+	/**
+	 * ['skills.fr_FR.php' => ['Bonjour' => 'Hello world']]
+	 * to
+	 * ['Bonjour' => 'Hello world']
+	 */
+	foreach ($arr as $key => $value) {
+		$translations = array_merge($translations, $value);
+	}
 
 	$arrayLoader = $yamlLoader = new \Symfony\Component\Translation\Loader\ArrayLoader();
 	$translator->addLoader('array', $arrayLoader);
 
-	$translator->addResource('array', $s, 'en_US');
+	$translator->addResource('array', $translations, 'en_US');
 
 	return $translator;
 };

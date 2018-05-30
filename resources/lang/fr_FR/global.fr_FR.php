@@ -24,5 +24,5 @@ return [
 	"Très bon" => "very good",
 	"Ambitieux" => "Ambitious",
 	"Sérieux" => "Serious",
-	"Curieux" => "Curious"
+	"Curieux" => "Curious",
 ];
