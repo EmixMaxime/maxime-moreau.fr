@@ -6,32 +6,31 @@ return [
 			'name' => 'HTML/CSS',
 			'class' => 'css',
 			'level' => 'ninety',
-			'description' => 'Utilisation du préprocesseur SASS afin de proposer un code maintenable. Compatible avec les anciens navigateurs ou récents selon les besoins.'
+			'description' => $translator->trans('Utilisation du préprocesseur SASS afin de proposer un code maintenable. Compatible avec les anciens navigateurs ou récents selon les besoins.')
 		],
 		[
 			'name' => 'Javascript',
 			'class' => 'js',
 			'level' => 'ninety',
-			'description' => "Éxécuté par le navigateur ou NodeJS.
-			Utilisation de l'ES6/7, le code est ensuite transpilé en fonction des besoins. Gulp et webpack sont de l'aventure."
+			'description' => $translator->trans("Éxécuté par le navigateur ou NodeJS. Utilisation de l'ES6/7, le code est ensuite transpilé en fonction des besoins. Gulp et webpack sont de l'aventure")
 		],
 		[
 			'name' => 'PHP',
 			'class' => 'php',
 			'level' => 'ninety',
-			'description' => "Utilisation du framework Laravel ou Slim afin d'apporter une structure maintenable."
+			'description' => $translator->trans("Utilisation du framework Laravel ou Slim afin d'apporter une structure maintenable")
 		],
 		[
 			'name' => 'Java',
 			'class' => 'java',
 			'level' => 'sixty',
-			'description' => "Découverte de l'écosystème JAVA (J2EE et Android)."
+			'description' => $translator->trans("Découverte de l'écosystème JAVA (J2EE et Android)")
 		],
 		[
 			'name' => 'C',
 			'class' => 'c',
 			'level' => 'seventy',
-			'description' => 'Les pointeurs et les "segmentation fault" n\'ont plus de secrets pour moi. Découverte de Rust également.'
+			'description' => $translator->trans('Les pointeurs et les "segmentation fault" n\'ont plus de secrets pour moi. Découverte de Rust également')
 		]
 
 	],
