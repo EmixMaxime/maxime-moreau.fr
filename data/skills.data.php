@@ -31,7 +31,7 @@ return [
 			'name' => 'C',
 			'class' => 'c',
 			'level' => 'seventy',
-			'descrpition' => 'Les pointeurs et les "segmentation fault" n\'ont plus de secrets pour moi. Découverte de Rust également.'
+			'description' => 'Les pointeurs et les "segmentation fault" n\'ont plus de secrets pour moi. Découverte de Rust également.'
 		]
 
 	],
@@ -65,7 +65,7 @@ return [
 		],
 		[
 			'name' => 'Ngnix',
-			'class' => 'nginx',
+			'class' => 'ngnix',
 			'level' => 'seventy',
 			'description' => 'La configuration des serveurs HTTP est primordiale. Capable également de gérer apache2 dans une moindre mesure.'
 		]
