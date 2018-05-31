@@ -41,32 +41,31 @@ return [
 			'name' => 'PostgreSQL',
 			'class' => 'pgsql',
 			'level' => 'seventy',
-			'description' => "Parce qu'il n'y a pas que MySQL dans la vie !
-			De la conception à la gestion et l'automatisation avec le langage PL/pgSQL."
+			'description' => $translator->trans("Parce qu'il n'y a pas que MySQL dans la vie ! De la conception à la gestion et l'automatisation avec le langage PL/pgSQL")
 		],
 		[
 			'name' => 'MongoDB',
 			'class' => 'mongodb',
 			'level' => 'sixty',
-			'description' => "Savoir administrer une base de données NoSQL m'assure une grande polyvalence dû à l'émergence du BigData."
+			'description' => $translator->trans("Savoir administrer une base de données NoSQL m'assure une grande polyvalence dû à l'émergence du BigData")
 		],
 		[
 			'name' => 'Redis',
 			'class' => 'redis',
 			'level' => 'sixty',
-			'description' => 'Cette base de données NoSQL est souvent utilisée pour booster les performances, elle est incontournable.',
+			'description' => $translator->trans('Cette base de données NoSQL est souvent utilisée pour booster les performances, elle est incontournable.'),
 		],
 		[
 			'name' => 'GNU/Linux',
 			'class' => 'linux',
 			'level' => 'seventy',
-			'description' => "Administrer un serveur devient incontournable pour un développeur. Le terminal ne me fait plus peur, c'est devenu un ami quotidien."
+			'description' => $translator->trans("Administrer un serveur devient incontournable pour un développeur. Le terminal ne me fait plus peur, c'est devenu un ami quotidien")
 		],
 		[
 			'name' => 'Ngnix',
 			'class' => 'ngnix',
 			'level' => 'seventy',
-			'description' => 'La configuration des serveurs HTTP est primordiale. Capable également de gérer apache2 dans une moindre mesure.'
+			'description' => $translator->trans('La configuration des serveurs HTTP est primordiale. Capable également de gérer apache2 dans une moindre mesure')
 		]
 	]
 
