@@ -32,10 +32,15 @@
 						<p>{{ "%age% ans" | trans({"%age%": '19'}) }}</p>
 					</li>
 
-					{# En anglais, je mets le pays #}
 					<li class="presentation-me-item">
-						<p class="presentation-me-item-title">Région</p>
-						<p>Hauts-de-France (62)</p>
+						{% if lang == 'fr' %}
+							<p class="presentation-me-item-title">Région</p>
+							<p>Hauts-de-France (62)</p>
+						{% elseif lang == 'en' %}
+							<p class="presentation-me-item-title">Country</p>
+							<p>France</p>
+						{% endif %}
+						
 					</li>
 
 					<li class="presentation-me-item">
