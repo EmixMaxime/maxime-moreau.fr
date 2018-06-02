@@ -1,37 +1,34 @@
 <!doctype html>
 <html lang="fr">
-  <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
-    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+	<head>
+		<meta charset="UTF-8">
+		<meta name="viewport" content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+		<meta http-equiv="X-UA-Compatible" content="ie=edge">
 
-    {% block head %}
+		{% block head %}
+			<link rel="stylesheet" href="{{ asset('main.css') }}">
+			
+			{% for assetname in assets %}
+			<link rel="stylesheet" href="{{ asset(assetname ~ '.css') }}">
+			{% endfor %}
+		{% endblock %}
 
-      <link rel="stylesheet" href="{{ asset('main.css') }}">
+		<title>Maxime Moreau</title>
+	</head>
 
-      {% for assetname in assets %}
-        <link rel="stylesheet" href="{{ asset(assetname ~ '.css') }}">
-      {% endfor %}
+	<body>
 
-    {% endblock %}
+		{% block body %} {% endblock %}
 
-    <title>Maxime Moreau</title>
-  </head>
-  <body>
-
-    {% block body %}
-    {% endblock %}
-
-    <script src="{{ asset('manifest.js') }}" charset="utf-8"></script>
-    <script src="{{ asset('main.js') }}" charset="utf-8"></script>
-
-    {% if assets is defined %}
-      {% for assetname in assets %}
-        <script src="{{ asset(assetname ~ '.js') }}"></script>
-      {% endfor %}
-    {% endif %}
-
-    {% block js %}
-    {% endblock %}
-  </body>
+		<script src="{{ asset('manifest.js') }}" charset="utf-8"></script>
+		<script src="{{ asset('main.js') }}" charset="utf-8"></script>
+		
+		{% if assets is defined %}
+			{% for assetname in assets %}
+				<script src="{{ asset(assetname ~ '.js') }}"></script>
+			{% endfor %}
+		{% endif %}
+		
+		{% block js %} {% endblock %}
+	</body>
 </html>
