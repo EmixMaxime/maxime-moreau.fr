@@ -20,7 +20,8 @@ class PathHelpers
     $paths['config'] = $root . '/config';
     $paths['storage'] = $root . '/storage';
     $paths['resources'] = $root . '/resources';
-    $paths['public'] = $root . '/public';
+	$paths['public'] = $root . '/public';
+	$paths['data'] = $root . '/data';
 
     $this->paths = $paths;
   }
