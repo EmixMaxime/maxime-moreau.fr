@@ -17,8 +17,18 @@ class TranslatorServiceProvider extends ServiceProvider
 	{
 		$this->container['translator'] = function(): Translator {
 			$langConfig = $this->configRepository->get('lang');
-			$translator = new \Symfony\Component\Translation\Translator('en_US');
-			// $translator = new Symfony\Component\Translation\Translator('fr_FR');
+			$lang = $this->container['lang']->getLang();
+
+			switch($lang) {
+				case 'fr':
+					$locale = 'fr_FR';
+					break;
+				case 'en':
+					$locale = 'en_US';
+					break;
+			}
+
+			$translator = new \Symfony\Component\Translation\Translator($locale);
 			
 			$path = $langConfig['path'];
 			
