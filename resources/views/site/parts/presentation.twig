@@ -1,64 +1,78 @@
 <div class="l-container l-container--small">
 
-  <section class="presentation-section">
-    <div class="l-box presentation-box">
+	<section class="presentation-section">
+		<div class="l-box presentation-box">
 
-        <div class="presentation-picture">
-          <div class="presentation-picture-wrapper">
-            <img class="presentation-picture-image" src="me.png">
-          </div>
-        </div>
+			<div class="presentation-picture">
+				<div class="presentation-picture-wrapper">
+					<img class="presentation-picture-image" src="me.png">
+				</div>
+			</div>
 
-        <div class="presentation-me">
-          <h1 class="title h4">
-            {{"Bonjour, je m'appelle %name%" | trans({'%name%' : 'Maxime Moreau'})}}
-          </h1>
-          
-          <p>
-            {{ "étudiant en 2ème année de DUT Informatique en alternance." | trans }}
-          </p>
-          <ul>
+			<div class="presentation-me">
+				<h1 class="title h4">
+					{{"Bonjour, je m'appelle %name%" | trans({'%name%' : 'Maxime Moreau'})}}
+				</h1>
 
-            <li class="presentation-me-item">
-              <p class="presentation-me-item-title">{{ "Status" | trans}}</p>
-              <p><strong>{{ "Apprenti développeur web à" | trans }} <a href="http://www.viously.com/">Visouly</a></strong></p>
-            </li>
-            <li class="presentation-me-item">
-              <p class="presentation-me-item-title">{{ "Âge" | trans }}</p>
-              <p>{{ "%age% ans" | trans({"%age%": '19'}) }}</p>
-            </li>
+				<p>
+					{{ "étudiant en 2ème année de DUT Informatique en alternance." | trans }}
+				</p>
+				<ul>
 
-            {# En anglais, je mets le pays #}
-            <li class="presentation-me-item">
-              <p class="presentation-me-item-title">Région</p>
-              <p>Hauts-de-France (62)</p>
-            </li>
+					<li class="presentation-me-item">
+						<p class="presentation-me-item-title">{{ "Status" | trans}}</p>
+						<p>
+							<strong>{{ "Apprenti développeur web à" | trans }}
+								<a href="http://www.viously.com/">Visouly</a>
+							</strong>
+						</p>
+					</li>
+					<li class="presentation-me-item">
+						<p class="presentation-me-item-title">{{ "Âge" | trans }}</p>
+						<p>{{ "%age% ans" | trans({"%age%": '19'}) }}</p>
+					</li>
 
-            <li class="presentation-me-item">
-              <p class="presentation-me-item-title">E-mail</p>
-              <a href="mailto:contact@maxime-moreau.fr">contact@maxime-moreau.fr</a>
-            </li>
+					{# En anglais, je mets le pays #}
+					<li class="presentation-me-item">
+						<p class="presentation-me-item-title">Région</p>
+						<p>Hauts-de-France (62)</p>
+					</li>
 
-            <li class="presentation-me-item">
-              <p class="presentation-me-item-title">{{ "Secteur d'activité" | trans }}</p>
-              <p>{{ "Développement web full-stack" | trans }}</p>
-            </li>
-          </ul>
-        </div>
+					<li class="presentation-me-item">
+						<p class="presentation-me-item-title">E-mail</p>
+						<a href="mailto:contact@maxime-moreau.fr">contact@maxime-moreau.fr</a>
+					</li>
 
-    </div>
+					<li class="presentation-me-item">
+						<p class="presentation-me-item-title">{{ "Secteur d'activité" | trans }}</p>
+						<p>{{ "Développement web full-stack" | trans }}</p>
+					</li>
+				</ul>
+			</div>
 
-    <div class="presentation-social">
-    <a class="presentation-social-link" href="https://github.com/EmixMaxime">
-      <svg class="icon icon-github"><use xlink:href="#icon-github"></use></svg><span class="mls"></span>
-    </a>
-    <a class="presentation-social-link" href="https://twitter.com/emixmaxime">
-      <svg class="icon icon-twitter"><use xlink:href="#icon-twitter"></use></svg><span class="mls"></span>
-    </a>
-    <a class="presentation-social-link" href="https://www.linkedin.com">
-      <svg class="icon icon-linkedin"><use xlink:href="#icon-linkedin"></use></svg><span class="mls"></span></a>
-    </a>
-    </div>
-  </section>
+		</div>
+
+		<div class="presentation-social">
+			<a class="presentation-social-link" href="https://github.com/EmixMaxime">
+				<svg class="icon icon-github">
+					<use xlink:href="#icon-github"></use>
+				</svg>
+				<span class="mls"></span>
+			</a>
+			<a class="presentation-social-link" href="https://twitter.com/emixmaxime">
+				<svg class="icon icon-twitter">
+					<use xlink:href="#icon-twitter"></use>
+				</svg>
+				<span class="mls"></span>
+			</a>
+			<a class="presentation-social-link" href="https://www.linkedin.com">
+				<svg class="icon icon-linkedin">
+					<use xlink:href="#icon-linkedin"></use>
+				</svg>
+				<span class="mls"></span>
+			</a>
+			</a>
+		</div>
+	</section>
 
 </div>
