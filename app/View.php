@@ -21,6 +21,7 @@ class View
 	private $twigConfig;
 
 	private $twig;
+
 	private $twigEnv;
 
 	private $env;
@@ -65,9 +66,10 @@ class View
 
 	private function addGlobals(): void
 	{
+		$this->twigEnv->addGlobal('request', $this->container['request']);
 		$this->twigEnv->addGlobal('uri', $this->container['request']->getUri());
 		$this->twigEnv->addGlobal('path', $this->container['request']->getUri()->getPath());
-		$this->twigEnv->addGlobal('request', $this->container['request']);
+		$this->twigEnv->addGlobal('lang', $this->container['lang']->getLang());
 		// $this->addGlobals($container, $twigEnv);
 
 		$siteConfig = $this->config->get('site');
