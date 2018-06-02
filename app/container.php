@@ -36,13 +36,13 @@ $container[TwigEnvExtension::class] = function ($container) {
 };
 
 $container['lang'] = function() use ($configRepository) {
-	$cookieLang = $_COOKIE['user_lang'] ?? null;
+	$userPrefLang = $_GET['lang'] ?? null;
 	$httpAcceptLang = $_SERVER["HTTP_ACCEPT_LANGUAGE"] ?? null;
 	$langConfig = $configRepository->get('lang');
 
 
-	// String $cookieLang, String $httpAcceptLang, array $supportedLanguages, String $defaultLang
-	return new \Emix\Lang\Lang($cookieLang, $httpAcceptLang, $langConfig['supported'], $langConfig['default']);
+	// String $userPrefLang, String $httpAcceptLang, array $supportedLanguages, String $defaultLang
+	return new \Emix\Lang\Lang($userPrefLang, $httpAcceptLang, $langConfig['supported'], $langConfig['default']);
 };
 
 $viewServiceProvider = new \App\Providers\ViewServiceProvider($container);

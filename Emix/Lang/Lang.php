@@ -4,7 +4,7 @@ namespace Emix\Lang;
 
 class Lang
 {
-    private $cookieLang;
+    private $userPrefLang;
 	private $httpAcceptLang;
 
 	private $supportedLanguages;
@@ -13,9 +13,9 @@ class Lang
 	private $browserLang;
 	private $lang;
 
-    public function __construct(?String $cookieLang, ?String $httpAcceptLang, array $supportedLanguages, String $defaultLang)
+    public function __construct(?String $userPrefLang, ?String $httpAcceptLang, array $supportedLanguages, String $defaultLang)
     {
-        $this->cookieLang = $cookieLang;
+        $this->userPrefLang = $userPrefLang;
 		$this->httpAcceptLang = $httpAcceptLang;
 
 		$this->supportedLanguages = $supportedLanguages;
@@ -60,8 +60,8 @@ class Lang
 
     private function determine(): String
     {
-		if ($this->cookieLang && in_array($this->cookieLang, $this->supportedLanguages)) {
-			return $this->cookieLang;
+		if ($this->userPrefLang && in_array($this->userPrefLang, $this->supportedLanguages)) {
+			return $this->userPrefLang;
 		}
 
 		if ($this->browserLang && in_array($this->browserLang, $this->supportedLanguages)) {
