@@ -16,7 +16,7 @@ class ViewServiceProvider extends ServiceProvider
 	public function run(): void
 	{
 		$this->container['view'] = function (ContainerInterface $container): Twig {
-			$viewBuilder = new \App\View($container);
+			$viewBuilder = new \App\View($container, $container->get('config'));
 			$view = $viewBuilder->getTwig();
 
 			return $view;

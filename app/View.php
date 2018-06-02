@@ -6,11 +6,15 @@ use Interop\Container\ContainerInterface;
 use Slim\Views\Twig;
 use Slim\Views\TwigExtension;
 use Symfony\Bridge\Twig\Extension\TranslationExtension;
+use Emix\Config\ConfigRepositoryInterface;
 
 class View
 {
 	private $container;
 
+	/**
+	 * @var ConfigRepositoryInterface
+	 */
 	private $config;
 
 	private $viewConfig;
@@ -21,11 +25,10 @@ class View
 
 	private $env;
 
-	public function __construct(ContainerInterface $container)
+	public function __construct(ContainerInterface $container, ConfigRepositoryInterface $config)
 	{
 		$this->container = $container;
 
-		$config = $container->get('config');
 		$env = $config->get('app.env');
 
 		$c = $config->get('view');

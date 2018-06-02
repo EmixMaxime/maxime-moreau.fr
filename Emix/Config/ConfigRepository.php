@@ -9,7 +9,7 @@ use Emix\Support\PathHelpers;
  * Dans items je vais avoir toutes les config, tableau associatif :
  * nom => [key => value, key => value]...
  */
-class ConfigRepository
+class ConfigRepository implements ConfigRepositoryInterface
 {
 
 	private $items;
@@ -24,7 +24,7 @@ class ConfigRepository
 		$this->items = $items;
 	}
 
-	public static function getInstance(): ConfigRepository
+	public static function getInstance(): ConfigRepositoryInterface
 	{
 		if (!self::$_instance) {
 			$configPath = PathHelpers::getInstance()->config;
@@ -41,7 +41,7 @@ class ConfigRepository
 		return self::$_instance;
 	}
 
-	public function get($key, $default = NULL): any
+	public function get($key, $default = NULL)
 	{
 		return Arr::get($this->items, $key, $default);
 	}

@@ -3,12 +3,13 @@
 use Emix\Asset\Asset;
 use Emix\Asset\TwigAssetExtension;
 use Emix\Config\ConfigRepository;
+use Emix\Config\ConfigRepositoryInterface;
 use Emix\Twig\TwigEnvExtension;
 use Psr\Container\ContainerInterface;
 
 $container = $app->getContainer();
 
-$container['config'] = function () use ($configRepository) {
+$container['config'] = function () use ($configRepository): ConfigRepositoryInterface {
   return $configRepository;
 };
 
