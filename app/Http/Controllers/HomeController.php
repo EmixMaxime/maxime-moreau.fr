@@ -16,7 +16,7 @@ class HomeController extends BaseController
 
 	public function home(RequestInterface $request, ResponseInterface $response)
 	{
-		$data = $this->getData(['skills', 'creations']);
+		$data = $this->getData(['skills', 'creations', 'timeline']);
 		return $this->render($response, 'site/home.twig', compact('data'));
 	}
 
