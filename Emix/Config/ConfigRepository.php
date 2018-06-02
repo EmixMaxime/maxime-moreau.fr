@@ -1,6 +1,6 @@
 <?php 
 
-namespace  Emix\Config;
+namespace Emix\Config;
 
 use Emix\Support\Arr;
 use Emix\Support\PathHelpers;
@@ -12,43 +12,43 @@ use Emix\Support\PathHelpers;
 class ConfigRepository
 {
 
-  private $items;
+	private $items;
 
-  /**
-   * @var ConfigRepository
-   */
-  private static $_instance;
+	/**
+	 * @var ConfigRepository
+	 */
+	private static $_instance;
 
-  public function __construct (array $items) 
-  {
-    $this->items = $items;
-  }
+	public function __construct (array $items) 
+	{
+		$this->items = $items;
+	}
 
-  public static function getInstance (): ConfigRepository
-  {
-    if (!self::$_instance) {
-      $configPath = PathHelpers::getInstance()->config;
-      $arr = [];
+	public static function getInstance(): ConfigRepository
+	{
+		if (!self::$_instance) {
+			$configPath = PathHelpers::getInstance()->config;
+			$arr = [];
 
-      foreach (glob("${configPath}/*.config.php") as $path) {
-        $filename = basename($path, '.config.php');
-        $arr[basename($filename)] = include($path);
-      }
+			foreach (glob("${configPath}/*.config.php") as $path) {
+				$filename = basename($path, '.config.php');
+				$arr[basename($filename)] = include($path);
+			}
 
-      self::$_instance = new self($arr);
-    }
+			self::$_instance = new self($arr);
+		}
 
-    return self::$_instance;
-  }
+		return self::$_instance;
+	}
 
-  public function get ($key, $default = NULL)
-  {
-    return Arr::get($this->items, $key, $default);
-  }
+	public function get($key, $default = NULL): any
+	{
+		return Arr::get($this->items, $key, $default);
+	}
 
-  public function all ()
-  {
+	public function all()
+	{
 
-  }
+	}
 
 }
