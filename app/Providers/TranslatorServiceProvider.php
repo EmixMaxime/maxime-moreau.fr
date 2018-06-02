@@ -6,7 +6,7 @@ use Interop\Container\ContainerInterface;
 use Slim\Views\Twig;
 use Symfony\Component\Translation\Translator;
 
-class LangServiceProvider extends ServiceProvider
+class TranslatorServiceProvider extends ServiceProvider
 {
 	public function __construct(ContainerInterface $container)
 	{

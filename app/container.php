@@ -47,6 +47,5 @@ $container['lang'] = function() use ($configRepository) {
 $viewServiceProvider = new \App\Providers\ViewServiceProvider($container);
 $viewServiceProvider->run();
 
-$viewServiceProvider = new \App\Providers\LangServiceProvider($container);
-$viewServiceProvider->run();
-
+$translatorServiceProvider = new \App\Providers\TranslatorServiceProvider($container);
+$translatorServiceProvider->run();
