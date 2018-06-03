@@ -2,15 +2,21 @@
 
 {% block content %}
 
-  <div class="presentation-wrapper" id="home">
-    {% include 'site/header.twig' %}
-    {% include 'site/parts/presentation.twig' %}
-  </div>
+	<div class="presentation-wrapper" id="home">
+		{% include 'site/header.twig' %}
+		{% include 'site/parts/presentation.twig' %}
+	</div>
 
-  {% include 'site/parts/about.twig' %}
-  {% include 'site/parts/advantage.twig' %}
-  {% include 'site/parts/skills.twig' %}
-  {% include 'site/parts/creations.twig' %}
-  {% include 'site/parts/timeline.twig' %}
+	<div class="l-container l-container--small">
+		<div class="bubble bubble--informations">
+			<p>The english version is in work in progress.</p>
+		</div>
+	</div>
+
+	{% include 'site/parts/about.twig' %}
+	{% include 'site/parts/advantage.twig' %}
+	{% include 'site/parts/skills.twig' %}
+	{% include 'site/parts/creations.twig' %}
+	{% include 'site/parts/timeline.twig' %}
 
 {% endblock content %}
