@@ -15,7 +15,7 @@ $general = [
 		| directory. However, as usual, you are free to change this value.
 		|
 		*/
-		'compiled' => storage_path('cache/views'),
+		'compiled' => storage_path('framework/views'),
 
 
 		'extensions' => [

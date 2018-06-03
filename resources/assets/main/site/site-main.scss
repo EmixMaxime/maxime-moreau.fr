@@ -12,3 +12,18 @@
 @import "../sass/skills/_skills.scss";
 @import "../sass/creations/_creations.scss";
 @import "../sass/timeline/_timeline.scss";
+
+/**
+ * TMP style for english message (wip)
+ */
+.bubble--informations {
+  margin-top: 20px;
+  border-top: 3px solid #6bb1eb;
+  background-color: #ebf7f9;
+  color: #277abe;
+
+  padding: 20px 10px;
+  p {
+    margin: 0;
+  }
+}
