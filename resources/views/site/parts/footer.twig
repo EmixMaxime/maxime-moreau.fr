@@ -1,8 +1,18 @@
 <footer class="l-footer">
 	<div class="l-footer-container l-container l-container--small">
 
-		<p class="pre-title">Vous êtes intéressé par mon profil ? Une question ? Contactez-moi !</p>
-		<h3 class="h4 text-center">La passion du web par un jeune qui ne demande qu'à évoluer.</h3>
+		<p class="pre-title">
+			{{
+				'Vous êtes intéressé par mon profil ? Une question ? Contactez-moi !'
+				| trans
+			}}
+		</p>
+		<h3 class="h4 text-center">
+			{{
+				"La passion du web par un jeune qui ne demande qu'à évoluer."
+				| trans
+			}}
+		</h3>
 
 		<div class="l-footer-wrapper">
 
@@ -16,7 +26,7 @@
 			</div>
 
 			<div class="l-footer-box l-wrapper l-footer-social">
-				<p class="l-footer-box-title">Retrouvez-moi</p>
+				<p class="l-footer-box-title">{{ 'Retrouvez-moi' | trans }}</p>
 				<ul>
 					<li>
 						<a href="https://github.com/EmixMaxime">Github</a>
@@ -31,7 +41,7 @@
 			</div>
 
 			<div class="l-footer-box l-wrapper l-footer-dev">
-				<p class="l-footer-box-title">En bref</p>
+				<p class="l-footer-box-title">{{ 'En bref' | trans }}</p>
 				<p>
 					Pasionné par les nouvelles technologies web tout en étant polyvalent et ouvert d'esprit. Autodidacte avec des projets ambitieux
 					dont
